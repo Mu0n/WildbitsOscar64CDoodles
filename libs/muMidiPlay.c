@@ -4,7 +4,7 @@
  * to play it as part of your music engine. These routines monopolize the Timer 0 that runs at the 25.175MHz dot clock,
  * so you must make do without it for other purposes in your program.
  *
- * Dependencies: your own program should just #include this file, muMidiPlay.c, which will in turn include muTimer0 and muMidi.
+ * Dependencies: your own program should just #include this file, muMidiPlay.c, which will in turn include muTimer0Int and muMidi.
  *
  * Typical usage:
  * 
