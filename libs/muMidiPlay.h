@@ -4,7 +4,7 @@
  * to play it as part of your music engine. These routines monopolize the Timer 0 that runs at the 25.175MHz dot clock,
  * so you must make do without it for other purposes in your program.
  *
- * Dependencies: your own program should just #include this file, muMidiPlay.c, which will in turn include muTimer0Int and muMidi.
+ * Dependencies: your own program should just #include this file, muMidiPlay.c, which will in turn include muTimer0Int, muMidi, muGen2Ram and their respective headers
  *
  * Typical usage:
  * 
@@ -30,7 +30,7 @@ EMBED(canyon, "../assets/canyon.mid", 0x50000);
  *  5) Do this to "rewind" the midi file at its beginning and start the playback over: rewindAndPlayMIDI();
  *  6) To load a new MIDI file and start playing that one, do steps 1a+2 to load from a .mid file or steps 1b+2 to get it from high memory
  *
- * v1.0 July 21st 2026
+ * v1.1 July 22nd 2026
  * Written by Mu0n aka 1Bit Fever Dreams aka AnyBits Fever Dreams
  */
  

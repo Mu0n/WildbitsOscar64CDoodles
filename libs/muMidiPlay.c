@@ -4,7 +4,7 @@
  * to play it as part of your music engine. These routines monopolize the Timer 0 that runs at the 25.175MHz dot clock,
  * so you must make do without it for other purposes in your program.
  *
- * Dependencies: your own program should just #include this file, muMidiPlay.c, which will in turn include muTimer0Int and muMidi.
+ * Dependencies: your own program should just #include this file, muMidiPlay.c, which will in turn include muTimer0Int, muMidi, muGen2Ram and their respective headers
  *
  * Typical usage:
  * 
@@ -30,7 +30,7 @@ EMBED(canyon, "../assets/canyon.mid", 0x50000);
  *  5) Do this to "rewind" the midi file at its beginning and start the playback over: rewindAndPlayMIDI();
  *  6) To load a new MIDI file and start playing that one, do steps 1a+2 to load from a .mid file or steps 1b+2 to get it from high memory
  *
- * v1.0 July 21st 2026
+ * v1.1 July 22nd 2026
  * Written by Mu0n aka 1Bit Fever Dreams aka AnyBits Fever Dreams
  */
 
@@ -42,6 +42,7 @@ EMBED(canyon, "../assets/canyon.mid", 0x50000);
 #include "muMidi.h"
 #include "muMidiPlay.h"
 #include "muTimer0Int.h" //contains helper functions I often use
+#include "muGen2RAM.h" //to access the extra 3 banks of SRAM available in Wildbits gen2 machines
 
 static struct MIDIParser theOne;
 static struct midiRecord myMIDIRecord;
@@ -126,7 +127,8 @@ uint8_t loadSMFile(char *name, uint32_t targetAddress) {
 			//dump the buffer into a special RAM area
 			for(i=0;i<bytesRead;i++)
 				{
-				FAR_POKE((uint32_t)targetAddress+(uint32_t)totalBytesRead+(uint32_t)i,buffer[i]);
+				//FAR_POKE((uint32_t)targetAddress+(uint32_t)totalBytesRead+(uint32_t)i,buffer[i]);
+				poke24((uint32_t)targetAddress+(uint32_t)totalBytesRead+(uint32_t)i,buffer[i]);
 				}
 			totalBytesRead += (uint32_t) bytesRead;
 			if(bytesRead < 250) break;
@@ -157,8 +159,13 @@ void detectStructure(uint16_t startIndex, struct midiRecord *rec) {
 	
 uint16_t readBigEndian16(uint32_t where) {
     uint8_t bytes[2];
+	/*
 	bytes[0] = FAR_PEEK(where);
 	bytes[1] = FAR_PEEK(where+1);
+	*/
+	
+	bytes[0] = peek24(where);
+	bytes[1] = peek24(where+1);
 	
     return ((uint16_t)bytes[0] << 8) |
            (uint16_t)bytes[1];
@@ -167,10 +174,16 @@ uint16_t readBigEndian16(uint32_t where) {
 uint32_t readBigEndian32(uint32_t where) {
     uint8_t bytes[4];
 
+/*
 	bytes[0] = FAR_PEEK(where);
 	bytes[1] = FAR_PEEK(where+1);
 	bytes[2] = FAR_PEEK(where+2);
 	bytes[3] = FAR_PEEK(where+3);
+*/
+	bytes[0] = peek24(where);
+	bytes[1] = peek24(where+1);
+	bytes[2] = peek24(where+2);
+	bytes[3] = peek24(where+3);
 	
     return (((uint32_t)bytes[0]) << 24) |
            (((uint32_t)bytes[1]) << 16) |
@@ -195,13 +208,18 @@ uint32_t readDelta(uint8_t track) {
 	uint8_t temp;
 	
 	//min count needed for describing the delta: 1; max is 4
-	temp = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset++);
+	
+	//temp = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset++);
+	temp = peek24(theOne.tracks[track].start + theOne.tracks[track].offset++);
+	
 	while(temp & 0x80) //keep reading after this one
 		{
 		temp &= 0x7F; //only keep lowest 7 bits
 		value += (uint32_t) temp; //add it to the pile
 		value <<= 7; //shift the pile 7 spots to make room
-		temp = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset++); //get the next one
+		//temp = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset++); //get the next one
+		temp = peek24(theOne.tracks[track].start + theOne.tracks[track].offset++); //get the next one
+		
 		}
 	value += (uint32_t)temp; //final addition to close it off
 	return value;
@@ -212,12 +230,21 @@ uint8_t readMIDICmd(uint8_t track) {
 	uint8_t extra_byte3, extra_byte4, extra_byte5;
 	
 //status byte or MIDI message reading
+/*
 	status_byte = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset);
 	extra_byte  = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)1);
 	extra_byte2 = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)2);
 	extra_byte3 = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)3);
 	extra_byte4 = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)4);
 	extra_byte5 = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)5);
+	*/
+	status_byte = peek24(theOne.tracks[track].start + theOne.tracks[track].offset);
+	extra_byte  = peek24(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)1);
+	extra_byte2 = peek24(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)2);
+	extra_byte3 = peek24(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)3);
+	extra_byte4 = peek24(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)4);
+	extra_byte5 = peek24(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)5);
+	
 	theOne.tracks[track].cmd[0] = status_byte;
 	theOne.tracks[track].cmd[1] = extra_byte;
 	theOne.tracks[track].cmd[2] = extra_byte2;
@@ -234,7 +261,6 @@ uint8_t readMIDICmd(uint8_t track) {
 		theOne.tracks[track].cmd[1] = extra_byte;
 		theOne.tracks[track].cmd[2] = extra_byte2;
 		
-		//printf(" ! %02x", status_byte);
 		theOne.tracks[track].offset--; //since there was no command byte, back track by one	
 		}
 //second, deal with MIDI meta-event commands that start with 0xFF
