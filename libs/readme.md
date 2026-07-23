@@ -25,6 +25,8 @@ Just include muMidiPlay.c and the rest will follow.
 `loadSMFile("yourfile.mid", 0x50000)` 
 where 0x50000 is a good address that gives you almost 196kb of space, more than enough than most MIDI files. Select anything else if needed, of course above 0x10000.
 
+or
+
 1.b) embed your MIDI file. 
 With oscar64, use this at the top of your main source file:
 ```
@@ -70,6 +72,8 @@ Just include muVGMPlay.c and the rest will follow.
 1.a) keep your vgm file external and at a known location which could include a path (i.e. `media/vgm/doom.mid`), and load it into high memory using 
 `loadVGMile("yourfile.vgm", 0x50000)` 
 where 0x50000 is a good address that gives you almost 196kb of space, more than enough than most VGM files. Select anything else if needed, of course above 0x10000.
+
+or
 
 1.b) embed your MIDI file. 
 With oscar64, use this at the top of your main source file:
