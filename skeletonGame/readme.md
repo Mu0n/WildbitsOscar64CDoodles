@@ -49,3 +49,53 @@ This is the structure of included files:
                                     |
                                     +--> [muTimer0Int.c] -> [muTimer0Int.h]
 ```
+
+## Compiling with oscar64
+
+Run the following script inside WSL, in folder `...\f256lib-oscar64\doodles` like so: 
+
+`./car.sh skelgame`
+
+(assuming `...\f256lib-oscar64\doodles\skelgame\` contains the skelgame project files found in this repo)
+
+```
+#!/bin/bash
+
+# --- 1. CONFIGURATION ---
+OSCAR_BIN="/mnt/d/F256/oscar64/bin/oscar64"
+# Use the Windows python launcher (it handles COM8 perfectly)
+PYTHON_EXE="python.exe" 
+# Use the Windows path for the script (escaped backslashes)
+FOENIX_MGR="D:\\F256\\llvm-mos\\f256dev\\FoenixMgr\\FoenixMgr\\fnxmgr.py"
+
+# --- 2. ARGUMENTS ---
+PROJ_NAME="$1"
+SRC_DIR="${PROJ_NAME}/src/"
+SRC_FILE="${PROJ_NAME}/src/${PROJ_NAME}.c"
+OUT_DIR="${PROJ_NAME}/"
+BIN_FILE="${PROJ_NAME}.pgz"
+FLAGS="-tm=f256k -n -i=../f256lib"
+# --- 3. Gather all files in src/
+
+mapfile -t CFILES < <(find "$SRC_DIR" -maxdepth 1 -type f -name "*.c")
+
+# --- 4. COMPILE ---
+echo "Compiling:"
+printf '%s\n' "${CFILES[@]}"
+echo
+echo "Linking into ${OUT_DIR}/${PROJ_NAME}.pgz"
+$OSCAR_BIN $FLAGS "${CFILES[@]}" -o="./$OUT_DIR/$PROJ_NAME.pgz"
+
+# --- 5. TRANSFER ---
+if [ $? -eq 0 ]; then
+    echo "Transferring to F256K2 via Windows Python..."
+    # We use the Windows path for the file we just built
+    WIN_BIN_PATH="D:\\F256\\f256lib-oscar64\\doodles\\${PROJ_NAME}\\${BIN_FILE}"
+    
+    $PYTHON_EXE "$FOENIX_MGR" --port COM8 --run-pgz "$WIN_BIN_PATH"
+else
+    echo "Compilation failed."
+    exit 1
+fi
+```
+
