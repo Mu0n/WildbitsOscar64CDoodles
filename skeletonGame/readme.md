@@ -53,7 +53,9 @@ This is the structure of included files:
 ## Usage during runtime
 
 WASD movement
+
 1 to switch to MIDI playback (default)
+
 2 to switch to OPL3 playback
 
 ## Compiling with oscar64
