@@ -50,6 +50,12 @@ This is the structure of included files:
                                     +--> [muTimer0Int.c] -> [muTimer0Int.h]
 ```
 
+## Usage during runtime
+
+WASD movement
+1 to switch to MIDI playback (default)
+2 to switch to OPL3 playback
+
 ## Compiling with oscar64
 
 Run the following script inside WSL, in folder `...\f256lib-oscar64\doodles` like so: 
