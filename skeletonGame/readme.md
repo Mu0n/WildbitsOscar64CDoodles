@@ -56,7 +56,13 @@ Run the following script inside WSL, in folder `...\f256lib-oscar64\doodles` lik
 
 `./car.sh skelgame`
 
-(assuming `...\f256lib-oscar64\doodles\skelgame\` contains the skelgame project files found in this repo)
+This assumes `...\f256lib-oscar64\doodles\skelgame\` contains the skelgame project files found in this repo.
+
+Modify `/mnt/d/F256/oscar64/bin/oscar64` to where your oscar64 compiler is located
+
+Modify `D:\\F256\\llvm-mos\\f256dev\\FoenixMgr\\FoenixMgr\\fnxmgr.py` to where the python FoenixMgr is located
+
+Modify `D:\\F256\\f256lib-oscar64\\doodles\\` to where your oscar64 project folders are located.
 
 ```
 #!/bin/bash
