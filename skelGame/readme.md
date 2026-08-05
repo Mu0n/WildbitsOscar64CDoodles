@@ -1,5 +1,7 @@
 ### Skeleton Game Project
 
+Video: https://youtu.be/3afAJUqeyeE
+
 Use this oscar64 project to get a running start on your own game. This provides:
 
 * a bitmap background full screen image
