@@ -9,7 +9,7 @@ sprRec spriteRecords[SPRITES_TOTAL_NUMBER];
 //initialize the sprites used in this project
 void initMySprites(void)
 {
-initSpriteRecord(0, SPRITES_ADDRESS_BASE, 32, 32, 182, 0, 0, 0);
+initSpriteRecord(0, SPRITES_ADDRESS_BASE, 32, 32, 32, 0, 0, 0);
 }
 
 //change the frames shown in the sprite in this project; position restrictions

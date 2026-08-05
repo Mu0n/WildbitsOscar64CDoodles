@@ -19,3 +19,5 @@ void initMyBitmap()
 }
 
 #endif //MYBITMAP_C
+
+
