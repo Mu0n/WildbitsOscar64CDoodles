@@ -874,7 +874,7 @@ _kernelCallRaw: ; _kernelCallRaw
 07d3 : 60 __ __ RTS
 --------------------------------------------------------------------
 f256main: ; f256main(i16,u8**)->i16
-;1639, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+;1600, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 07d4 : a2 03 __ LDX #$03
 07d6 : b5 55 __ LDA T0 + 0,x 
@@ -2892,7 +2892,7 @@ textPrint: ; textPrint(const u8*)->void
 16ab : __ __ __ BYT 4c 6f 63 61 6c 20 44 69 72 3a 00                : Local Dir:.
 --------------------------------------------------------------------
 textFullClear: ; textFullClear()->void
-; 180, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 181, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 16b6 : a9 4f __ LDA #$4f
 16b8 : 85 25 __ STA P10 
@@ -3009,7 +3009,7 @@ textSectionClear: ; textSectionClear(u8)->void
 1774 : __ __ __ BYT 20 00                                           :  .
 --------------------------------------------------------------------
 initTextXY: ; initTextXY(u8)->void
-; 187, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 188, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 1776 : a5 1d __ LDA P2 ; (endX + 0)
 1778 : c9 4e __ CMP #$4e
@@ -3046,7 +3046,7 @@ initTextXY: ; initTextXY(u8)->void
 17b7 : __ __ __ BYT 65 6e 74 00                                     : ent.
 --------------------------------------------------------------------
 textPrintNewLine: ; textPrintNewLine(u8,u8,u8,u8)->void
-; 203, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 204, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 17bb : a9 cb __ LDA #$cb
 17bd : 85 1b __ STA P0 
@@ -3136,7 +3136,7 @@ textGetXY: ; textGetXY(u8*,u8*)->void
 1856 : __ __ __ BYT 65 6d 2e 2e 2e 00                               : em....
 --------------------------------------------------------------------
 wiz_init: ; wiz_init()->bool
-; 801, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 802, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 185c : a5 55 __ LDA T1 + 0 
 185e : 8d a2 9f STA $9fa2 ; (wiz_init@stack + 0)
@@ -3237,7 +3237,7 @@ wiz_init: ; wiz_init()->bool
 192a : d0 8c __ BNE $18b8 ; (wiz_init.s3 + 0)
 --------------------------------------------------------------------
 lilpause: ; lilpause(u8)->void
-; 253, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 254, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 192c : a9 00 __ LDA #$00
 192e : 85 1b __ STA P0 
@@ -3266,7 +3266,7 @@ lilpause: ; lilpause(u8)->void
 195d : 60 __ __ RTS
 --------------------------------------------------------------------
 getTimerAbsolute: ; getTimerAbsolute(u8)->u8
-; 243, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 244, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 195e : a5 1b __ LDA P0 ; (units + 0)
 1960 : 09 80 __ ORA #$80
@@ -3300,7 +3300,7 @@ _kernelCallRaw: ; _kernelCallRaw
 1990 : 60 __ __ RTS
 --------------------------------------------------------------------
 setTimer: ; setTimer(const struct timer_t*)->bool
-; 229, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 230, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 1991 : a9 f0 __ LDA #$f0
 1993 : 8d cb 7a STA $7acb ; (_kern_target + 0)
@@ -3333,7 +3333,7 @@ kernelNextEvent: ; kernelNextEvent()->u8
 19c2 : 4c 71 19 JMP $1971 ; (_kernelCallWrapper.s4 + 0)
 --------------------------------------------------------------------
 wiz_atcmd: ; wiz_atcmd(const u8*,u16)->bool
-; 792, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 793, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 19c5 : a9 00 __ LDA #$00
 19c7 : 8d 00 7b STA $7b00 ; (at_resp_line[0] + 0)
@@ -3356,7 +3356,7 @@ wiz_atcmd: ; wiz_atcmd(const u8*,u16)->bool
 19f4 : 4c 3a 1a JMP $1a3a ; (wiz_wait_atok.s1 + 0)
 --------------------------------------------------------------------
 uart_puts: ; uart_puts(const u8*)->void
-; 290, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 291, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 19f7 : a0 00 __ LDY #$00
 19f9 : b1 1c __ LDA (P1),y ; (s + 0)
@@ -3383,7 +3383,7 @@ uart_puts: ; uart_puts(const u8*)->void
 1a1d : 60 __ __ RTS
 --------------------------------------------------------------------
 uart_putc: ; uart_putc(u8)->void
-; 280, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 281, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 1a1e : a8 __ __ TAY
 .l5:
@@ -3406,7 +3406,7 @@ uart_putc: ; uart_putc(u8)->void
 1a37 : __ __ __ BYT 0d 0a 00                                        : ...
 --------------------------------------------------------------------
 wiz_wait_atok: ; wiz_wait_atok(u16)->bool
-; 762, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 763, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 1a3a : a2 03 __ LDX #$03
 1a3c : b5 55 __ LDA T0 + 0,x 
@@ -3470,7 +3470,7 @@ wiz_wait_atok: ; wiz_wait_atok(u16)->bool
 1a9c : 60 __ __ RTS
 --------------------------------------------------------------------
 wiz_poll_any: ; wiz_poll_any()->bool
-; 469, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 470, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 1a9d : ad 82 dd LDA $dd82 
 1aa0 : 0d 83 dd ORA $dd83 
@@ -3488,7 +3488,7 @@ wiz_poll_any: ; wiz_poll_any()->bool
 1ab8 : 60 __ __ RTS
 --------------------------------------------------------------------
 wiz_rx_byte: ; wiz_rx_byte(u8)->void
-; 407, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 408, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 1ab9 : a5 55 __ LDA T4 + 0 
 1abb : 8d a7 9f STA $9fa7 ; (wiz_rx_byte@stack + 0)
@@ -3719,7 +3719,7 @@ wiz_rx_byte: ; wiz_rx_byte(u8)->void
 1c79 : 4c 00 1c JMP $1c00 ; (wiz_rx_byte.s31 + 0)
 --------------------------------------------------------------------
 handle_line: ; handle_line(u8*)->void
-; 360, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 361, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 1c7c : ad ad 79 LDA $79ad ; (debug_mode + 0)
 1c7f : f0 31 __ BEQ $1cb2 ; (handle_line.s5 + 0)
@@ -4175,7 +4175,7 @@ strncpy: ; strncpy(u8*,const u8*,i16)->u8*
 1f64 : 60 __ __ RTS
 --------------------------------------------------------------------
 parse_ipd_header: ; parse_ipd_header(const u8*,u8*,u16*)->bool
-; 371, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 372, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 1f65 : a5 21 __ LDA P6 ; (hdr + 0)
 1f67 : 85 1b __ STA P0 
@@ -4587,7 +4587,7 @@ textPrintUInt: ; textPrintUInt(u32)->void
 2220 : __ __ __ BYT 5d 00                                           : ].
 --------------------------------------------------------------------
 handle_data_byte: ; handle_data_byte(u8,u8)->void
-; 362, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 363, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 2222 : ad d8 9f LDA $9fd8 ; (sstack + 12)
 2225 : d0 09 __ BNE $2230 ; (handle_data_byte.s6 + 0)
@@ -4647,7 +4647,7 @@ handle_data_byte: ; handle_data_byte(u8,u8)->void
 2280 : 4c a1 23 JMP $23a1 ; (flush_listline.s4 + 0)
 --------------------------------------------------------------------
 handle_ctrl_byte: ; handle_ctrl_byte(u8)->void
-; 361, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 362, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 2283 : ad ce 9f LDA $9fce ; (sstack + 2)
 2286 : c9 0a __ CMP #$0a
@@ -4817,7 +4817,7 @@ handle_ctrl_byte: ; handle_ctrl_byte(u8)->void
 2399 : __ __ __ BYT 5b 63 74 72 6c 5d 20 00                         : [ctrl] .
 --------------------------------------------------------------------
 flush_listline: ; flush_listline()->void
-; 364, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 365, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 23a1 : a9 00 __ LDA #$00
 23a3 : 85 2a __ STA ACCU + 1 
@@ -4846,8 +4846,8 @@ flush_listline: ; flush_listline()->void
 .s3:
 23d8 : 60 __ __ RTS
 --------------------------------------------------------------------
-format_and_print_listline: ; format_and_print_listline(u8*,struct S#8557*)->bool
-; 365, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+format_and_print_listline: ; format_and_print_listline(u8*,struct S#8571*)->bool
+; 366, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 23d9 : ad ce 9f LDA $9fce ; (sstack + 2)
 23dc : 85 48 __ STA T1 + 0 
@@ -5214,7 +5214,7 @@ format_and_print_listline: ; format_and_print_listline(u8*,struct S#8557*)->bool
 265c : __ __ __ BYT 74 6f 74 61 6c 20 00                            : total .
 --------------------------------------------------------------------
 format_u32: ; format_u32(u32,u8*)->void
-; 566, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 567, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 2663 : a5 1e __ LDA P3 ; (v + 3)
 2665 : d0 17 __ BNE $267e ; (format_u32.s5 + 0)
@@ -5392,7 +5392,7 @@ strcat: ; strcat(u8*,const u8*)->u8*
 2750 : __ __ __ BYT 4b 00                                           : K.
 --------------------------------------------------------------------
 print_right: ; print_right(const u8*,u8)->void
-; 559, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 560, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 2752 : a5 25 __ LDA P10 ; (s + 0)
 2754 : 85 1b __ STA P0 
@@ -5426,7 +5426,7 @@ print_right: ; print_right(const u8*,u8)->void
 2788 : __ __ __ BYT 20 20 00                                        :   .
 --------------------------------------------------------------------
 flush_filebuf: ; flush_filebuf()->void
-; 363, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 364, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 278b : ad b8 79 LDA $79b8 ; (filebuf_len + 0)
 278e : f0 36 __ BEQ $27c6 ; (flush_filebuf.s5 + 0)
@@ -5732,7 +5732,7 @@ kernelNextEvent: ; kernelNextEvent()->u8
 2a40 : __ __ __ BYT 20 76 00                                        :  v.
 --------------------------------------------------------------------
 wiz_get_ssid: ; wiz_get_ssid(u8*,u8)->bool
-; 837, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 838, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 2a43 : a5 55 __ LDA T2 + 0 
 2a45 : 8d a1 9f STA $9fa1 ; (wiz_get_ssid@stack + 0)
@@ -10121,7 +10121,7 @@ isinf: ; isinf(float)->bool
 4734 : __ __ __ BYT 66 74 70 3e 20 00                               : ftp> .
 --------------------------------------------------------------------
 read_line: ; read_line(u8*,u8)->void
-;1349, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+;1316, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 473a : a2 09 __ LDX #$09
 473c : b5 55 __ LDA T1 + 0,x ; (buf + 1)
@@ -10781,7 +10781,7 @@ read_line: ; read_line(u8*,u8)->void
 4bcb : d0 bc __ BNE $4b89 ; (read_line.s88 + 0)
 --------------------------------------------------------------------
 mouseInWhere: ; mouseInWhere()->u8
-;1289, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+;   8, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/mouseAreas.h"
 .s4:
 4bcd : ad e2 d6 LDA $d6e2 
 4bd0 : 85 29 __ STA ACCU + 0 
@@ -10881,7 +10881,7 @@ mouseInWhere: ; mouseInWhere()->u8
 4c50 : __ __ __ BYT 00 00                                           : ..
 --------------------------------------------------------------------
 ftp_retr: ; ftp_retr(const u8*,const u8*)->bool
-;1158, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+;1159, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 4c52 : a2 0c __ LDX #$0c
 4c54 : b5 55 __ LDA T0 + 0,x 
@@ -11224,7 +11224,7 @@ ftp_retr: ; ftp_retr(const u8*,const u8*)->bool
 4f2f : 4c df 4c JMP $4cdf ; (ftp_retr.s21 + 0)
 --------------------------------------------------------------------
 ftp_size: ; ftp_size(const u8*,u32*)->bool
-;1068, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+;1069, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 4f32 : a2 05 __ LDX #$05
 4f34 : b5 55 __ LDA T0 + 0,x 
@@ -11401,7 +11401,7 @@ sprintf: ; sprintf(u8*,const u8*)->i16
 5076 : __ __ __ BYT 53 49 5a 45 20 25 73 00                         : SIZE %s.
 --------------------------------------------------------------------
 ftp_command: ; ftp_command(const u8*)->i16
-; 366, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 367, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 507e : ad e7 9f LDA $9fe7 ; (sstack + 27)
 5081 : 8d e5 9f STA $9fe5 ; (sstack + 25)
@@ -11431,7 +11431,7 @@ ftp_command: ; ftp_command(const u8*)->i16
 50b3 : 60 __ __ RTS
 --------------------------------------------------------------------
 ftp_send_cmd: ; ftp_send_cmd(const u8*)->bool
-; 887, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 888, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 50b4 : ad e5 9f LDA $9fe5 ; (sstack + 25)
 50b7 : 85 35 __ STA T0 + 0 
@@ -11469,7 +11469,7 @@ ftp_send_cmd: ; ftp_send_cmd(const u8*)->bool
 50fc : 4c ff 50 JMP $50ff ; (wiz_cipsend.s1 + 0)
 --------------------------------------------------------------------
 wiz_cipsend: ; wiz_cipsend(u8,const u8*,u16)->bool
-; 872, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 873, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 50ff : a2 03 __ LDX #$03
 5101 : b5 55 __ LDA T0 + 0,x 
@@ -11559,7 +11559,7 @@ wiz_cipsend: ; wiz_cipsend(u8,const u8*,u16)->bool
 51b4 : __ __ __ BYT 0d 0a 00                                        : ...
 --------------------------------------------------------------------
 wiz_wait_char: ; wiz_wait_char(u8,u16)->bool
-; 296, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 297, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 51b7 : a5 20 __ LDA P5 ; (timeout_frames + 1)
 51b9 : 05 1f __ ORA P4 ; (timeout_frames + 0)
@@ -11604,7 +11604,7 @@ wiz_wait_char: ; wiz_wait_char(u8,u16)->bool
 51f4 : d0 f2 __ BNE $51e8 ; (wiz_wait_char.s3 + 0)
 --------------------------------------------------------------------
 ftp_wait_reply: ; ftp_wait_reply(u16)->bool
-; 773, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 774, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 51f6 : a2 03 __ LDX #$03
 51f8 : b5 55 __ LDA T0 + 0,x 
@@ -11666,7 +11666,7 @@ ftp_wait_reply: ; ftp_wait_reply(u16)->bool
 5252 : f0 ca __ BEQ $521e ; (ftp_wait_reply.s8 + 0)
 --------------------------------------------------------------------
 print_reply: ; print_reply()->void
-; 783, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 784, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 5254 : a9 4f __ LDA #$4f
 5256 : 85 1d __ STA P2 
@@ -11706,7 +11706,7 @@ print_reply: ; print_reply()->void
 52a6 : 4c bb 17 JMP $17bb ; (textPrintNewLine.s4 + 0)
 --------------------------------------------------------------------
 reset_download_progress: ; reset_download_progress()->void
-; 398, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 399, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 52a9 : a9 00 __ LDA #$00
 52ab : 8d 60 7a STA $7a60 ; (progressTickCounter + 0)
@@ -11719,7 +11719,7 @@ reset_download_progress: ; reset_download_progress()->void
 52bc : 60 __ __ RTS
 --------------------------------------------------------------------
 draw_download_progress: ; draw_download_progress(bool)->void
-; 675, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 676, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 52bd : a9 00 __ LDA #$00
 52bf : 85 43 __ STA T1 + 0 
@@ -12082,8 +12082,8 @@ fileOpen: ; fileOpen(const u8*,const u8*)->u8*
 --------------------------------------------------------------------
 55c0 : __ __ __ BYT 2e 2e 2e 00                                     : ....
 --------------------------------------------------------------------
-ftp_retr_attempt: ; ftp_retr_attempt(const u8*,u8*,u32)->enum E#8551
-;1108, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+ftp_retr_attempt: ; ftp_retr_attempt(const u8*,u8*,u32)->enum E#8565
+;1109, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 55c4 : a5 55 __ LDA T0 + 0 
 55c6 : 8d 6d 9e STA $9e6d ; (ftp_retr_attempt@stack + 0)
@@ -12308,7 +12308,7 @@ ftp_retr_attempt: ; ftp_retr_attempt(const u8*,u8*,u32)->enum E#8551
 5787 : 4c 39 56 JMP $5639 ; (ftp_retr_attempt.s3 + 0)
 --------------------------------------------------------------------
 ftp_pasv: ; ftp_pasv(u8*,u16*)->bool
-;1009, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+;1010, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 578a : a5 55 __ LDA T0 + 0 
 578c : 8d fb 9e STA $9efb ; (ftp_pasv@stack + 0)
@@ -12359,7 +12359,7 @@ ftp_pasv: ; ftp_pasv(u8*,u16*)->bool
 57ec : __ __ __ BYT 50 41 53 56 00                                  : PASV.
 --------------------------------------------------------------------
 parse_pasv: ; parse_pasv(const u8*,u8*,u16*)->bool
-; 990, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 991, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 57f1 : ad e0 9f LDA $9fe0 ; (sstack + 20)
 57f4 : 85 1b __ STA P0 
@@ -12525,7 +12525,7 @@ strchr: ; strchr(const u8*,i16)->u8*
 5919 : __ __ __ BYT 25 75 2e 25 75 2e 25 75 2e 25 75 00             : %u.%u.%u.%u.
 --------------------------------------------------------------------
 wiz_open_link: ; wiz_open_link(u8,const u8*,u16)->bool
-; 859, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 860, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 5925 : a9 43 __ LDA #$43
 5927 : 8d d4 9f STA $9fd4 ; (sstack + 8)
@@ -12565,7 +12565,7 @@ wiz_open_link: ; wiz_open_link(u8,const u8*,u16)->bool
 59a3 : __ __ __ BYT 66 61 69 6c 65 64 00                            : failed.
 --------------------------------------------------------------------
 ftp_rest: ; ftp_rest(u32)->bool
-; 391, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 392, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 59aa : a9 dd __ LDA #$dd
 59ac : 8d d4 9f STA $9fd4 ; (sstack + 8)
@@ -12607,7 +12607,7 @@ ftp_rest: ; ftp_rest(u32)->bool
 59f7 : __ __ __ BYT 52 45 53 54 20 25 6c 75 00                      : REST %lu.
 --------------------------------------------------------------------
 wiz_close_link: ; wiz_close_link(u8)->bool
-; 865, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 866, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 5a00 : a9 8b __ LDA #$8b
 5a02 : 8d d4 9f STA $9fd4 ; (sstack + 8)
@@ -12684,7 +12684,7 @@ fileClose: ; fileClose(u8*)->i8
 5ac6 : __ __ __ BYT 20 2d 3e 20 00                                  :  -> .
 --------------------------------------------------------------------
 forceFileHighlight: ; forceFileHighlight(u8,u8,u8,u8)->void
-;1305, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+;1293, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 5acb : a5 20 __ LDA P5 ; (whichArea + 0)
 5acd : c9 01 __ CMP #$01
@@ -12751,7 +12751,7 @@ forceFileHighlight: ; forceFileHighlight(u8,u8,u8,u8)->void
 5b32 : 4c ff 14 JMP $14ff ; (textSetColor.s4 + 0)
 --------------------------------------------------------------------
 rowFromMouse: ; rowFromMouse(u8*,u8)->bool
-;1323, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+;   9, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/mouseAreas.h"
 .s4:
 5b35 : a5 1d __ LDA P2 ; (whichArea + 0)
 5b37 : ae e4 d6 LDX $d6e4 
@@ -12791,7 +12791,7 @@ rowFromMouse: ; rowFromMouse(u8*,u8)->bool
 5b67 : 60 __ __ RTS
 --------------------------------------------------------------------
 split_args: ; split_args(u8*,u8**,u8**,u8**)->void
-;1516, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+;1483, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 5b68 : a9 00 __ LDA #$00
 5b6a : a8 __ __ TAY
@@ -12969,7 +12969,7 @@ split_args: ; split_args(u8*,u8**,u8**,u8**)->void
 5c60 : __ __ __ BYT 68 65 6c 70 00                                  : help.
 --------------------------------------------------------------------
 print_help: ; print_help()->void
-;1548, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+;1509, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 5c65 : a5 55 __ LDA T6 + 0 
 5c67 : 8d 83 9f STA $9f83 ; (print_help@stack + 0)
@@ -13790,7 +13790,7 @@ print_help: ; print_help()->void
 6303 : 60 __ __ RTS
 --------------------------------------------------------------------
 fillSpaceToEnd: ; fillSpaceToEnd(u8)->void
-;1541, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+;  28, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/textareas.h"
 .s4:
 6304 : a9 cb __ LDA #$cb
 6306 : 85 1b __ STA P0 
@@ -13909,7 +13909,7 @@ _MAX_ROW:
 6620 : __ __ __ BYT 20 70 72 6f 67 72 61 6d 00                      :  program.
 --------------------------------------------------------------------
 wiz_join: ; wiz_join(const u8*,const u8*)->bool
-; 853, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 854, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 6629 : a9 43 __ LDA #$43
 662b : 8d d4 9f STA $9fd4 ; (sstack + 8)
@@ -13946,7 +13946,7 @@ wiz_join: ; wiz_join(const u8*,const u8*)->bool
 6696 : __ __ __ BYT 6f 70 65 6e 00                                  : open.
 --------------------------------------------------------------------
 ftp_open: ; ftp_open(const u8*,u16)->bool
-; 901, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 902, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 669b : a5 55 __ LDA T1 + 0 
 669d : 8d 41 9f STA $9f41 ; (ftp_open@stack + 0)
@@ -14233,7 +14233,7 @@ atoi: ; atoi(const u8*)->i16
 6915 : __ __ __ BYT 74 3e 20 5b 70 6f 72 74 5d 00                   : t> [port].
 --------------------------------------------------------------------
 ftp_login: ; ftp_login(const u8*,const u8*)->bool
-; 922, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 923, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 691f : a5 55 __ LDA T0 + 0 
 6921 : 8d a7 9e STA $9ea7 ; (ftp_login@stack + 0)
@@ -14321,7 +14321,7 @@ ftp_login: ; ftp_login(const u8*,const u8*)->bool
 69d1 : 60 __ __ RTS
 --------------------------------------------------------------------
 ftp_type_binary: ; ftp_type_binary()->bool
-; 920, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 921, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 69d2 : a5 55 __ LDA T0 + 0 
 69d4 : 8d fb 9e STA $9efb ; (ftp_type_binary@stack + 0)
@@ -14368,7 +14368,7 @@ ftp_type_binary: ; ftp_type_binary()->bool
 6a3b : __ __ __ BYT 64 69 72 00                                     : dir.
 --------------------------------------------------------------------
 ftp_list: ; ftp_list(const u8*)->bool
-;1023, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+;1024, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 6a3f : a5 55 __ LDA T0 + 0 
 6a41 : 8d 90 9e STA $9e90 ; (ftp_list@stack + 0)
@@ -14544,7 +14544,7 @@ ftp_list: ; ftp_list(const u8*)->bool
 6b99 : d0 9e __ BNE $6b39 ; (ftp_list.s26 + 0)
 --------------------------------------------------------------------
 ftp_clear_remote_files: ; ftp_clear_remote_files()->void
-;1016, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+;1017, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s4:
 6b9b : a9 7d __ LDA #$7d
 6b9d : 85 2a __ STA ACCU + 1 
@@ -14576,7 +14576,7 @@ ftp_clear_remote_files: ; ftp_clear_remote_files()->void
 6bc5 : __ __ __ BYT 4c 49 53 54 00                                  : LIST.
 --------------------------------------------------------------------
 ftp_cwd: ; ftp_cwd(const u8*)->bool
-; 948, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 949, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 6bca : a2 05 __ LDX #$05
 6bcc : b5 55 __ LDA T0 + 0,x 
@@ -14697,7 +14697,7 @@ ftp_cwd: ; ftp_cwd(const u8*)->bool
 6cc5 : __ __ __ BYT 70 77 64 00                                     : pwd.
 --------------------------------------------------------------------
 ftp_pwd: ; ftp_pwd()->bool
-; 969, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 970, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 6cc9 : a5 55 __ LDA T0 + 0 
 6ccb : 8d fb 9e STA $9efb ; (ftp_pwd@stack + 0)
@@ -14742,7 +14742,7 @@ ftp_pwd: ; ftp_pwd()->bool
 6d29 : __ __ __ BYT 70 75 74 00                                     : put.
 --------------------------------------------------------------------
 ftp_stor: ; ftp_stor(const u8*,const u8*)->bool
-;1236, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+;1237, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 6d2d : a2 08 __ LDX #$08
 6d2f : b5 55 __ LDA T0 + 0,x 
@@ -15265,7 +15265,7 @@ _kernelCallRaw: ; _kernelCallRaw
 7148 : __ __ __ BYT 62 79 65 00                                     : bye.
 --------------------------------------------------------------------
 ftp_quit: ; ftp_quit()->bool
-; 981, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
+; 982, "/mnt/d/F256/f256lib-oscar64/doodles/ftpclient/src/ftpclient.c"
 .s1:
 714c : a5 55 __ LDA T1 + 0 
 714e : 8d fb 9e STA $9efb ; (ftp_quit@stack + 0)

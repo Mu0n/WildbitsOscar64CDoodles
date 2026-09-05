@@ -67,6 +67,7 @@ high memory usage
 #include "mySprites.h"
 #include "myBitmap.h"
 #include "textareas.h"
+#include "mouseAreas.h"
 #include "muFilePicker.h"
 
 /* ---- Version ---- */
@@ -1286,20 +1287,7 @@ static bool ftp_stor(const char *local, const char *remote) {
     return true;
 }
 
-uint8_t mouseInWhere()
-{
-	int16_t newX, newY;
-	
-	newX = (int16_t)PEEKW(PS2_M_X_LO);
-	newY = (int16_t)PEEKW(PS2_M_Y_LO);
-	
-	if(newX >= (SCR_REMOTE_X*8) && newX <= (SCR_REMOTE_X_END*8)
-		&& newY >= (SCR_REMOTE_Y*8) && newY <= ((SCR_REMOTE_Y_END+1)*8)) return 1; //in remote
-	else if(newX >= (SCR_LOCAL_X*8) && newX <= (SCR_LOCAL_X_END*8)
-		&& newY >= (SCR_LOCAL_Y*8) && newY <= ((SCR_LOCAL_Y_END+1)*8)) return 2; //in local
-	
-	return 0; //none of the 2 directories
-}
+
 
 //force a highlight of a file
 void forceFileHighlight(uint8_t foreColor,uint8_t backColor, uint8_t line, uint8_t whichArea)
@@ -1320,27 +1308,6 @@ void forceFileHighlight(uint8_t foreColor,uint8_t backColor, uint8_t line, uint8
 	textSetColor(15,0); //return to neutral white on black
 }
 
-static bool rowFromMouse(uint8_t *row, uint8_t whichArea)
-{
-	int16_t y = (int16_t)PEEKW(PS2_M_Y_LO);
-	uint8_t r;
-	uint8_t start=0, end=0;
-	
-	if(whichArea==1){start = SCR_REMOTE_Y; end = SCR_REMOTE_Y_END;}
-	else if(whichArea==2){start = SCR_LOCAL_Y; end = SCR_LOCAL_Y_END;}
-	else return false;
-	
-	if(y < start * 8)
-		return false;
-	
-	r = (uint8_t)(y/8);
-	
-	if(r < start || r >= end)
-		return false;
-	
-	*row = r;
-	return true;
-}
 
 
 /* ===================================================================
@@ -1538,13 +1505,7 @@ static void split_args(char *line, char **cmd, char **a1, char **a2) {
     *a2 = p;
 }
 
-void fillSpaceToEnd(uint8_t endX)
-{
-	uint8_t curX, curY;
-	textGetXY(&curX, &curY);
-	
-	for(uint8_t i = curX; i < endX; i++) textPrint(" ");
-}
+
 static void print_help(void) {	
 	//preserve what's there
 	char topLine[SCR_HELP_X_END - SCR_HELP_X + 1];

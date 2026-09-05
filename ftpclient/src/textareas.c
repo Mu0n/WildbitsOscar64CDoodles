@@ -49,5 +49,11 @@ void textSectionClear(uint8_t endX) //wipe a specific section using a unique end
 	}
 }
 
-
+void fillSpaceToEnd(uint8_t endX)
+{
+	uint8_t curX, curY;
+	textGetXY(&curX, &curY);
+	
+	for(uint8_t i = curX; i < endX; i++) textPrint(" ");
+}
 #endif //TEXTAREAS_C

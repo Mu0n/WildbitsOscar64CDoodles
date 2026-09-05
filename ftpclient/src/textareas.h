@@ -25,7 +25,7 @@
 
 
 void textSectionClear(uint8_t); //wipe a specific section using a unique endx identifier
-
+void fillSpaceToEnd(uint8_t);
 
 extern uint8_t cur_cli_y; // current line for the command line interface area
 extern uint8_t cur_rem_y; // current line for the remote area
