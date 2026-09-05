@@ -1,0 +1,810 @@
+sections
+0280 - 5aa7 : DATA, code
+2fff - 6000 : DATA, data
+6000 - 61ff : BSS, bss
+6200 - 9000 : HEAP, heap
+9000 - 9f62 : STACK, stack
+0080 - 0080 : ZEROPAGE, zeropage
+10000 - 70d00 : DATA, lcdimg
+10000 - 42ffc : DATA, gassets
+0200 - 023f : DATA, startup
+9fe9 - a000 : SSTACK, sstack
+9fe9 - 9fe9 : SSTACK, kernelReset@stack
+9fe9 - 9fe9 : SSTACK, graphicsDefineColor@stack
+9fe9 - 9fe9 : SSTACK, graphicsSetLayerBitmap@stack
+9fe9 - 9fe9 : SSTACK, graphicsReset@stack
+9fe9 - 9fe9 : SSTACK, textSetDouble@stack
+9fe9 - 9fe9 : SSTACK, textSetCursor@stack
+9fe9 - 9fe9 : SSTACK, mathUnsignedMultiply@stack
+9fe9 - 9fe9 : SSTACK, textDefineForegroundColor@stack
+9fe9 - 9fe9 : SSTACK, textDefineBackgroundColor@stack
+9fe9 - 9fe9 : SSTACK, textGotoXY@stack
+9fe9 - 9fe9 : SSTACK, textClear@stack
+9fe9 - 9fe9 : SSTACK, textReset@stack
+9fe9 - 9fe9 : SSTACK, bitmapSetVisible@stack
+9fe9 - 9fe9 : SSTACK, bitmapReset@stack
+9fe9 - 9fe9 : SSTACK, tileSetVisible@stack
+9fe9 - 9fe9 : SSTACK, tileReset@stack
+9fe9 - 9fe9 : SSTACK, spriteSetVisible@stack
+9fe9 - 9fe9 : SSTACK, spriteReset@stack
+9fe9 - 9fe9 : SSTACK, fileReset@stack
+9fe9 - 9fe9 : SSTACK, _kernelCallWrapper@stack
+9fe9 - 9fe9 : SSTACK, randomSeed@stack
+9fe1 - 9fe9 : SSTACK, randomReset@stack
+9fe1 - 9fe1 : SSTACK, f256Init@stack
+9fe9 - 9fe9 : SSTACK, FAR_PEEK@stack
+9fe9 - 9fe9 : SSTACK, bitmapSetActive@stack
+9fe9 - 9fe9 : SSTACK, bitmapSetAddress@stack
+9fe9 - 9fe9 : SSTACK, bitmapSetCLUT@stack
+9fe9 - 9fe9 : SSTACK, resetGlobals@stack
+9fe9 - 9fe9 : SSTACK, FAR_POKE@stack
+9fe9 - 9fe9 : SSTACK, resetLFOTable@stack
+9fe9 - 9fe9 : SSTACK, midiShutUp@stack
+9fe9 - 9fe9 : SSTACK, resetInstruments@stack
+9fe9 - 9fe9 : SSTACK, resetTrack@stack
+9fe9 - 9fe9 : SSTACK, resetAllTracks@stack
+9fe9 - 9fe9 : SSTACK, realTextClear@stack
+9fe9 - 9fe9 : SSTACK, mathUnsignedAddition@stack
+9fe9 - 9fe9 : SSTACK, textPrint@stack
+9fe9 - 9fe9 : SSTACK, textSetColor@stack
+9fe9 - 9fe9 : SSTACK, f256k_scroll@stack
+9fe9 - 9fe9 : SSTACK, putpch@stack
+9fe9 - 9fe9 : SSTACK, puts@stack
+9fd9 - 9fe9 : SSTACK, nformi@stack
+9fd9 - 9fe9 : SSTACK, nforml@stack
+9fe9 - 9fe9 : SSTACK, isinf@stack
+9fe9 - 9fe9 : SSTACK, nformf@stack
+9fd1 - 9fd9 : SSTACK, sformat@stack
+9f9f - 9fd1 : SSTACK, printf@stack
+9fe9 - 9fe9 : SSTACK, textScrollUp@stack
+9fe9 - 9fe9 : SSTACK, textNewline@stack
+9fe9 - 9fe9 : SSTACK, textAdvanceCursor@stack
+9fe9 - 9fe9 : SSTACK, textPutChar@stack
+9f9f - 9f9f : SSTACK, refreshInstrumentText@stack
+9f9b - 9f9f : SSTACK, channelTextMenu@stack
+9fe9 - 9fe9 : SSTACK, keybInstructionsRefresh@stack
+9fe9 - 9fe9 : SSTACK, showMIDIChoiceText@stack
+9fe9 - 9fe9 : SSTACK, showChipChoiceText@stack
+9fe9 - 9fe9 : SSTACK, chipSelectTextMenu@stack
+9fe9 - 9fe9 : SSTACK, layoutChipAct@stack
+9f9b - 9f9b : SSTACK, textTitle@stack
+9fe9 - 9fe9 : SSTACK, defaultPianoPaint@stack
+9fe9 - 9fe9 : SSTACK, shutAllSIDVoices@stack
+9fe9 - 9fe9 : SSTACK, shutPSG@stack
+9fe9 - 9fe9 : SSTACK, opl3_write@stack
+9fe9 - 9fe9 : SSTACK, opl3_quietAll@stack
+9fe9 - 9fe9 : SSTACK, liberateAllChannels@stack
+9fe9 - 9fe9 : SSTACK, quietSounds@stack
+9f9b - 9f9b : SSTACK, escReset@stack
+9fe9 - 9fe9 : SSTACK, _kernelCallWrapper@stack
+9fe9 - 9fe9 : SSTACK, getTimerAbsolute@stack
+9fe9 - 9fe9 : SSTACK, setTimer@stack
+9fe9 - 9fe9 : SSTACK, emptyMIDIINBuffer@stack
+9fe9 - 9fe9 : SSTACK, clearSIDRegisters@stack
+9fe9 - 9fe9 : SSTACK, sid_setInstrument@stack
+9fe9 - 9fe9 : SSTACK, sid_setSIDWide@stack
+9fe9 - 9fe9 : SSTACK, sid_setInstrumentAllChannels@stack
+9fe9 - 9fe9 : SSTACK, prepSIDinstruments@stack
+9fe9 - 9fe9 : SSTACK, setMonoSID@stack
+9fe9 - 9fe9 : SSTACK, setMonoPSG@stack
+9fe9 - 9fe9 : SSTACK, opl3_initialize@stack
+9fe9 - 9fe9 : SSTACK, opl3_setInstrument@stack
+9fe9 - 9fe9 : SSTACK, opl3_setInstrumentAllChannels@stack
+9fe9 - 9fe9 : SSTACK, bitmapSetColor@stack
+9fe9 - 9fe9 : SSTACK, bitmapLine@stack
+9fe9 - 9fe9 : SSTACK, updateKeybRedLine@stack
+9fe9 - 9fe9 : SSTACK, hasCaseLCD@stack
+9fe9 - 9fe9 : SSTACK, FAR_PEEKW@stack
+9fe9 - 9fe9 : SSTACK, mulcddisplay@stack
+9fe9 - 9fe9 : SSTACK, isWave2@stack
+9fe9 - 9fe9 : SSTACK, boostVSClock@stack
+9fe9 - 9fe9 : SSTACK, initVS1053Plugin@stack
+9fe9 - 9fe9 : SSTACK, initRTMIDI@stack
+9fe9 - 9fe9 : SSTACK, openAllCODEC@stack
+9f97 - 9f9b : SSTACK, setup@stack
+9fe9 - 9fe9 : SSTACK, midiNoteOn@stack
+9fe9 - 9fe9 : SSTACK, midiNoteOff@stack
+9fe9 - 9fe9 : SSTACK, findFreeChannel@stack
+9fe9 - 9fe9 : SSTACK, sidNoteOnOrOff@stack
+9fe9 - 9fe9 : SSTACK, fetchCtrl@stack
+9fe9 - 9fe9 : SSTACK, liberateChannel@stack
+9fe9 - 9fe9 : SSTACK, psgNoteOn@stack
+9fe9 - 9fe9 : SSTACK, psgNoteOff@stack
+9fe9 - 9fe9 : SSTACK, opl3_note@stack
+9fe9 - 9fe9 : SSTACK, dispatchNote@stack
+9fe9 - 9fe9 : SSTACK, _kernelCallWrapper@stack
+9fe9 - 9fe9 : SSTACK, kernelNextEvent@stack
+9fe9 - 9fe9 : SSTACK, psgVol@stack
+9fe9 - 9fe9 : SSTACK, opl3_vol@stack
+9fe9 - 9fe9 : SSTACK, refreshChipAct@stack
+9fe9 - 9fe9 : SSTACK, midiShutAChannel@stack
+9fe9 - 9fe9 : SSTACK, mathUnsignedDivision@stack
+9fe9 - 9fe9 : SSTACK, textPrintUInt@stack
+9fe5 - 9fe9 : SSTACK, textPrintInt@stack
+9f97 - 9f9f : SSTACK, highLightInstChoice@stack
+9f86 - 9f97 : SSTACK, instListShow@stack
+9fe9 - 9fe9 : SSTACK, prgChange@stack
+9f95 - 9f97 : SSTACK, modalMoveUp@stack
+9f95 - 9f97 : SSTACK, modalMoveDown@stack
+9f95 - 9f97 : SSTACK, modalMoveLeft@stack
+9f95 - 9f97 : SSTACK, modalMoveRight@stack
+9fe9 - 9fe9 : SSTACK, shutAllMIDIchans@stack
+9fe9 - 9fe9 : SSTACK, emptySIDBuffer@stack
+9fe9 - 9fe9 : SSTACK, emptyPSGBuffer@stack
+9fe9 - 9fe9 : SSTACK, emptyOPL3Buffer@stack
+9f7a - 9f86 : SSTACK, dealKeyPressed@stack
+9fe9 - 9fe9 : SSTACK, dealKeyReleased@stack
+9f62 - 9f7a : SSTACK, f256main@stack
+9fe9 - 9fe9 : SSTACK, f256Reset@stack
+9f62 - 9f62 : SSTACK, main@stack
+
+regions
+50000 - 80000 : 70d00, 20d00, lcdimg
+30000 - 50000 : 42ffc, 12ffc, gassets
+0080 - 00ef : 0000, 0000, zeropage
+0200 - 0280 : 023f, 003f, startup
+0280 - 9000 : 6000, 5f7f, main
+
+objects
+0080 - 0080 : ZeroEnd, END:zeropage
+0080 - 0080 : ZeroStart, START:zeropage
+0200 - 023f : startup, NATIVE_CODE:startup
+0280 - 02b3 : main, NATIVE_CODE:code
+02b3 - 02f2 : f256Init, NATIVE_CODE:code
+02f2 - 0305 : kernelReset, NATIVE_CODE:code
+0305 - 033e : graphicsReset, NATIVE_CODE:code
+033e - 0396 : graphicsDefineColor, NATIVE_CODE:code
+0396 - 03c5 : graphicsSetLayerBitmap, NATIVE_CODE:code
+03c5 - 0409 : textReset, NATIVE_CODE:code
+0409 - 043a : textSetDouble, NATIVE_CODE:code
+043a - 044a : textSetCursor, NATIVE_CODE:code
+044a - 0478 : textDefineForegroundColor, NATIVE_CODE:code
+0478 - 04a1 : mathUnsignedMultiply, NATIVE_CODE:code
+04a1 - 04cf : textDefineBackgroundColor, NATIVE_CODE:code
+04cf - 0552 : textClear, NATIVE_CODE:code
+0552 - 056b : textGotoXY, NATIVE_CODE:code
+056b - 069a : bitmapReset, NATIVE_CODE:code
+069a - 06cf : bitmapSetVisible, NATIVE_CODE:code
+06cf - 06ed : tileReset, NATIVE_CODE:code
+06ed - 0733 : tileSetVisible, NATIVE_CODE:code
+0733 - 0745 : spriteReset, NATIVE_CODE:code
+0745 - 075f : spriteSetVisible, NATIVE_CODE:code
+075f - 076a : fileReset, NATIVE_CODE:code
+076a - 07b4 : randomReset, NATIVE_CODE:code
+07b4 - 07bc : _kernelCallWrapper, NATIVE_CODE:code
+07bc - 07d4 : _kernelCallRaw, NATIVE_CODE:code
+07d4 - 09ed : f256main, NATIVE_CODE:code
+09ed - 0b3c : setup, NATIVE_CODE:code
+0b3c - 0b6f : FAR_PEEK, NATIVE_CODE:code
+0b6f - 0bc0 : bitmapSetAddress, NATIVE_CODE:code
+0bc0 - 0bf8 : bitmapSetCLUT, NATIVE_CODE:code
+0bf8 - 0c0c : resetGlobals, NATIVE_CODE:code
+0c0c - 0c7d : resetLFOTable, NATIVE_CODE:code
+0c7d - 0cae : FAR_POKE, NATIVE_CODE:code
+0cae - 0cfa : escReset, NATIVE_CODE:code
+0cfa - 0d1b : resetAllTracks, NATIVE_CODE:code
+0d1b - 0d91 : resetTrack, NATIVE_CODE:code
+0d91 - 0db7 : resetInstruments, NATIVE_CODE:code
+0db7 - 0dc6 : midiShutUp, NATIVE_CODE:code
+0dc6 - 0de5 : realTextClear, NATIVE_CODE:code
+0de5 - 1004 : refreshInstrumentText, NATIVE_CODE:code
+1004 - 1197 : textPrint, NATIVE_CODE:code
+1197 - 11d4 : mathUnsignedAddition, NATIVE_CODE:code
+11d4 - 11fc : *, DATA:code
+11fc - 11fe : *, DATA:code
+11fe - 120b : textSetColor, NATIVE_CODE:code
+120b - 1233 : printf, NATIVE_CODE:code
+1233 - 1678 : sformat, NATIVE_CODE:code
+1678 - 168d : puts, NATIVE_CODE:code
+168d - 1847 : putpch, NATIVE_CODE:code
+1847 - 18ab : f256k_scroll, NATIVE_CODE:code
+18ab - 19c6 : nformi, NATIVE_CODE:code
+19c6 - 1b12 : nforml, NATIVE_CODE:code
+1b12 - 2062 : nformf, NATIVE_CODE:code
+2062 - 2071 : isinf, NATIVE_CODE:code
+2071 - 2077 : *, DATA:code
+2077 - 2087 : *, DATA:code
+2087 - 2098 : *, DATA:code
+2098 - 20ad : *, DATA:code
+20ad - 20be : *, DATA:code
+20be - 20cf : *, DATA:code
+20cf - 20e0 : *, DATA:code
+20e0 - 20ec : *, DATA:code
+20ec - 20f5 : *, DATA:code
+20f5 - 20fd : *, DATA:code
+20fd - 210a : *, DATA:code
+210a - 2114 : *, DATA:code
+2114 - 211f : *, DATA:code
+211f - 2127 : *, DATA:code
+2127 - 2131 : *, DATA:code
+2131 - 213f : *, DATA:code
+213f - 2146 : *, DATA:code
+2146 - 2154 : *, DATA:code
+2154 - 2165 : *, DATA:code
+2165 - 2170 : *, DATA:code
+2170 - 217d : *, DATA:code
+217d - 2188 : *, DATA:code
+2188 - 2192 : *, DATA:code
+2192 - 219c : *, DATA:code
+219c - 21ac : *, DATA:code
+21ac - 21bf : *, DATA:code
+21bf - 21d2 : *, DATA:code
+21d2 - 21e6 : *, DATA:code
+21e6 - 21fb : *, DATA:code
+21fb - 2210 : *, DATA:code
+2210 - 2222 : *, DATA:code
+2222 - 2234 : *, DATA:code
+2234 - 2245 : *, DATA:code
+2245 - 2253 : *, DATA:code
+2253 - 2267 : *, DATA:code
+2267 - 2279 : *, DATA:code
+2279 - 2287 : *, DATA:code
+2287 - 2293 : *, DATA:code
+2293 - 229f : *, DATA:code
+229f - 22ac : *, DATA:code
+22ac - 22b9 : *, DATA:code
+22b9 - 22c0 : *, DATA:code
+22c0 - 22c6 : *, DATA:code
+22c6 - 22cc : *, DATA:code
+22cc - 22d7 : *, DATA:code
+22d7 - 22e7 : *, DATA:code
+22e7 - 22f9 : *, DATA:code
+22f9 - 2309 : *, DATA:code
+2309 - 2311 : *, DATA:code
+2311 - 2323 : *, DATA:code
+2323 - 2335 : *, DATA:code
+2335 - 2344 : *, DATA:code
+2344 - 2353 : *, DATA:code
+2353 - 235e : *, DATA:code
+235e - 2369 : *, DATA:code
+2369 - 2375 : *, DATA:code
+2375 - 2383 : *, DATA:code
+2383 - 238b : *, DATA:code
+238b - 2394 : *, DATA:code
+2394 - 2399 : *, DATA:code
+2399 - 23a7 : *, DATA:code
+23a7 - 23b3 : *, DATA:code
+23b3 - 23c1 : *, DATA:code
+23c1 - 23ce : *, DATA:code
+23ce - 23db : *, DATA:code
+23db - 23e7 : *, DATA:code
+23e7 - 23f0 : *, DATA:code
+23f0 - 23fa : *, DATA:code
+23fa - 2407 : *, DATA:code
+2407 - 240c : *, DATA:code
+240c - 2419 : *, DATA:code
+2419 - 2421 : *, DATA:code
+2421 - 242a : *, DATA:code
+242a - 2432 : *, DATA:code
+2432 - 2438 : *, DATA:code
+2438 - 2441 : *, DATA:code
+2441 - 244b : *, DATA:code
+244b - 2458 : *, DATA:code
+2458 - 2463 : *, DATA:code
+2463 - 246b : *, DATA:code
+246b - 2473 : *, DATA:code
+2473 - 2483 : *, DATA:code
+2483 - 2495 : *, DATA:code
+2495 - 24a7 : *, DATA:code
+24a7 - 24b6 : *, DATA:code
+24b6 - 24c7 : *, DATA:code
+24c7 - 24d6 : *, DATA:code
+24d6 - 24e6 : *, DATA:code
+24e6 - 24fb : *, DATA:code
+24fb - 250b : *, DATA:code
+250b - 2518 : *, DATA:code
+2518 - 252a : *, DATA:code
+252a - 2538 : *, DATA:code
+2538 - 2546 : *, DATA:code
+2546 - 2557 : *, DATA:code
+2557 - 2564 : *, DATA:code
+2564 - 2572 : *, DATA:code
+2572 - 257e : *, DATA:code
+257e - 2590 : *, DATA:code
+2590 - 259f : *, DATA:code
+259f - 25b1 : *, DATA:code
+25b1 - 25c3 : *, DATA:code
+25c3 - 25d2 : *, DATA:code
+25d2 - 25e0 : *, DATA:code
+25e0 - 25ee : *, DATA:code
+25ee - 25f4 : *, DATA:code
+25f4 - 25fa : *, DATA:code
+25fa - 2603 : *, DATA:code
+2603 - 2608 : *, DATA:code
+2608 - 2610 : *, DATA:code
+2610 - 2619 : *, DATA:code
+2619 - 2620 : *, DATA:code
+2620 - 2627 : *, DATA:code
+2627 - 2633 : *, DATA:code
+2633 - 2639 : *, DATA:code
+2639 - 2645 : *, DATA:code
+2645 - 264f : *, DATA:code
+264f - 265a : *, DATA:code
+265a - 2666 : *, DATA:code
+2666 - 2671 : *, DATA:code
+2671 - 2680 : *, DATA:code
+2680 - 2692 : *, DATA:code
+2692 - 269f : *, DATA:code
+269f - 26a8 : *, DATA:code
+26a8 - 26b3 : *, DATA:code
+26b3 - 26c2 : *, DATA:code
+26c2 - 26cd : *, DATA:code
+26cd - 26d6 : *, DATA:code
+26d6 - 26de : *, DATA:code
+26de - 2758 : textPutChar, NATIVE_CODE:code
+2758 - 2776 : textNewline, NATIVE_CODE:code
+2776 - 286e : textScrollUp, NATIVE_CODE:code
+286e - 2897 : textAdvanceCursor, NATIVE_CODE:code
+2897 - 28a0 : *, DATA:code
+28a0 - 28a9 : *, DATA:code
+28a9 - 28af : *, DATA:code
+28af - 28b5 : *, DATA:code
+28b5 - 28b9 : *, DATA:code
+28b9 - 28bf : *, DATA:code
+28bf - 28cb : *, DATA:code
+28cb - 28d7 : *, DATA:code
+28d7 - 28e9 : *, DATA:code
+28e9 - 28f0 : *, DATA:code
+28f0 - 28f7 : *, DATA:code
+28f7 - 2903 : *, DATA:code
+2903 - 2915 : *, DATA:code
+2915 - 2920 : *, DATA:code
+2920 - 292b : *, DATA:code
+292b - 2939 : *, DATA:code
+2939 - 2947 : *, DATA:code
+2947 - 2954 : *, DATA:code
+2954 - 2963 : *, DATA:code
+2963 - 2972 : *, DATA:code
+2972 - 2981 : *, DATA:code
+2981 - 2990 : *, DATA:code
+2990 - 299f : *, DATA:code
+299f - 29ab : *, DATA:code
+29ab - 29b7 : *, DATA:code
+29b7 - 29c3 : *, DATA:code
+29c3 - 29cf : *, DATA:code
+29cf - 2aaa : textTitle, NATIVE_CODE:code
+2aaa - 2ab9 : *, DATA:code
+2ab9 - 2ac1 : *, DATA:code
+2ac1 - 2af9 : *, DATA:code
+2af9 - 2d6f : channelTextMenu, NATIVE_CODE:code
+2d6f - 2d7e : *, DATA:code
+2d7e - 2d9a : *, DATA:code
+2d9a - 2dbb : *, DATA:code
+2dbb - 2dde : *, DATA:code
+2dde - 2de9 : *, DATA:code
+2de9 - 2deb : *, DATA:code
+2deb - 2df0 : *, DATA:code
+2df0 - 2df8 : *, DATA:code
+2df8 - 2dfe : *, DATA:code
+2dfe - 2e00 : *, DATA:code
+2e00 - 2e3d : *, DATA:code
+2e3d - 2e75 : *, DATA:code
+2e75 - 2e98 : *, DATA:code
+2e98 - 2eb3 : *, DATA:code
+2eb3 - 2ebf : *, DATA:code
+2ebf - 2ed7 : *, DATA:code
+2ed7 - 2ee1 : *, DATA:code
+2ee1 - 2ef3 : *, DATA:code
+2ef3 - 2efd : *, DATA:code
+2efd - 2f00 : __multab25L, DATA:code
+2f00 - 2f4e : *, DATA:code
+2f4e - 2f9c : *, DATA:code
+2f9c - 2fc1 : *, DATA:code
+2fc1 - 2fe8 : *, DATA:code
+2fe8 - 2ffa : *, DATA:code
+2ffa - 2fff : __multab9L, DATA:code
+2fff - 3000 : _ccolor, DATA:data
+3000 - 304c : *, DATA:code
+304c - 309a : *, DATA:code
+309a - 3101 : keybInstructionsRefresh, NATIVE_CODE:code
+3101 - 312c : *, DATA:code
+312c - 315e : *, DATA:code
+315e - 319e : *, DATA:code
+319e - 31eb : chipSelectTextMenu, NATIVE_CODE:code
+31eb - 31fb : *, DATA:code
+31fb - 31ff : __multab13L, DATA:code
+31ff - 3200 : _MAX_COL, DATA:data
+3200 - 3219 : *, DATA:code
+3219 - 3332 : showChipChoiceText, NATIVE_CODE:code
+3332 - 33ab : showMIDIChoiceText, NATIVE_CODE:code
+33ab - 33bb : *, DATA:code
+33bb - 33cb : *, DATA:code
+33cb - 33db : *, DATA:code
+33db - 33ed : *, DATA:code
+33ed - 33f4 : *, DATA:code
+33f4 - 33fb : *, DATA:code
+33fb - 33fc : _MAX_ROW, DATA:data
+33fc - 33fd : _col, DATA:data
+33fd - 33fe : _row, DATA:data
+33fe - 33ff : f256k_color, DATA:data
+33ff - 3400 : instSelectMode, DATA:data
+3400 - 340e : *, DATA:code
+340e - 3415 : *, DATA:code
+3415 - 341d : *, DATA:code
+341d - 342a : *, DATA:code
+342a - 3431 : *, DATA:code
+3431 - 34cd : layoutChipAct, NATIVE_CODE:code
+34cd - 34d7 : *, DATA:code
+34d7 - 34e1 : *, DATA:code
+34e1 - 34eb : *, DATA:code
+34eb - 34f5 : *, DATA:code
+34f5 - 34ff : *, DATA:code
+34ff - 3522 : defaultPianoPaint, NATIVE_CODE:code
+3522 - 352e : quietSounds, NATIVE_CODE:code
+352e - 355f : shutAllSIDVoices, NATIVE_CODE:code
+355f - 3574 : shutPSG, NATIVE_CODE:code
+3574 - 35a5 : opl3_quietAll, NATIVE_CODE:code
+35a5 - 35bc : opl3_write, NATIVE_CODE:code
+35bc - 35d3 : liberateAllChannels, NATIVE_CODE:code
+35d3 - 35e6 : getTimerAbsolute, NATIVE_CODE:code
+35e6 - 35ee : _kernelCallWrapper, NATIVE_CODE:code
+35ee - 3606 : _kernelCallRaw, NATIVE_CODE:code
+3606 - 362a : setTimer, NATIVE_CODE:code
+362a - 364d : emptyMIDIINBuffer, NATIVE_CODE:code
+364d - 365c : clearSIDRegisters, NATIVE_CODE:code
+365c - 369f : sid_setInstrumentAllChannels, NATIVE_CODE:code
+369f - 36f0 : sid_setInstrument, NATIVE_CODE:code
+36f0 - 3719 : sid_setSIDWide, NATIVE_CODE:code
+3719 - 3722 : setMonoSID, NATIVE_CODE:code
+3722 - 372b : setMonoPSG, NATIVE_CODE:code
+372b - 3796 : opl3_initialize, NATIVE_CODE:code
+3796 - 3818 : opl3_setInstrumentAllChannels, NATIVE_CODE:code
+3818 - 391a : opl3_setInstrument, NATIVE_CODE:code
+391a - 39c0 : updateKeybRedLine, NATIVE_CODE:code
+39c0 - 3cbd : bitmapLine, NATIVE_CODE:code
+3cbd - 3cca : hasCaseLCD, NATIVE_CODE:code
+3cca - 3e0c : mulcddisplay, NATIVE_CODE:code
+3e0c - 3e4b : FAR_PEEKW, NATIVE_CODE:code
+3e4b - 3e5e : isWave2, NATIVE_CODE:code
+3e5e - 3e80 : boostVSClock, NATIVE_CODE:code
+3e80 - 3e93 : initRTMIDI, NATIVE_CODE:code
+3e93 - 3f3e : initVS1053Plugin, NATIVE_CODE:code
+3f3e - 3f69 : openAllCODEC, NATIVE_CODE:code
+3f69 - 3f82 : *, DATA:code
+3f82 - 4227 : dispatchNote, NATIVE_CODE:code
+4227 - 4243 : midiNoteOn, NATIVE_CODE:code
+4243 - 425f : midiNoteOff, NATIVE_CODE:code
+425f - 427d : findFreeChannel, NATIVE_CODE:code
+427d - 4291 : sidNoteOnOrOff, NATIVE_CODE:code
+4291 - 4299 : fetchCtrl, NATIVE_CODE:code
+4299 - 42b3 : liberateChannel, NATIVE_CODE:code
+42b3 - 42d3 : psgNoteOn, NATIVE_CODE:code
+42d3 - 432e : opl3_note, NATIVE_CODE:code
+432e - 433e : kernelNextEvent, NATIVE_CODE:code
+433e - 4346 : _kernelCallWrapper, NATIVE_CODE:code
+4346 - 435e : _kernelCallRaw, NATIVE_CODE:code
+435e - 4440 : refreshChipAct, NATIVE_CODE:code
+4440 - 4b09 : dealKeyPressed, NATIVE_CODE:code
+4b09 - 4dd4 : instListShow, NATIVE_CODE:code
+4dd4 - 4df0 : midiShutAChannel, NATIVE_CODE:code
+4df0 - 4df7 : *, DATA:code
+4df7 - 4dfd : polySIDBuffer, DATA:data
+4dfd - 4dfe : shiftHit, DATA:data
+4dfe - 4dff : altHit, DATA:data
+4dff - 4e00 : _active, DATA:bss
+4e00 - 4e24 : *, DATA:code
+4e24 - 4ea7 : textPrintInt, NATIVE_CODE:code
+4ea7 - 4fbd : textPrintUInt, NATIVE_CODE:code
+4fbd - 4fdf : *, DATA:code
+4fdf - 4ff6 : prgChange, NATIVE_CODE:code
+4ff6 - 5000 : sid_instruments_names, DATA:data
+5000 - 5040 : *, DATA:code
+5040 - 5081 : *, DATA:code
+5081 - 51e0 : highLightInstChoice, NATIVE_CODE:code
+51e0 - 5260 : modalMoveUp, NATIVE_CODE:code
+5260 - 52e0 : modalMoveDown, NATIVE_CODE:code
+52e0 - 533e : modalMoveLeft, NATIVE_CODE:code
+533e - 539c : modalMoveRight, NATIVE_CODE:code
+539c - 53c6 : shutAllMIDIchans, NATIVE_CODE:code
+53c6 - 53d1 : emptySIDBuffer, NATIVE_CODE:code
+53d1 - 53dc : emptyPSGBuffer, NATIVE_CODE:code
+53dc - 53e7 : emptyOPL3Buffer, NATIVE_CODE:code
+53e7 - 5486 : dealKeyReleased, NATIVE_CODE:code
+5486 - 54a3 : f256Reset, NATIVE_CODE:code
+54a3 - 54db : mul16by8, NATIVE_CODE:code
+54db - 5520 : freg, NATIVE_CODE:code
+5520 - 560d : faddsub, NATIVE_CODE:code
+560d - 56a7 : crt_fmul, NATIVE_CODE:code
+56a7 - 56d5 : crt_fmul8, NATIVE_CODE:code
+56d5 - 5783 : crt_fdiv, NATIVE_CODE:code
+5783 - 57a1 : divs16, NATIVE_CODE:code
+57a1 - 57af : negaccu, NATIVE_CODE:code
+57af - 57bd : negtmp, NATIVE_CODE:code
+57bd - 5842 : divmod, NATIVE_CODE:code
+5842 - 5861 : mods16, NATIVE_CODE:code
+5861 - 586f : negtmpb, NATIVE_CODE:code
+586f - 58bb : f32_to_i16, NATIVE_CODE:code
+58bb - 58d9 : sint16_to_float, NATIVE_CODE:code
+58d9 - 5902 : uint16_to_float, NATIVE_CODE:code
+5902 - 59d9 : divmod32, NATIVE_CODE:code
+59d9 - 5aa7 : crt_malloc, NATIVE_CODE:code
+5aa7 - 5ad7 : textColors, DATA:data
+5ad7 - 5af3 : fround5, DATA:data
+5af3 - 5af9 : polyPSGBuffer, DATA:data
+5af9 - 5afe : chipAct, DATA:data
+5afe - 5b00 : kernelArgs, DATA:bss
+5b00 - 5c00 : midi_instruments, DATA:data
+5c00 - 5c2c : opl3_instrument_names, DATA:data
+5c2c - 5c84 : noteColors, DATA:data
+5c84 - 5c96 : polyOPL3Buffer, DATA:data
+5c96 - 5cc3 : sid_instrument_defs, DATA:data
+5cc3 - 5cfb : rtmplugin, DATA:data
+5cfb - 5cfd : _MAX_X, DATA:bss
+5cfd - 5cfe : _color, DATA:bss
+5cfe - 5d00 : _kern_target, DATA:bss
+5d00 - 5df2 : opl3_instrument_defs, DATA:data
+5df2 - 5df8 : reservedSID, DATA:data
+5df8 - 5dfe : sidChoiceToVoice, DATA:data
+5dfe - 5dff : _kernelError, DATA:bss
+5e00 - 5e60 : sidLow, DATA:data
+5e60 - 5ec0 : sidHigh, DATA:data
+5ec0 - 5ec6 : reservedPSG, DATA:data
+5ec6 - 5ecc : polyPSGChanBits, DATA:data
+5ecc - 5ede : reservedOPL3, DATA:data
+5ede - 5ef6 : opl3_fnums, DATA:data
+5ef6 - 5efd : kernelEventData, DATA:bss
+5efd - 5f00 : _BITMAP_CLUT, DATA:bss
+5f00 - 5f40 : psgLow, DATA:data
+5f40 - 5f80 : psgHigh, DATA:data
+5f80 - 6000 : KeyCodesToMIDINotes, DATA:data
+6000 - 600c : _BITMAP_BASE, DATA:bss
+6000 - 6000 : BSSStart, START:bss
+600c - 600f : _tileSize, DATA:bss
+600f - 604f : _spriteCtl, DATA:bss
+604f - 6057 : _dirStream, DATA:bss
+6057 - 605c : gT, DATA:bss
+605c - 6090 : tracks, DATA:bss
+6090 - 6093 : refTimer, DATA:bss
+6093 - 6096 : lfoTimer, DATA:bss
+6096 - 60ca : kTracks, DATA:bss
+60ca - 60ce : HeapNode, DATA:bss
+6100 - 61ff : diagBuffer, DATA:bss
+61ff - 61ff : BSSEnd, END:bss
+6200 - 6200 : HeapStart, START:heap
+9000 - 9000 : HeapEnd, END:heap
+9f62 - 9f62 : StackEnd, END:stack
+9f62 - 9f7a : f256main@stack, BSS:f256main@stack
+9f7a - 9f86 : dealKeyPressed@stack, BSS:dealKeyPressed@stack
+9f86 - 9f97 : instListShow@stack, BSS:instListShow@stack
+9f95 - 9f97 : modalMoveRight@stack, BSS:modalMoveRight@stack
+9f95 - 9f97 : modalMoveDown@stack, BSS:modalMoveDown@stack
+9f95 - 9f97 : modalMoveLeft@stack, BSS:modalMoveLeft@stack
+9f95 - 9f97 : modalMoveUp@stack, BSS:modalMoveUp@stack
+9f97 - 9f9f : highLightInstChoice@stack, BSS:highLightInstChoice@stack
+9f97 - 9f9b : setup@stack, BSS:setup@stack
+9f9b - 9f9f : channelTextMenu@stack, BSS:channelTextMenu@stack
+9f9f - 9fd1 : buff, BSS:printf@stack
+9fd1 - 9fd9 : si, BSS:sformat@stack
+9fd9 - 9fe9 : buffer, BSS:nforml@stack
+9fd9 - 9fe9 : buffer, BSS:nformi@stack
+9fe1 - 9fe9 : clock, BSS:randomReset@stack
+9fe5 - 9fe9 : textPrintInt@stack, BSS:textPrintInt@stack
+9fe9 - a000 : sstack, STACK:sstack
+30000 - 303fc : palPiano, DATA:gassets
+303fc - 42ffc : bmPiano, DATA:gassets
+50000 - 70d00 : lcdimg, DATA:lcdimg
+
+objects by size
+50000 (20d00) : lcdimg, DATA:lcdimg
+303fc (12c00) : bmPiano, DATA:gassets
+4440 (06c9) : dealKeyPressed, NATIVE_CODE:code
+1b12 (0550) : nformf, NATIVE_CODE:code
+1233 (0445) : sformat, NATIVE_CODE:code
+30000 (03fc) : palPiano, DATA:gassets
+39c0 (02fd) : bitmapLine, NATIVE_CODE:code
+4b09 (02cb) : instListShow, NATIVE_CODE:code
+3f82 (02a5) : dispatchNote, NATIVE_CODE:code
+2af9 (0276) : channelTextMenu, NATIVE_CODE:code
+0de5 (021f) : refreshInstrumentText, NATIVE_CODE:code
+07d4 (0219) : f256main, NATIVE_CODE:code
+168d (01ba) : putpch, NATIVE_CODE:code
+1004 (0193) : textPrint, NATIVE_CODE:code
+5081 (015f) : highLightInstChoice, NATIVE_CODE:code
+09ed (014f) : setup, NATIVE_CODE:code
+19c6 (014c) : nforml, NATIVE_CODE:code
+3cca (0142) : mulcddisplay, NATIVE_CODE:code
+056b (012f) : bitmapReset, NATIVE_CODE:code
+18ab (011b) : nformi, NATIVE_CODE:code
+3219 (0119) : showChipChoiceText, NATIVE_CODE:code
+4ea7 (0116) : textPrintUInt, NATIVE_CODE:code
+3818 (0102) : opl3_setInstrument, NATIVE_CODE:code
+5b00 (0100) : midi_instruments, DATA:data
+6100 (00ff) : diagBuffer, DATA:bss
+2776 (00f8) : textScrollUp, NATIVE_CODE:code
+5d00 (00f2) : opl3_instrument_defs, DATA:data
+5520 (00ed) : faddsub, NATIVE_CODE:code
+435e (00e2) : refreshChipAct, NATIVE_CODE:code
+29cf (00db) : textTitle, NATIVE_CODE:code
+5902 (00d7) : divmod32, NATIVE_CODE:code
+59d9 (00ce) : crt_malloc, NATIVE_CODE:code
+56d5 (00ae) : crt_fdiv, NATIVE_CODE:code
+3e93 (00ab) : initVS1053Plugin, NATIVE_CODE:code
+391a (00a6) : updateKeybRedLine, NATIVE_CODE:code
+53e7 (009f) : dealKeyReleased, NATIVE_CODE:code
+3431 (009c) : layoutChipAct, NATIVE_CODE:code
+560d (009a) : crt_fmul, NATIVE_CODE:code
+57bd (0085) : divmod, NATIVE_CODE:code
+04cf (0083) : textClear, NATIVE_CODE:code
+4e24 (0083) : textPrintInt, NATIVE_CODE:code
+3796 (0082) : opl3_setInstrumentAllChannels, NATIVE_CODE:code
+51e0 (0080) : modalMoveUp, NATIVE_CODE:code
+5260 (0080) : modalMoveDown, NATIVE_CODE:code
+5f80 (0080) : KeyCodesToMIDINotes, DATA:data
+26de (007a) : textPutChar, NATIVE_CODE:code
+3332 (0079) : showMIDIChoiceText, NATIVE_CODE:code
+0d1b (0076) : resetTrack, NATIVE_CODE:code
+0c0c (0071) : resetLFOTable, NATIVE_CODE:code
+372b (006b) : opl3_initialize, NATIVE_CODE:code
+309a (0067) : keybInstructionsRefresh, NATIVE_CODE:code
+1847 (0064) : f256k_scroll, NATIVE_CODE:code
+5e00 (0060) : sidLow, DATA:data
+5e60 (0060) : sidHigh, DATA:data
+52e0 (005e) : modalMoveLeft, NATIVE_CODE:code
+533e (005e) : modalMoveRight, NATIVE_CODE:code
+42d3 (005b) : opl3_note, NATIVE_CODE:code
+033e (0058) : graphicsDefineColor, NATIVE_CODE:code
+5c2c (0058) : noteColors, DATA:data
+0b6f (0051) : bitmapSetAddress, NATIVE_CODE:code
+369f (0051) : sid_setInstrument, NATIVE_CODE:code
+319e (004d) : chipSelectTextMenu, NATIVE_CODE:code
+0cae (004c) : escReset, NATIVE_CODE:code
+586f (004c) : f32_to_i16, NATIVE_CODE:code
+076a (004a) : randomReset, NATIVE_CODE:code
+06ed (0046) : tileSetVisible, NATIVE_CODE:code
+54db (0045) : freg, NATIVE_CODE:code
+03c5 (0044) : textReset, NATIVE_CODE:code
+365c (0043) : sid_setInstrumentAllChannels, NATIVE_CODE:code
+5f00 (0040) : psgLow, DATA:data
+5f40 (0040) : psgHigh, DATA:data
+600f (0040) : _spriteCtl, DATA:bss
+0200 (003f) : startup, NATIVE_CODE:startup
+02b3 (003f) : f256Init, NATIVE_CODE:code
+3e0c (003f) : FAR_PEEKW, NATIVE_CODE:code
+1197 (003d) : mathUnsignedAddition, NATIVE_CODE:code
+0305 (0039) : graphicsReset, NATIVE_CODE:code
+0bc0 (0038) : bitmapSetCLUT, NATIVE_CODE:code
+54a3 (0038) : mul16by8, NATIVE_CODE:code
+5cc3 (0038) : rtmplugin, DATA:data
+069a (0035) : bitmapSetVisible, NATIVE_CODE:code
+605c (0034) : tracks, DATA:bss
+6096 (0034) : kTracks, DATA:bss
+0280 (0033) : main, NATIVE_CODE:code
+0b3c (0033) : FAR_PEEK, NATIVE_CODE:code
+9f9f (0032) : buff, BSS:printf@stack
+0409 (0031) : textSetDouble, NATIVE_CODE:code
+0c7d (0031) : FAR_POKE, NATIVE_CODE:code
+352e (0031) : shutAllSIDVoices, NATIVE_CODE:code
+3574 (0031) : opl3_quietAll, NATIVE_CODE:code
+5aa7 (0030) : textColors, DATA:data
+0396 (002f) : graphicsSetLayerBitmap, NATIVE_CODE:code
+044a (002e) : textDefineForegroundColor, NATIVE_CODE:code
+04a1 (002e) : textDefineBackgroundColor, NATIVE_CODE:code
+56a7 (002e) : crt_fmul8, NATIVE_CODE:code
+5c96 (002d) : sid_instrument_defs, DATA:data
+5c00 (002c) : opl3_instrument_names, DATA:data
+3f3e (002b) : openAllCODEC, NATIVE_CODE:code
+539c (002a) : shutAllMIDIchans, NATIVE_CODE:code
+0478 (0029) : mathUnsignedMultiply, NATIVE_CODE:code
+286e (0029) : textAdvanceCursor, NATIVE_CODE:code
+36f0 (0029) : sid_setSIDWide, NATIVE_CODE:code
+58d9 (0029) : uint16_to_float, NATIVE_CODE:code
+120b (0028) : printf, NATIVE_CODE:code
+0d91 (0026) : resetInstruments, NATIVE_CODE:code
+3606 (0024) : setTimer, NATIVE_CODE:code
+34ff (0023) : defaultPianoPaint, NATIVE_CODE:code
+362a (0023) : emptyMIDIINBuffer, NATIVE_CODE:code
+3e5e (0022) : boostVSClock, NATIVE_CODE:code
+0cfa (0021) : resetAllTracks, NATIVE_CODE:code
+42b3 (0020) : psgNoteOn, NATIVE_CODE:code
+0dc6 (001f) : realTextClear, NATIVE_CODE:code
+5842 (001f) : mods16, NATIVE_CODE:code
+06cf (001e) : tileReset, NATIVE_CODE:code
+2758 (001e) : textNewline, NATIVE_CODE:code
+425f (001e) : findFreeChannel, NATIVE_CODE:code
+5783 (001e) : divs16, NATIVE_CODE:code
+58bb (001e) : sint16_to_float, NATIVE_CODE:code
+5486 (001d) : f256Reset, NATIVE_CODE:code
+4227 (001c) : midiNoteOn, NATIVE_CODE:code
+4243 (001c) : midiNoteOff, NATIVE_CODE:code
+4dd4 (001c) : midiShutAChannel, NATIVE_CODE:code
+5ad7 (001c) : fround5, DATA:data
+0745 (001a) : spriteSetVisible, NATIVE_CODE:code
+4299 (001a) : liberateChannel, NATIVE_CODE:code
+0552 (0019) : textGotoXY, NATIVE_CODE:code
+07bc (0018) : _kernelCallRaw, NATIVE_CODE:code
+35ee (0018) : _kernelCallRaw, NATIVE_CODE:code
+4346 (0018) : _kernelCallRaw, NATIVE_CODE:code
+5ede (0018) : opl3_fnums, DATA:data
+9f62 (0018) : f256main@stack, BSS:f256main@stack
+35a5 (0017) : opl3_write, NATIVE_CODE:code
+35bc (0017) : liberateAllChannels, NATIVE_CODE:code
+4fdf (0017) : prgChange, NATIVE_CODE:code
+9fe9 (0017) : sstack, STACK:sstack
+1678 (0015) : puts, NATIVE_CODE:code
+355f (0015) : shutPSG, NATIVE_CODE:code
+0bf8 (0014) : resetGlobals, NATIVE_CODE:code
+427d (0014) : sidNoteOnOrOff, NATIVE_CODE:code
+02f2 (0013) : kernelReset, NATIVE_CODE:code
+35d3 (0013) : getTimerAbsolute, NATIVE_CODE:code
+3e4b (0013) : isWave2, NATIVE_CODE:code
+3e80 (0013) : initRTMIDI, NATIVE_CODE:code
+0733 (0012) : spriteReset, NATIVE_CODE:code
+5c84 (0012) : polyOPL3Buffer, DATA:data
+5ecc (0012) : reservedOPL3, DATA:data
+9f86 (0011) : instListShow@stack, BSS:instListShow@stack
+043a (0010) : textSetCursor, NATIVE_CODE:code
+432e (0010) : kernelNextEvent, NATIVE_CODE:code
+9fd9 (0010) : buffer, BSS:nforml@stack
+9fd9 (0010) : buffer, BSS:nformi@stack
+0db7 (000f) : midiShutUp, NATIVE_CODE:code
+2062 (000f) : isinf, NATIVE_CODE:code
+364d (000f) : clearSIDRegisters, NATIVE_CODE:code
+57a1 (000e) : negaccu, NATIVE_CODE:code
+57af (000e) : negtmp, NATIVE_CODE:code
+5861 (000e) : negtmpb, NATIVE_CODE:code
+11fe (000d) : textSetColor, NATIVE_CODE:code
+3cbd (000d) : hasCaseLCD, NATIVE_CODE:code
+3522 (000c) : quietSounds, NATIVE_CODE:code
+6000 (000c) : _BITMAP_BASE, DATA:bss
+9f7a (000c) : dealKeyPressed@stack, BSS:dealKeyPressed@stack
+075f (000b) : fileReset, NATIVE_CODE:code
+53c6 (000b) : emptySIDBuffer, NATIVE_CODE:code
+53d1 (000b) : emptyPSGBuffer, NATIVE_CODE:code
+53dc (000b) : emptyOPL3Buffer, NATIVE_CODE:code
+4ff6 (000a) : sid_instruments_names, DATA:data
+3719 (0009) : setMonoSID, NATIVE_CODE:code
+3722 (0009) : setMonoPSG, NATIVE_CODE:code
+07b4 (0008) : _kernelCallWrapper, NATIVE_CODE:code
+35e6 (0008) : _kernelCallWrapper, NATIVE_CODE:code
+4291 (0008) : fetchCtrl, NATIVE_CODE:code
+433e (0008) : _kernelCallWrapper, NATIVE_CODE:code
+604f (0008) : _dirStream, DATA:bss
+9f97 (0008) : highLightInstChoice@stack, BSS:highLightInstChoice@stack
+9fd1 (0008) : si, BSS:sformat@stack
+9fe1 (0008) : clock, BSS:randomReset@stack
+5ef6 (0007) : kernelEventData, DATA:bss
+4df7 (0006) : polySIDBuffer, DATA:data
+5af3 (0006) : polyPSGBuffer, DATA:data
+5df2 (0006) : reservedSID, DATA:data
+5df8 (0006) : sidChoiceToVoice, DATA:data
+5ec0 (0006) : reservedPSG, DATA:data
+5ec6 (0006) : polyPSGChanBits, DATA:data
+2ffa (0005) : __multab9L, DATA:code
+5af9 (0005) : chipAct, DATA:data
+6057 (0005) : gT, DATA:bss
+31fb (0004) : __multab13L, DATA:code
+60ca (0004) : HeapNode, DATA:bss
+9f97 (0004) : setup@stack, BSS:setup@stack
+9f9b (0004) : channelTextMenu@stack, BSS:channelTextMenu@stack
+9fe5 (0004) : textPrintInt@stack, BSS:textPrintInt@stack
+2efd (0003) : __multab25L, DATA:code
+5efd (0003) : _BITMAP_CLUT, DATA:bss
+600c (0003) : _tileSize, DATA:bss
+6090 (0003) : refTimer, DATA:bss
+6093 (0003) : lfoTimer, DATA:bss
+5afe (0002) : kernelArgs, DATA:bss
+5cfb (0002) : _MAX_X, DATA:bss
+5cfe (0002) : _kern_target, DATA:bss
+9f95 (0002) : modalMoveRight@stack, BSS:modalMoveRight@stack
+9f95 (0002) : modalMoveDown@stack, BSS:modalMoveDown@stack
+9f95 (0002) : modalMoveLeft@stack, BSS:modalMoveLeft@stack
+9f95 (0002) : modalMoveUp@stack, BSS:modalMoveUp@stack
+2fff (0001) : _ccolor, DATA:data
+31ff (0001) : _MAX_COL, DATA:data
+33fb (0001) : _MAX_ROW, DATA:data
+33fc (0001) : _col, DATA:data
+33fd (0001) : _row, DATA:data
+33fe (0001) : f256k_color, DATA:data
+33ff (0001) : instSelectMode, DATA:data
+4dfd (0001) : shiftHit, DATA:data
+4dfe (0001) : altHit, DATA:data
+4dff (0001) : _active, DATA:bss
+5cfd (0001) : _color, DATA:bss
+5dfe (0001) : _kernelError, DATA:bss
+0080 (0000) : ZeroEnd, END:zeropage
+0080 (0000) : ZeroStart, START:zeropage
+6000 (0000) : BSSStart, START:bss
+61ff (0000) : BSSEnd, END:bss
+6200 (0000) : HeapStart, START:heap
+9000 (0000) : HeapEnd, END:heap
+9f62 (0000) : StackEnd, END:stack

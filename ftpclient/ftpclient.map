@@ -1,0 +1,970 @@
+sections
+0280 - 7975 : DATA, code
+63fe - 7a64 : DATA, data
+7a64 - 818a : BSS, bss
+8190 - 9000 : HEAP, heap
+9000 - 9d53 : STACK, stack
+0080 - 0080 : ZEROPAGE, zeropage
+10000 - 10400 : DATA, gfx
+10000 - 10800 : DATA, spr
+0200 - 023f : DATA, startup
+9fcc - a000 : SSTACK, sstack
+9fcc - 9fcc : SSTACK, kernelReset@stack
+9fcc - 9fcc : SSTACK, graphicsDefineColor@stack
+9fcc - 9fcc : SSTACK, graphicsSetLayerBitmap@stack
+9fcc - 9fcc : SSTACK, graphicsReset@stack
+9fcc - 9fcc : SSTACK, textSetDouble@stack
+9fcc - 9fcc : SSTACK, textSetCursor@stack
+9fcc - 9fcc : SSTACK, mathUnsignedMultiply@stack
+9fcc - 9fcc : SSTACK, textDefineForegroundColor@stack
+9fcc - 9fcc : SSTACK, textDefineBackgroundColor@stack
+9fcc - 9fcc : SSTACK, textGotoXY@stack
+9fcc - 9fcc : SSTACK, textClear@stack
+9fcc - 9fcc : SSTACK, textReset@stack
+9fcc - 9fcc : SSTACK, bitmapSetVisible@stack
+9fcc - 9fcc : SSTACK, bitmapReset@stack
+9fcc - 9fcc : SSTACK, tileSetVisible@stack
+9fcc - 9fcc : SSTACK, tileReset@stack
+9fcc - 9fcc : SSTACK, spriteSetVisible@stack
+9fcc - 9fcc : SSTACK, spriteReset@stack
+9fcc - 9fcc : SSTACK, fileReset@stack
+9fcc - 9fcc : SSTACK, _kernelCallWrapper@stack
+9fcc - 9fcc : SSTACK, randomSeed@stack
+9fc4 - 9fcc : SSTACK, randomReset@stack
+9fc4 - 9fc4 : SSTACK, f256Init@stack
+9fcc - 9fcc : SSTACK, FAR_PEEK@stack
+9fcc - 9fcc : SSTACK, bitmapSetColor@stack
+9fcc - 9fcc : SSTACK, bitmapClear@stack
+9fcc - 9fcc : SSTACK, mathUnsignedAddition@stack
+9fcc - 9fcc : SSTACK, bitmapLine@stack
+9fcc - 9fcc : SSTACK, initMyBitmap@stack
+9fcc - 9fcc : SSTACK, spriteDefine@stack
+9fcc - 9fcc : SSTACK, spriteSetPosition@stack
+9fcc - 9fcc : SSTACK, initSpriteRecord@stack
+9fcc - 9fcc : SSTACK, initMySprites@stack
+9fcc - 9fcc : SSTACK, FAR_POKE@stack
+9fcc - 9fcc : SSTACK, fpr_set_currentPath@stack
+9fcc - 9fcc : SSTACK, initFPR@stack
+9fcc - 9fcc : SSTACK, textSetColor@stack
+9fcc - 9fcc : SSTACK, textPrint@stack
+9fcc - 9fcc : SSTACK, textSectionClear@stack
+9fcc - 9fcc : SSTACK, textFullClear@stack
+9fcc - 9fcc : SSTACK, initTextXY@stack
+9fcc - 9fcc : SSTACK, textGetXY@stack
+9fca - 9fcc : SSTACK, textPrintNewLine@stack
+9fcc - 9fcc : SSTACK, _kernelCallWrapper@stack
+9fcc - 9fcc : SSTACK, getTimerAbsolute@stack
+9fcc - 9fcc : SSTACK, setTimer@stack
+9fcc - 9fcc : SSTACK, kernelNextEvent@stack
+9fc9 - 9fcc : SSTACK, lilpause@stack
+9fcc - 9fcc : SSTACK, uart_putc@stack
+9fcc - 9fcc : SSTACK, uart_puts@stack
+9fcc - 9fcc : SSTACK, strcmp@stack
+9fcc - 9fcc : SSTACK, strstr@stack
+9fcc - 9fcc : SSTACK, strncmp@stack
+9fcc - 9fcc : SSTACK, strncpy@stack
+9fca - 9fca : SSTACK, handle_line@stack
+9fcc - 9fcc : SSTACK, parse_ipd_header@stack
+9fcc - 9fcc : SSTACK, mathUnsignedDivision@stack
+9fcc - 9fcc : SSTACK, textPrintUInt@stack
+9fc8 - 9fcc : SSTACK, textPrintInt@stack
+9fca - 9fca : SSTACK, handle_ctrl_byte@stack
+9fc1 - 9fcc : SSTACK, format_u32@stack
+9fcc - 9fcc : SSTACK, strlen@stack
+9fcc - 9fcc : SSTACK, strcat@stack
+9fcc - 9fcc : SSTACK, print_right@stack
+9fa8 - 9fc1 : SSTACK, format_and_print_listline@stack
+9fa8 - 9fa8 : SSTACK, flush_listline@stack
+9fcc - 9fcc : SSTACK, f256putchar@stack
+9fcc - 9fcc : SSTACK, _kernelCallWrapper@stack
+9fcc - 9fcc : SSTACK, kernelNextEvent@stack
+9fcc - 9fcc : SSTACK, kernelWrite@stack
+9fcc - 9fcc : SSTACK, fileWrite@stack
+9fcc - 9fcc : SSTACK, flush_filebuf@stack
+9fa8 - 9fa8 : SSTACK, handle_data_byte@stack
+9fa7 - 9fa8 : SSTACK, wiz_rx_byte@stack
+9fa7 - 9fa7 : SSTACK, wiz_poll_any@stack
+9fa3 - 9fa7 : SSTACK, wiz_wait_atok@stack
+9fa3 - 9fa3 : SSTACK, wiz_atcmd@stack
+9fa2 - 9fa3 : SSTACK, wiz_init@stack
+9fa1 - 9fa3 : SSTACK, wiz_get_ssid@stack
+9fcc - 9fcc : SSTACK, FAR_POKEW@stack
+9fcc - 9fcc : SSTACK, reprepFPR_far@stack
+9fcc - 9fcc : SSTACK, initFilePickRecord_far@stack
+9fcc - 9fcc : SSTACK, pathWithoutDrive@stack
+9fcb - 9fcc : SSTACK, fileOpenDir@stack
+9fcc - 9fcc : SSTACK, fileReadDir@stack
+9fcc - 9fcc : SSTACK, strrchr@stack
+9fcc - 9fcc : SSTACK, tolower@stack
+9fcc - 9fcc : SSTACK, endsWithExt@stack
+9fc8 - 9fcc : SSTACK, isExtensionAllowed_far@stack
+9fcc - 9fcc : SSTACK, fileCloseDir@stack
+9f8c - 9fc8 : SSTACK, readDirectory_far@stack
+9fcc - 9fcc : SSTACK, FAR_PEEKW@stack
+9fcc - 9fcc : SSTACK, strcasecmp_local@stack
+9edc - 9fcc : SSTACK, sortFileList_far@stack
+9fcc - 9fcc : SSTACK, f256k_scroll@stack
+9fcc - 9fcc : SSTACK, putpch@stack
+9fcc - 9fcc : SSTACK, puts@stack
+9fbc - 9fcc : SSTACK, nformi@stack
+9fbc - 9fcc : SSTACK, nforml@stack
+9fcc - 9fcc : SSTACK, isinf@stack
+9fcc - 9fcc : SSTACK, nformf@stack
+9fb4 - 9fbc : SSTACK, sformat@stack
+9f82 - 9fb4 : SSTACK, printf@stack
+9f7e - 9f82 : SSTACK, wipeArea_far@stack
+9e6e - 9f7e : SSTACK, displayFileList_far@stack
+9e6e - 9e6e : SSTACK, showFilesInDirectory@stack
+9fcc - 9fcc : SSTACK, mouseInWhere@stack
+9fb4 - 9fb4 : SSTACK, sprintf@stack
+9fc9 - 9fc9 : SSTACK, wiz_wait_char@stack
+9f7f - 9fa3 : SSTACK, wiz_cipsend@stack
+9efd - 9f7f : SSTACK, ftp_send_cmd@stack
+9fa3 - 9fa7 : SSTACK, ftp_wait_reply@stack
+9efd - 9efd : SSTACK, ftp_command@stack
+9fc8 - 9fc8 : SSTACK, print_reply@stack
+9ea5 - 9efd : SSTACK, ftp_size@stack
+9fcc - 9fcc : SSTACK, reset_download_progress@stack
+9fb5 - 9fc1 : SSTACK, draw_download_progress@stack
+9fcb - 9fcc : SSTACK, fileOpen@stack
+9fcc - 9fcc : SSTACK, strchr@stack
+9fa8 - 9fb4 : SSTACK, parse_pasv@stack
+9efb - 9efd : SSTACK, ftp_pasv@stack
+9f43 - 9fa3 : SSTACK, wiz_open_link@stack
+9edd - 9efd : SSTACK, ftp_rest@stack
+9f8b - 9fa3 : SSTACK, wiz_close_link@stack
+9e6d - 9edd : SSTACK, ftp_retr_attempt@stack
+9fcc - 9fcc : SSTACK, fileClose@stack
+9e46 - 9e6d : SSTACK, ftp_retr@stack
+9fcc - 9fcc : SSTACK, forceFileHighlight@stack
+9fcc - 9fcc : SSTACK, rowFromMouse@stack
+9dcf - 9e46 : SSTACK, read_line@stack
+9fcc - 9fcc : SSTACK, split_args@stack
+9fca - 9fcc : SSTACK, fillSpaceToEnd@stack
+9f83 - 9fca : SSTACK, print_help@stack
+9f43 - 9fa3 : SSTACK, wiz_join@stack
+9f41 - 9f43 : SSTACK, ftp_open@stack
+9fcc - 9fcc : SSTACK, atoi@stack
+9efb - 9efd : SSTACK, ftp_type_binary@stack
+9ea7 - 9efb : SSTACK, ftp_login@stack
+9fcc - 9fcc : SSTACK, ftp_clear_remote_files@stack
+9e90 - 9efb : SSTACK, ftp_list@stack
+9ea5 - 9efd : SSTACK, ftp_cwd@stack
+9fcc - 9fcc : SSTACK, ftp_cld@stack
+9efb - 9efd : SSTACK, ftp_pwd@stack
+9fcc - 9fcc : SSTACK, _kernelCallWrapper@stack
+9fcc - 9fcc : SSTACK, kernelNextEvent@stack
+9fcc - 9fcc : SSTACK, f256getchar@stack
+9fcc - 9fcc : SSTACK, kernelRead@stack
+9fcc - 9fcc : SSTACK, fileRead@stack
+9e09 - 9efb : SSTACK, ftp_stor@stack
+9efb - 9efd : SSTACK, ftp_quit@stack
+9d53 - 9dcf : SSTACK, f256main@stack
+9fcc - 9fcc : SSTACK, f256Reset@stack
+9d53 - 9d53 : SSTACK, main@stack
+
+regions
+10000 - 10400 : 10400, 0400, gfx
+10400 - 10800 : 10800, 0400, spr
+0080 - 00ef : 0000, 0000, zeropage
+0200 - 0280 : 023f, 003f, startup
+0280 - 9000 : 7a64, 7f0a, main
+
+objects
+0080 - 0080 : ZeroEnd, END:zeropage
+0080 - 0080 : ZeroStart, START:zeropage
+0200 - 023f : startup, NATIVE_CODE:startup
+0280 - 02b3 : main, NATIVE_CODE:code
+02b3 - 02f2 : f256Init, NATIVE_CODE:code
+02f2 - 0305 : kernelReset, NATIVE_CODE:code
+0305 - 033e : graphicsReset, NATIVE_CODE:code
+033e - 0396 : graphicsDefineColor, NATIVE_CODE:code
+0396 - 03c5 : graphicsSetLayerBitmap, NATIVE_CODE:code
+03c5 - 0409 : textReset, NATIVE_CODE:code
+0409 - 043a : textSetDouble, NATIVE_CODE:code
+043a - 044a : textSetCursor, NATIVE_CODE:code
+044a - 0478 : textDefineForegroundColor, NATIVE_CODE:code
+0478 - 04a1 : mathUnsignedMultiply, NATIVE_CODE:code
+04a1 - 04cf : textDefineBackgroundColor, NATIVE_CODE:code
+04cf - 0552 : textClear, NATIVE_CODE:code
+0552 - 056b : textGotoXY, NATIVE_CODE:code
+056b - 069a : bitmapReset, NATIVE_CODE:code
+069a - 06cf : bitmapSetVisible, NATIVE_CODE:code
+06cf - 06ed : tileReset, NATIVE_CODE:code
+06ed - 0733 : tileSetVisible, NATIVE_CODE:code
+0733 - 0745 : spriteReset, NATIVE_CODE:code
+0745 - 075f : spriteSetVisible, NATIVE_CODE:code
+075f - 076a : fileReset, NATIVE_CODE:code
+076a - 07b4 : randomReset, NATIVE_CODE:code
+07b4 - 07bc : _kernelCallWrapper, NATIVE_CODE:code
+07bc - 07d4 : _kernelCallRaw, NATIVE_CODE:code
+07d4 - 0e7f : f256main, NATIVE_CODE:code
+0e7f - 0fb6 : initMyBitmap, NATIVE_CODE:code
+0fb6 - 0fe9 : FAR_PEEK, NATIVE_CODE:code
+0fe9 - 106d : bitmapClear, NATIVE_CODE:code
+106d - 136a : bitmapLine, NATIVE_CODE:code
+136a - 13a7 : mathUnsignedAddition, NATIVE_CODE:code
+13a7 - 13dd : initMySprites, NATIVE_CODE:code
+13dd - 141c : initSpriteRecord, NATIVE_CODE:code
+141c - 147c : spriteDefine, NATIVE_CODE:code
+147c - 14a4 : spriteSetPosition, NATIVE_CODE:code
+14a4 - 14cc : fpr_set_currentPath, NATIVE_CODE:code
+14cc - 14fd : FAR_POKE, NATIVE_CODE:code
+14fd - 14ff : *, DATA:code
+14ff - 150c : textSetColor, NATIVE_CODE:code
+150c - 169f : textPrint, NATIVE_CODE:code
+169f - 16ab : *, DATA:code
+16ab - 16b6 : *, DATA:code
+16b6 - 16cb : textFullClear, NATIVE_CODE:code
+16cb - 1774 : textSectionClear, NATIVE_CODE:code
+1774 - 1776 : *, DATA:code
+1776 - 17a7 : initTextXY, NATIVE_CODE:code
+17a7 - 17bb : *, DATA:code
+17bb - 1839 : textPrintNewLine, NATIVE_CODE:code
+1839 - 1846 : textGetXY, NATIVE_CODE:code
+1846 - 185c : *, DATA:code
+185c - 192c : wiz_init, NATIVE_CODE:code
+192c - 195e : lilpause, NATIVE_CODE:code
+195e - 1971 : getTimerAbsolute, NATIVE_CODE:code
+1971 - 1979 : _kernelCallWrapper, NATIVE_CODE:code
+1979 - 1991 : _kernelCallRaw, NATIVE_CODE:code
+1991 - 19b5 : setTimer, NATIVE_CODE:code
+19b5 - 19c5 : kernelNextEvent, NATIVE_CODE:code
+19c5 - 19f7 : wiz_atcmd, NATIVE_CODE:code
+19f7 - 1a1e : uart_puts, NATIVE_CODE:code
+1a1e - 1a37 : uart_putc, NATIVE_CODE:code
+1a37 - 1a3a : *, DATA:code
+1a3a - 1a9d : wiz_wait_atok, NATIVE_CODE:code
+1a9d - 1ab9 : wiz_poll_any, NATIVE_CODE:code
+1ab9 - 1c7c : wiz_rx_byte, NATIVE_CODE:code
+1c7c - 1dbf : handle_line, NATIVE_CODE:code
+1dbf - 1dc3 : *, DATA:code
+1dc3 - 1df0 : strcmp, NATIVE_CODE:code
+1df0 - 1df3 : *, DATA:code
+1df3 - 1dfb : *, DATA:code
+1dfb - 1e00 : *, DATA:code
+1e00 - 1e06 : *, DATA:code
+1e06 - 1e79 : strstr, NATIVE_CODE:code
+1e79 - 1e81 : *, DATA:code
+1e81 - 1e8a : *, DATA:code
+1e8a - 1eed : strncmp, NATIVE_CODE:code
+1eed - 1ef2 : *, DATA:code
+1ef2 - 1f65 : strncpy, NATIVE_CODE:code
+1f65 - 206e : parse_ipd_header, NATIVE_CODE:code
+206e - 2074 : *, DATA:code
+2074 - 207f : *, DATA:code
+207f - 2102 : textPrintInt, NATIVE_CODE:code
+2102 - 2104 : *, DATA:code
+2104 - 221a : textPrintUInt, NATIVE_CODE:code
+221a - 2220 : *, DATA:code
+2220 - 2222 : *, DATA:code
+2222 - 2283 : handle_data_byte, NATIVE_CODE:code
+2283 - 2399 : handle_ctrl_byte, NATIVE_CODE:code
+2399 - 23a1 : *, DATA:code
+23a1 - 23d9 : flush_listline, NATIVE_CODE:code
+23d9 - 265c : format_and_print_listline, NATIVE_CODE:code
+265c - 2663 : *, DATA:code
+2663 - 26f7 : format_u32, NATIVE_CODE:code
+26f7 - 2713 : strlen, NATIVE_CODE:code
+2713 - 274e : strcat, NATIVE_CODE:code
+274e - 2750 : *, DATA:code
+2750 - 2752 : *, DATA:code
+2752 - 2788 : print_right, NATIVE_CODE:code
+2788 - 278b : *, DATA:code
+278b - 27ca : flush_filebuf, NATIVE_CODE:code
+27ca - 2882 : fileWrite, NATIVE_CODE:code
+2882 - 292f : kernelWrite, NATIVE_CODE:code
+292f - 2937 : _kernelCallWrapper, NATIVE_CODE:code
+2937 - 294f : _kernelCallRaw, NATIVE_CODE:code
+294f - 295f : kernelNextEvent, NATIVE_CODE:code
+295f - 2962 : *, DATA:code
+2962 - 2967 : *, DATA:code
+2967 - 2973 : *, DATA:code
+2973 - 2981 : *, DATA:code
+2981 - 298d : *, DATA:code
+298d - 29b5 : *, DATA:code
+29b5 - 29dc : *, DATA:code
+29dc - 29de : *, DATA:code
+29de - 29e0 : *, DATA:code
+29e0 - 29e2 : *, DATA:code
+29e2 - 29e6 : *, DATA:code
+29e6 - 29eb : *, DATA:code
+29eb - 29f5 : *, DATA:code
+29f5 - 29fd : *, DATA:code
+29fd - 2a00 : *, DATA:code
+2a00 - 2a43 : *, DATA:code
+2a43 - 2ae2 : wiz_get_ssid, NATIVE_CODE:code
+2ae2 - 2af0 : *, DATA:code
+2af0 - 2b2b : showFilesInDirectory, NATIVE_CODE:code
+2b2b - 2bba : initFilePickRecord_far, NATIVE_CODE:code
+2bba - 2c6b : reprepFPR_far, NATIVE_CODE:code
+2c6b - 2ca1 : FAR_POKEW, NATIVE_CODE:code
+2ca1 - 2e5f : readDirectory_far, NATIVE_CODE:code
+2e5f - 2ee1 : fileOpenDir, NATIVE_CODE:code
+2ee1 - 2f2f : pathWithoutDrive, NATIVE_CODE:code
+2f2f - 2ff9 : fileReadDir, NATIVE_CODE:code
+2ff9 - 3067 : isExtensionAllowed_far, NATIVE_CODE:code
+3067 - 30d6 : endsWithExt, NATIVE_CODE:code
+30d6 - 3109 : strrchr, NATIVE_CODE:code
+3109 - 3114 : tolower, NATIVE_CODE:code
+3114 - 3156 : fileCloseDir, NATIVE_CODE:code
+3156 - 34c0 : sortFileList_far, NATIVE_CODE:code
+34c0 - 34ff : FAR_PEEKW, NATIVE_CODE:code
+34ff - 3574 : strcasecmp_local, NATIVE_CODE:code
+3574 - 384f : displayFileList_far, NATIVE_CODE:code
+384f - 38b4 : wipeArea_far, NATIVE_CODE:code
+38b4 - 38dc : printf, NATIVE_CODE:code
+38dc - 3d21 : sformat, NATIVE_CODE:code
+3d21 - 3d36 : puts, NATIVE_CODE:code
+3d36 - 3ef0 : putpch, NATIVE_CODE:code
+3ef0 - 3f54 : f256k_scroll, NATIVE_CODE:code
+3f54 - 406f : nformi, NATIVE_CODE:code
+406f - 41bb : nforml, NATIVE_CODE:code
+41bb - 470b : nformf, NATIVE_CODE:code
+470b - 471a : isinf, NATIVE_CODE:code
+471a - 471c : *, DATA:code
+471c - 4723 : *, DATA:code
+4723 - 4726 : *, DATA:code
+4726 - 472e : *, DATA:code
+472e - 4734 : *, DATA:code
+4734 - 473a : *, DATA:code
+473a - 4bcd : read_line, NATIVE_CODE:code
+4bcd - 4c50 : mouseInWhere, NATIVE_CODE:code
+4c50 - 4c52 : *, DATA:code
+4c52 - 4f32 : ftp_retr, NATIVE_CODE:code
+4f32 - 503a : ftp_size, NATIVE_CODE:code
+503a - 5076 : sprintf, NATIVE_CODE:code
+5076 - 507e : *, DATA:code
+507e - 50b4 : ftp_command, NATIVE_CODE:code
+50b4 - 50ff : ftp_send_cmd, NATIVE_CODE:code
+50ff - 51a4 : wiz_cipsend, NATIVE_CODE:code
+51a4 - 51b7 : *, DATA:code
+51b7 - 51f6 : wiz_wait_char, NATIVE_CODE:code
+51f6 - 5254 : ftp_wait_reply, NATIVE_CODE:code
+5254 - 52a9 : print_reply, NATIVE_CODE:code
+52a9 - 52bd : reset_download_progress, NATIVE_CODE:code
+52bd - 548d : draw_download_progress, NATIVE_CODE:code
+548d - 54ce : *, DATA:code
+54ce - 54d9 : *, DATA:code
+54d9 - 54db : *, DATA:code
+54db - 54de : *, DATA:code
+54de - 54e1 : *, DATA:code
+54e1 - 54e8 : *, DATA:code
+54e8 - 558d : fileOpen, NATIVE_CODE:code
+558d - 5590 : *, DATA:code
+5590 - 55aa : *, DATA:code
+55aa - 55c0 : *, DATA:code
+55c0 - 55c4 : *, DATA:code
+55c4 - 578a : ftp_retr_attempt, NATIVE_CODE:code
+578a - 57ec : ftp_pasv, NATIVE_CODE:code
+57ec - 57f1 : *, DATA:code
+57f1 - 58f7 : parse_pasv, NATIVE_CODE:code
+58f7 - 5919 : strchr, NATIVE_CODE:code
+5919 - 5925 : *, DATA:code
+5925 - 5976 : wiz_open_link, NATIVE_CODE:code
+5976 - 5993 : *, DATA:code
+5993 - 59aa : *, DATA:code
+59aa - 59f7 : ftp_rest, NATIVE_CODE:code
+59f7 - 5a00 : *, DATA:code
+5a00 - 5a39 : wiz_close_link, NATIVE_CODE:code
+5a39 - 5a48 : *, DATA:code
+5a48 - 5a50 : *, DATA:code
+5a50 - 5a8b : fileClose, NATIVE_CODE:code
+5a8b - 5aa2 : *, DATA:code
+5aa2 - 5aae : *, DATA:code
+5aae - 5ab2 : *, DATA:code
+5ab2 - 5aba : *, DATA:code
+5aba - 5ac6 : *, DATA:code
+5ac6 - 5acb : *, DATA:code
+5acb - 5b35 : forceFileHighlight, NATIVE_CODE:code
+5b35 - 5b68 : rowFromMouse, NATIVE_CODE:code
+5b68 - 5c60 : split_args, NATIVE_CODE:code
+5c60 - 5c65 : *, DATA:code
+5c65 - 6304 : print_help, NATIVE_CODE:code
+6304 - 6334 : fillSpaceToEnd, NATIVE_CODE:code
+6334 - 6368 : *, DATA:code
+6368 - 6390 : *, DATA:code
+6390 - 63b9 : *, DATA:code
+63b9 - 63f8 : *, DATA:code
+63f8 - 63fe : *, DATA:code
+63fe - 63ff : _ccolor, DATA:data
+63ff - 6400 : _MAX_COL, DATA:data
+6400 - 641e : *, DATA:code
+641e - 6444 : *, DATA:code
+6444 - 6473 : *, DATA:code
+6473 - 64a1 : *, DATA:code
+64a1 - 64d0 : *, DATA:code
+64d0 - 64f7 : *, DATA:code
+64f7 - 64fc : *, DATA:code
+64fc - 64ff : *, DATA:code
+64ff - 6500 : _MAX_ROW, DATA:data
+6500 - 6525 : *, DATA:code
+6525 - 6555 : *, DATA:code
+6555 - 658b : *, DATA:code
+658b - 65bc : *, DATA:code
+65bc - 65e2 : *, DATA:code
+65e2 - 65f5 : *, DATA:code
+65f5 - 65fd : *, DATA:code
+65fd - 6600 : *, DATA:code
+6600 - 6629 : *, DATA:code
+6629 - 666f : wiz_join, NATIVE_CODE:code
+666f - 667c : *, DATA:code
+667c - 6696 : *, DATA:code
+6696 - 669b : *, DATA:code
+669b - 67d3 : ftp_open, NATIVE_CODE:code
+67d3 - 67e2 : *, DATA:code
+67e2 - 67f0 : *, DATA:code
+67f0 - 67f6 : *, DATA:code
+67f6 - 67fe : *, DATA:code
+67fe - 67ff : _col, DATA:data
+67ff - 6800 : _row, DATA:data
+6800 - 6825 : *, DATA:code
+6825 - 6846 : *, DATA:code
+6846 - 685b : *, DATA:code
+685b - 6905 : atoi, NATIVE_CODE:code
+6905 - 691f : *, DATA:code
+691f - 69d2 : ftp_login, NATIVE_CODE:code
+69d2 - 6a11 : ftp_type_binary, NATIVE_CODE:code
+6a11 - 6a18 : *, DATA:code
+6a18 - 6a20 : *, DATA:code
+6a20 - 6a3b : *, DATA:code
+6a3b - 6a3f : *, DATA:code
+6a3f - 6b9b : ftp_list, NATIVE_CODE:code
+6b9b - 6bbd : ftp_clear_remote_files, NATIVE_CODE:code
+6bbd - 6bc5 : *, DATA:code
+6bc5 - 6bca : *, DATA:code
+6bca - 6c97 : ftp_cwd, NATIVE_CODE:code
+6c97 - 6c9e : *, DATA:code
+6c9e - 6caf : *, DATA:code
+6caf - 6cb3 : *, DATA:code
+6cb3 - 6cc5 : *, DATA:code
+6cc5 - 6cc9 : *, DATA:code
+6cc9 - 6d05 : ftp_pwd, NATIVE_CODE:code
+6d05 - 6d09 : *, DATA:code
+6d09 - 6d0d : *, DATA:code
+6d0d - 6d29 : *, DATA:code
+6d29 - 6d2d : *, DATA:code
+6d2d - 6f5e : ftp_stor, NATIVE_CODE:code
+6f5e - 6f61 : *, DATA:code
+6f61 - 6f79 : *, DATA:code
+6f79 - 6f81 : *, DATA:code
+6f81 - 7013 : fileRead, NATIVE_CODE:code
+7013 - 70a8 : kernelRead, NATIVE_CODE:code
+70a8 - 70d6 : f256getchar, NATIVE_CODE:code
+70d6 - 70e6 : kernelNextEvent, NATIVE_CODE:code
+70e6 - 70ee : _kernelCallWrapper, NATIVE_CODE:code
+70ee - 7106 : _kernelCallRaw, NATIVE_CODE:code
+7106 - 7119 : *, DATA:code
+7119 - 7123 : *, DATA:code
+7123 - 713f : *, DATA:code
+713f - 7143 : *, DATA:code
+7143 - 7148 : *, DATA:code
+7148 - 714c : *, DATA:code
+714c - 71bf : ftp_quit, NATIVE_CODE:code
+71bf - 71c4 : *, DATA:code
+71c4 - 71e8 : *, DATA:code
+71e8 - 71ee : *, DATA:code
+71ee - 71f1 : *, DATA:code
+71f1 - 71f8 : *, DATA:code
+71f8 - 71fc : *, DATA:code
+71fc - 7200 : __multab3L, DATA:code
+7200 - 7205 : *, DATA:code
+7205 - 7225 : *, DATA:code
+7225 - 7243 : *, DATA:code
+7243 - 7260 : f256Reset, NATIVE_CODE:code
+7260 - 7298 : mul16by8, NATIVE_CODE:code
+7298 - 72ce : mul32by8, NATIVE_CODE:code
+72ce - 7313 : freg, NATIVE_CODE:code
+7313 - 7400 : faddsub, NATIVE_CODE:code
+7400 - 749a : crt_fmul, NATIVE_CODE:code
+749a - 74c8 : crt_fmul8, NATIVE_CODE:code
+74c8 - 7576 : crt_fdiv, NATIVE_CODE:code
+7576 - 75b8 : mul16, NATIVE_CODE:code
+75b8 - 75d6 : divs16, NATIVE_CODE:code
+75d6 - 75e4 : negaccu, NATIVE_CODE:code
+75e4 - 75f2 : negtmp, NATIVE_CODE:code
+75f2 - 7677 : divmod, NATIVE_CODE:code
+7677 - 7696 : mods16, NATIVE_CODE:code
+7696 - 76a4 : negtmpb, NATIVE_CODE:code
+76a4 - 76f0 : f32_to_i16, NATIVE_CODE:code
+76f0 - 770e : sint16_to_float, NATIVE_CODE:code
+770e - 7737 : uint16_to_float, NATIVE_CODE:code
+7737 - 780e : divmod32, NATIVE_CODE:code
+780e - 78dc : crt_malloc, NATIVE_CODE:code
+78dc - 7975 : crt_free, NATIVE_CODE:code
+7975 - 79a5 : textColors, DATA:data
+79a5 - 79a6 : cur_cli_y, DATA:data
+79a6 - 79a7 : cur_rem_y, DATA:data
+79a7 - 79a8 : cur_loc_y, DATA:data
+79a8 - 79a9 : at_ok, DATA:data
+79a9 - 79aa : at_error, DATA:data
+79aa - 79ab : rxstate, DATA:data
+79ab - 79ac : linelen, DATA:data
+79ac - 79ad : ipd_hdr_len, DATA:data
+79ad - 79ae : debug_mode, DATA:data
+79ae - 79af : data_closed, DATA:data
+79af - 79b0 : ipd_link, DATA:data
+79b0 - 79b2 : ipd_remaining, DATA:data
+79b2 - 79b3 : ctrllen, DATA:data
+79b3 - 79b5 : ctrl_reply_code, DATA:data
+79b5 - 79b6 : ctrl_reply_ready, DATA:data
+79b6 - 79b7 : data_sink, DATA:data
+79b7 - 79b8 : listlinelen, DATA:data
+79b8 - 79b9 : filebuf_len, DATA:data
+79b9 - 79bd : downloadBytes, DATA:data
+79bd - 79bf : out_fp, DATA:data
+79bf - 79c1 : s, DATA:data
+79c1 - 79fd : remoteDirectory, DATA:data
+79fd - 79fe : f256k_color, DATA:data
+79fe - 79ff : oldHighlight, DATA:data
+79ff - 7a00 : oldHighlightLocal, DATA:data
+7a00 - 7a3c : localDirectory, DATA:data
+7a3c - 7a58 : fround5, DATA:data
+7a58 - 7a59 : isFileTrailing, DATA:data
+7a59 - 7a5a : isRemoteListed, DATA:data
+7a5a - 7a5e : downloadTotal, DATA:data
+7a5e - 7a5f : downloadComplete, DATA:data
+7a5f - 7a60 : downloadProgressY, DATA:data
+7a60 - 7a62 : progressTickCounter, DATA:data
+7a62 - 7a63 : progressLastFilled, DATA:data
+7a63 - 7a64 : progressLastY, DATA:data
+7a64 - 7a66 : kernelArgs, DATA:bss
+7a64 - 7a64 : BSSStart, START:bss
+7a66 - 7a6d : kernelEventData, DATA:bss
+7a6d - 7a6f : _MAX_X, DATA:bss
+7a6f - 7a70 : _active, DATA:bss
+7a70 - 7a71 : _color, DATA:bss
+7a71 - 7a7d : _BITMAP_BASE, DATA:bss
+7a7d - 7a80 : _BITMAP_CLUT, DATA:bss
+7a80 - 7a83 : _tileSize, DATA:bss
+7a83 - 7ac3 : _spriteCtl, DATA:bss
+7ac3 - 7acb : _dirStream, DATA:bss
+7acb - 7acd : _kern_target, DATA:bss
+7acd - 7ace : _kernelError, DATA:bss
+7ace - 7ae2 : ipd_hdr, DATA:bss
+7ae2 - 7ae6 : HeapNode, DATA:bss
+7b00 - 7b80 : at_resp_line, DATA:bss
+7b80 - 7c00 : linebuf, DATA:bss
+7c00 - 7c80 : ctrlline, DATA:bss
+7c80 - 7d00 : ctrl_reply_text, DATA:bss
+7d00 - 7d50 : listline, DATA:bss
+7d50 - 8008 : remoteFiles, DATA:bss
+8008 - 8088 : filebuf, DATA:bss
+8088 - 818a : fileDirEntS, DATA:bss
+818a - 818a : BSSEnd, END:bss
+8190 - 8190 : HeapStart, START:heap
+9000 - 9000 : HeapEnd, END:heap
+9d53 - 9d53 : StackEnd, END:stack
+9d53 - 9d57 : f256main@stack, BSS:f256main@stack
+9d57 - 9d78 : ssid, BSS:f256main@stack
+9d78 - 9d7a : a2, BSS:f256main@stack
+9d7a - 9d7c : a1, BSS:f256main@stack
+9d7c - 9d7e : cmd, BSS:f256main@stack
+9d7f - 9dcf : line, BSS:f256main@stack
+9dcf - 9ddc : read_line@stack, BSS:read_line@stack
+9ddc - 9dde : s, BSS:read_line@stack
+9dde - 9ddf : newHighlight, BSS:read_line@stack
+9ddf - 9de0 : newHighlight, BSS:read_line@stack
+9de0 - 9e44 : finalName, BSS:read_line@stack
+9e09 - 9e14 : ftp_stor@stack, BSS:ftp_stor@stack
+9e14 - 9e94 : buf, BSS:ftp_stor@stack
+9e44 - 9e45 : ly, BSS:read_line@stack
+9e45 - 9e46 : lx, BSS:read_line@stack
+9e46 - 9e55 : ftp_retr@stack, BSS:ftp_retr@stack
+9e55 - 9e61 : buf, BSS:ftp_retr@stack
+9e61 - 9e6d : buf, BSS:ftp_retr@stack
+9e6d - 9e76 : ftp_retr_attempt@stack, BSS:ftp_retr_attempt@stack
+9e6e - 9e8e : displayFileList_far@stack, BSS:displayFileList_far@stack
+9e76 - 9ec6 : cmd, BSS:ftp_retr_attempt@stack
+9e8e - 9f06 : nameBuf, BSS:displayFileList_far@stack
+9e90 - 9e94 : ftp_list@stack, BSS:ftp_list@stack
+9e94 - 9ee4 : cmd, BSS:ftp_stor@stack
+9e94 - 9ee4 : cmd, BSS:ftp_list@stack
+9ea5 - 9ead : ftp_size@stack, BSS:ftp_size@stack
+9ea5 - 9ead : ftp_cwd@stack, BSS:ftp_cwd@stack
+9ea7 - 9eab : ftp_login@stack, BSS:ftp_login@stack
+9eab - 9efb : cmd, BSS:ftp_login@stack
+9ead - 9efd : cmd, BSS:ftp_cwd@stack
+9ead - 9efd : cmd, BSS:ftp_size@stack
+9ec6 - 9ec8 : port, BSS:ftp_retr_attempt@stack
+9ec9 - 9edd : ip, BSS:ftp_retr_attempt@stack
+9edc - 9f54 : jName, BSS:sortFileList_far@stack
+9edd - 9efd : cmd, BSS:ftp_rest@stack
+9ee4 - 9ee6 : port, BSS:ftp_stor@stack
+9ee4 - 9ee6 : port, BSS:ftp_list@stack
+9ee7 - 9efb : ip, BSS:ftp_list@stack
+9ee7 - 9efb : ip, BSS:ftp_stor@stack
+9efb - 9efd : ftp_pasv@stack, BSS:ftp_pasv@stack
+9efb - 9efd : ftp_pwd@stack, BSS:ftp_pwd@stack
+9efb - 9efd : ftp_type_binary@stack, BSS:ftp_type_binary@stack
+9efb - 9efd : ftp_quit@stack, BSS:ftp_quit@stack
+9efd - 9f7f : buf, BSS:ftp_send_cmd@stack
+9f06 - 9f7e : nameBuf, BSS:displayFileList_far@stack
+9f41 - 9f43 : ftp_open@stack, BSS:ftp_open@stack
+9f43 - 9fa3 : cmd, BSS:wiz_open_link@stack
+9f43 - 9fa3 : cmd, BSS:wiz_join@stack
+9f54 - 9fcc : keyName, BSS:sortFileList_far@stack
+9f7e - 9f82 : wipeArea_far@stack, BSS:wipeArea_far@stack
+9f7f - 9f83 : wiz_cipsend@stack, BSS:wiz_cipsend@stack
+9f82 - 9fb4 : buff, BSS:printf@stack
+9f83 - 9fa3 : cmd, BSS:wiz_cipsend@stack
+9f83 - 9f86 : print_help@stack, BSS:print_help@stack
+9f86 - 9f88 : aCol, BSS:print_help@stack
+9f88 - 9fca : topLine, BSS:print_help@stack
+9f8b - 9fa3 : cmd, BSS:wiz_close_link@stack
+9f8c - 9fc8 : localPath, BSS:readDirectory_far@stack
+9fa1 - 9fa3 : wiz_get_ssid@stack, BSS:wiz_get_ssid@stack
+9fa2 - 9fa3 : wiz_init@stack, BSS:wiz_init@stack
+9fa3 - 9fa7 : wiz_wait_atok@stack, BSS:wiz_wait_atok@stack
+9fa3 - 9fa7 : ftp_wait_reply@stack, BSS:ftp_wait_reply@stack
+9fa7 - 9fa8 : wiz_rx_byte@stack, BSS:wiz_rx_byte@stack
+9fa8 - 9fb4 : v, BSS:parse_pasv@stack
+9fa8 - 9fb0 : sizebuf, BSS:format_and_print_listline@stack
+9fb0 - 9fc0 : field, BSS:format_and_print_listline@stack
+9fb4 - 9fbc : si, BSS:sformat@stack
+9fb5 - 9fc1 : buf, BSS:draw_download_progress@stack
+9fbc - 9fcc : buffer, BSS:nformi@stack
+9fbc - 9fcc : buffer, BSS:nforml@stack
+9fc1 - 9fcc : tmp, BSS:format_u32@stack
+9fc4 - 9fcc : clock, BSS:randomReset@stack
+9fc8 - 9fcc : textPrintInt@stack, BSS:textPrintInt@stack
+9fc8 - 9fcc : extBuf, BSS:isExtensionAllowed_far@stack
+9fc9 - 9fcc : pauseTimer, BSS:lilpause@stack
+9fca - 9fcb : y, BSS:textPrintNewLine@stack
+9fca - 9fcb : curY, BSS:fillSpaceToEnd@stack
+9fcb - 9fcc : curX, BSS:fillSpaceToEnd@stack
+9fcb - 9fcc : drive, BSS:fileOpen@stack
+9fcb - 9fcc : x, BSS:textPrintNewLine@stack
+9fcb - 9fcc : drive, BSS:fileOpenDir@stack
+9fcc - a000 : sstack, STACK:sstack
+10000 - 10400 : mainpalette, DATA:gfx
+10400 - 10800 : fileIconSprite, DATA:spr
+
+objects by size
+07d4 (06ab) : f256main, NATIVE_CODE:code
+5c65 (069f) : print_help, NATIVE_CODE:code
+41bb (0550) : nformf, NATIVE_CODE:code
+473a (0493) : read_line, NATIVE_CODE:code
+38dc (0445) : sformat, NATIVE_CODE:code
+10000 (0400) : mainpalette, DATA:gfx
+10400 (0400) : fileIconSprite, DATA:spr
+3156 (036a) : sortFileList_far, NATIVE_CODE:code
+106d (02fd) : bitmapLine, NATIVE_CODE:code
+4c52 (02e0) : ftp_retr, NATIVE_CODE:code
+3574 (02db) : displayFileList_far, NATIVE_CODE:code
+7d50 (02b8) : remoteFiles, DATA:bss
+23d9 (0283) : format_and_print_listline, NATIVE_CODE:code
+6d2d (0231) : ftp_stor, NATIVE_CODE:code
+52bd (01d0) : draw_download_progress, NATIVE_CODE:code
+55c4 (01c6) : ftp_retr_attempt, NATIVE_CODE:code
+1ab9 (01c3) : wiz_rx_byte, NATIVE_CODE:code
+2ca1 (01be) : readDirectory_far, NATIVE_CODE:code
+3d36 (01ba) : putpch, NATIVE_CODE:code
+150c (0193) : textPrint, NATIVE_CODE:code
+6a3f (015c) : ftp_list, NATIVE_CODE:code
+406f (014c) : nforml, NATIVE_CODE:code
+1c7c (0143) : handle_line, NATIVE_CODE:code
+669b (0138) : ftp_open, NATIVE_CODE:code
+0e7f (0137) : initMyBitmap, NATIVE_CODE:code
+056b (012f) : bitmapReset, NATIVE_CODE:code
+3f54 (011b) : nformi, NATIVE_CODE:code
+2104 (0116) : textPrintUInt, NATIVE_CODE:code
+2283 (0116) : handle_ctrl_byte, NATIVE_CODE:code
+1f65 (0109) : parse_ipd_header, NATIVE_CODE:code
+4f32 (0108) : ftp_size, NATIVE_CODE:code
+57f1 (0106) : parse_pasv, NATIVE_CODE:code
+8088 (0102) : fileDirEntS, DATA:bss
+5b68 (00f8) : split_args, NATIVE_CODE:code
+7313 (00ed) : faddsub, NATIVE_CODE:code
+7737 (00d7) : divmod32, NATIVE_CODE:code
+185c (00d0) : wiz_init, NATIVE_CODE:code
+780e (00ce) : crt_malloc, NATIVE_CODE:code
+6bca (00cd) : ftp_cwd, NATIVE_CODE:code
+2f2f (00ca) : fileReadDir, NATIVE_CODE:code
+27ca (00b8) : fileWrite, NATIVE_CODE:code
+691f (00b3) : ftp_login, NATIVE_CODE:code
+2bba (00b1) : reprepFPR_far, NATIVE_CODE:code
+74c8 (00ae) : crt_fdiv, NATIVE_CODE:code
+2882 (00ad) : kernelWrite, NATIVE_CODE:code
+685b (00aa) : atoi, NATIVE_CODE:code
+16cb (00a9) : textSectionClear, NATIVE_CODE:code
+50ff (00a5) : wiz_cipsend, NATIVE_CODE:code
+54e8 (00a5) : fileOpen, NATIVE_CODE:code
+2a43 (009f) : wiz_get_ssid, NATIVE_CODE:code
+7400 (009a) : crt_fmul, NATIVE_CODE:code
+78dc (0099) : crt_free, NATIVE_CODE:code
+7013 (0095) : kernelRead, NATIVE_CODE:code
+2663 (0094) : format_u32, NATIVE_CODE:code
+6f81 (0092) : fileRead, NATIVE_CODE:code
+2b2b (008f) : initFilePickRecord_far, NATIVE_CODE:code
+75f2 (0085) : divmod, NATIVE_CODE:code
+0fe9 (0084) : bitmapClear, NATIVE_CODE:code
+04cf (0083) : textClear, NATIVE_CODE:code
+207f (0083) : textPrintInt, NATIVE_CODE:code
+4bcd (0083) : mouseInWhere, NATIVE_CODE:code
+2e5f (0082) : fileOpenDir, NATIVE_CODE:code
+9efd (0082) : buf, BSS:ftp_send_cmd@stack
+7b00 (0080) : at_resp_line, DATA:bss
+7b80 (0080) : linebuf, DATA:bss
+7c00 (0080) : ctrlline, DATA:bss
+7c80 (0080) : ctrl_reply_text, DATA:bss
+8008 (0080) : filebuf, DATA:bss
+9e14 (0080) : buf, BSS:ftp_stor@stack
+17bb (007e) : textPrintNewLine, NATIVE_CODE:code
+9e8e (0078) : nameBuf, BSS:displayFileList_far@stack
+9edc (0078) : jName, BSS:sortFileList_far@stack
+9f06 (0078) : nameBuf, BSS:displayFileList_far@stack
+9f54 (0078) : keyName, BSS:sortFileList_far@stack
+34ff (0075) : strcasecmp_local, NATIVE_CODE:code
+1e06 (0073) : strstr, NATIVE_CODE:code
+1ef2 (0073) : strncpy, NATIVE_CODE:code
+714c (0073) : ftp_quit, NATIVE_CODE:code
+3067 (006f) : endsWithExt, NATIVE_CODE:code
+2ff9 (006e) : isExtensionAllowed_far, NATIVE_CODE:code
+5acb (006a) : forceFileHighlight, NATIVE_CODE:code
+384f (0065) : wipeArea_far, NATIVE_CODE:code
+3ef0 (0064) : f256k_scroll, NATIVE_CODE:code
+9de0 (0064) : finalName, BSS:read_line@stack
+1a3a (0063) : wiz_wait_atok, NATIVE_CODE:code
+1e8a (0063) : strncmp, NATIVE_CODE:code
+578a (0062) : ftp_pasv, NATIVE_CODE:code
+2222 (0061) : handle_data_byte, NATIVE_CODE:code
+141c (0060) : spriteDefine, NATIVE_CODE:code
+9f43 (0060) : cmd, BSS:wiz_open_link@stack
+9f43 (0060) : cmd, BSS:wiz_join@stack
+51f6 (005e) : ftp_wait_reply, NATIVE_CODE:code
+033e (0058) : graphicsDefineColor, NATIVE_CODE:code
+5254 (0055) : print_reply, NATIVE_CODE:code
+5925 (0051) : wiz_open_link, NATIVE_CODE:code
+7d00 (0050) : listline, DATA:bss
+9d7f (0050) : line, BSS:f256main@stack
+9e76 (0050) : cmd, BSS:ftp_retr_attempt@stack
+9e94 (0050) : cmd, BSS:ftp_stor@stack
+9e94 (0050) : cmd, BSS:ftp_list@stack
+9eab (0050) : cmd, BSS:ftp_login@stack
+9ead (0050) : cmd, BSS:ftp_cwd@stack
+9ead (0050) : cmd, BSS:ftp_size@stack
+2ee1 (004e) : pathWithoutDrive, NATIVE_CODE:code
+59aa (004d) : ftp_rest, NATIVE_CODE:code
+76a4 (004c) : f32_to_i16, NATIVE_CODE:code
+50b4 (004b) : ftp_send_cmd, NATIVE_CODE:code
+076a (004a) : randomReset, NATIVE_CODE:code
+06ed (0046) : tileSetVisible, NATIVE_CODE:code
+6629 (0046) : wiz_join, NATIVE_CODE:code
+72ce (0045) : freg, NATIVE_CODE:code
+03c5 (0044) : textReset, NATIVE_CODE:code
+3114 (0042) : fileCloseDir, NATIVE_CODE:code
+7576 (0042) : mul16, NATIVE_CODE:code
+9f88 (0042) : topLine, BSS:print_help@stack
+7a83 (0040) : _spriteCtl, DATA:bss
+0200 (003f) : startup, NATIVE_CODE:startup
+02b3 (003f) : f256Init, NATIVE_CODE:code
+13dd (003f) : initSpriteRecord, NATIVE_CODE:code
+278b (003f) : flush_filebuf, NATIVE_CODE:code
+34c0 (003f) : FAR_PEEKW, NATIVE_CODE:code
+51b7 (003f) : wiz_wait_char, NATIVE_CODE:code
+69d2 (003f) : ftp_type_binary, NATIVE_CODE:code
+136a (003d) : mathUnsignedAddition, NATIVE_CODE:code
+503a (003c) : sprintf, NATIVE_CODE:code
+6cc9 (003c) : ftp_pwd, NATIVE_CODE:code
+79c1 (003c) : remoteDirectory, DATA:data
+7a00 (003c) : localDirectory, DATA:data
+9f8c (003c) : localPath, BSS:readDirectory_far@stack
+2713 (003b) : strcat, NATIVE_CODE:code
+2af0 (003b) : showFilesInDirectory, NATIVE_CODE:code
+5a50 (003b) : fileClose, NATIVE_CODE:code
+0305 (0039) : graphicsReset, NATIVE_CODE:code
+5a00 (0039) : wiz_close_link, NATIVE_CODE:code
+23a1 (0038) : flush_listline, NATIVE_CODE:code
+7260 (0038) : mul16by8, NATIVE_CODE:code
+13a7 (0036) : initMySprites, NATIVE_CODE:code
+2752 (0036) : print_right, NATIVE_CODE:code
+2c6b (0036) : FAR_POKEW, NATIVE_CODE:code
+507e (0036) : ftp_command, NATIVE_CODE:code
+7298 (0036) : mul32by8, NATIVE_CODE:code
+069a (0035) : bitmapSetVisible, NATIVE_CODE:code
+9fcc (0034) : sstack, STACK:sstack
+0280 (0033) : main, NATIVE_CODE:code
+0fb6 (0033) : FAR_PEEK, NATIVE_CODE:code
+30d6 (0033) : strrchr, NATIVE_CODE:code
+5b35 (0033) : rowFromMouse, NATIVE_CODE:code
+192c (0032) : lilpause, NATIVE_CODE:code
+19c5 (0032) : wiz_atcmd, NATIVE_CODE:code
+9f82 (0032) : buff, BSS:printf@stack
+0409 (0031) : textSetDouble, NATIVE_CODE:code
+14cc (0031) : FAR_POKE, NATIVE_CODE:code
+1776 (0031) : initTextXY, NATIVE_CODE:code
+6304 (0030) : fillSpaceToEnd, NATIVE_CODE:code
+7975 (0030) : textColors, DATA:data
+0396 (002f) : graphicsSetLayerBitmap, NATIVE_CODE:code
+044a (002e) : textDefineForegroundColor, NATIVE_CODE:code
+04a1 (002e) : textDefineBackgroundColor, NATIVE_CODE:code
+70a8 (002e) : f256getchar, NATIVE_CODE:code
+749a (002e) : crt_fmul8, NATIVE_CODE:code
+1dc3 (002d) : strcmp, NATIVE_CODE:code
+0478 (0029) : mathUnsignedMultiply, NATIVE_CODE:code
+770e (0029) : uint16_to_float, NATIVE_CODE:code
+147c (0028) : spriteSetPosition, NATIVE_CODE:code
+14a4 (0028) : fpr_set_currentPath, NATIVE_CODE:code
+38b4 (0028) : printf, NATIVE_CODE:code
+19f7 (0027) : uart_puts, NATIVE_CODE:code
+1991 (0024) : setTimer, NATIVE_CODE:code
+58f7 (0022) : strchr, NATIVE_CODE:code
+6b9b (0022) : ftp_clear_remote_files, NATIVE_CODE:code
+9d57 (0021) : ssid, BSS:f256main@stack
+9e6e (0020) : displayFileList_far@stack, BSS:displayFileList_far@stack
+9edd (0020) : cmd, BSS:ftp_rest@stack
+9f83 (0020) : cmd, BSS:wiz_cipsend@stack
+7677 (001f) : mods16, NATIVE_CODE:code
+06cf (001e) : tileReset, NATIVE_CODE:code
+75b8 (001e) : divs16, NATIVE_CODE:code
+76f0 (001e) : sint16_to_float, NATIVE_CODE:code
+7243 (001d) : f256Reset, NATIVE_CODE:code
+1a9d (001c) : wiz_poll_any, NATIVE_CODE:code
+26f7 (001c) : strlen, NATIVE_CODE:code
+7a3c (001c) : fround5, DATA:data
+0745 (001a) : spriteSetVisible, NATIVE_CODE:code
+0552 (0019) : textGotoXY, NATIVE_CODE:code
+1a1e (0019) : uart_putc, NATIVE_CODE:code
+07bc (0018) : _kernelCallRaw, NATIVE_CODE:code
+1979 (0018) : _kernelCallRaw, NATIVE_CODE:code
+2937 (0018) : _kernelCallRaw, NATIVE_CODE:code
+70ee (0018) : _kernelCallRaw, NATIVE_CODE:code
+9f8b (0018) : cmd, BSS:wiz_close_link@stack
+16b6 (0015) : textFullClear, NATIVE_CODE:code
+3d21 (0015) : puts, NATIVE_CODE:code
+52a9 (0014) : reset_download_progress, NATIVE_CODE:code
+7ace (0014) : ipd_hdr, DATA:bss
+9ec9 (0014) : ip, BSS:ftp_retr_attempt@stack
+9ee7 (0014) : ip, BSS:ftp_list@stack
+9ee7 (0014) : ip, BSS:ftp_stor@stack
+02f2 (0013) : kernelReset, NATIVE_CODE:code
+195e (0013) : getTimerAbsolute, NATIVE_CODE:code
+0733 (0012) : spriteReset, NATIVE_CODE:code
+043a (0010) : textSetCursor, NATIVE_CODE:code
+19b5 (0010) : kernelNextEvent, NATIVE_CODE:code
+294f (0010) : kernelNextEvent, NATIVE_CODE:code
+70d6 (0010) : kernelNextEvent, NATIVE_CODE:code
+9fb0 (0010) : field, BSS:format_and_print_listline@stack
+9fbc (0010) : buffer, BSS:nformi@stack
+9fbc (0010) : buffer, BSS:nforml@stack
+470b (000f) : isinf, NATIVE_CODE:code
+9e46 (000f) : ftp_retr@stack, BSS:ftp_retr@stack
+75d6 (000e) : negaccu, NATIVE_CODE:code
+75e4 (000e) : negtmp, NATIVE_CODE:code
+7696 (000e) : negtmpb, NATIVE_CODE:code
+14ff (000d) : textSetColor, NATIVE_CODE:code
+1839 (000d) : textGetXY, NATIVE_CODE:code
+9dcf (000d) : read_line@stack, BSS:read_line@stack
+7a71 (000c) : _BITMAP_BASE, DATA:bss
+9e55 (000c) : buf, BSS:ftp_retr@stack
+9e61 (000c) : buf, BSS:ftp_retr@stack
+9fa8 (000c) : v, BSS:parse_pasv@stack
+9fb5 (000c) : buf, BSS:draw_download_progress@stack
+075f (000b) : fileReset, NATIVE_CODE:code
+3109 (000b) : tolower, NATIVE_CODE:code
+9e09 (000b) : ftp_stor@stack, BSS:ftp_stor@stack
+9fc1 (000b) : tmp, BSS:format_u32@stack
+9e6d (0009) : ftp_retr_attempt@stack, BSS:ftp_retr_attempt@stack
+07b4 (0008) : _kernelCallWrapper, NATIVE_CODE:code
+1971 (0008) : _kernelCallWrapper, NATIVE_CODE:code
+292f (0008) : _kernelCallWrapper, NATIVE_CODE:code
+70e6 (0008) : _kernelCallWrapper, NATIVE_CODE:code
+7ac3 (0008) : _dirStream, DATA:bss
+9ea5 (0008) : ftp_size@stack, BSS:ftp_size@stack
+9ea5 (0008) : ftp_cwd@stack, BSS:ftp_cwd@stack
+9fa8 (0008) : sizebuf, BSS:format_and_print_listline@stack
+9fb4 (0008) : si, BSS:sformat@stack
+9fc4 (0008) : clock, BSS:randomReset@stack
+7a66 (0007) : kernelEventData, DATA:bss
+71fc (0004) : __multab3L, DATA:code
+79b9 (0004) : downloadBytes, DATA:data
+7a5a (0004) : downloadTotal, DATA:data
+7ae2 (0004) : HeapNode, DATA:bss
+9d53 (0004) : f256main@stack, BSS:f256main@stack
+9e90 (0004) : ftp_list@stack, BSS:ftp_list@stack
+9ea7 (0004) : ftp_login@stack, BSS:ftp_login@stack
+9f7e (0004) : wipeArea_far@stack, BSS:wipeArea_far@stack
+9f7f (0004) : wiz_cipsend@stack, BSS:wiz_cipsend@stack
+9fa3 (0004) : wiz_wait_atok@stack, BSS:wiz_wait_atok@stack
+9fa3 (0004) : ftp_wait_reply@stack, BSS:ftp_wait_reply@stack
+9fc8 (0004) : textPrintInt@stack, BSS:textPrintInt@stack
+9fc8 (0004) : extBuf, BSS:isExtensionAllowed_far@stack
+7a7d (0003) : _BITMAP_CLUT, DATA:bss
+7a80 (0003) : _tileSize, DATA:bss
+9f83 (0003) : print_help@stack, BSS:print_help@stack
+9fc9 (0003) : pauseTimer, BSS:lilpause@stack
+79b0 (0002) : ipd_remaining, DATA:data
+79b3 (0002) : ctrl_reply_code, DATA:data
+79bd (0002) : out_fp, DATA:data
+79bf (0002) : s, DATA:data
+7a60 (0002) : progressTickCounter, DATA:data
+7a64 (0002) : kernelArgs, DATA:bss
+7a6d (0002) : _MAX_X, DATA:bss
+7acb (0002) : _kern_target, DATA:bss
+9d78 (0002) : a2, BSS:f256main@stack
+9d7a (0002) : a1, BSS:f256main@stack
+9d7c (0002) : cmd, BSS:f256main@stack
+9ddc (0002) : s, BSS:read_line@stack
+9ec6 (0002) : port, BSS:ftp_retr_attempt@stack
+9ee4 (0002) : port, BSS:ftp_stor@stack
+9ee4 (0002) : port, BSS:ftp_list@stack
+9efb (0002) : ftp_pasv@stack, BSS:ftp_pasv@stack
+9efb (0002) : ftp_pwd@stack, BSS:ftp_pwd@stack
+9efb (0002) : ftp_type_binary@stack, BSS:ftp_type_binary@stack
+9efb (0002) : ftp_quit@stack, BSS:ftp_quit@stack
+9f41 (0002) : ftp_open@stack, BSS:ftp_open@stack
+9f86 (0002) : aCol, BSS:print_help@stack
+9fa1 (0002) : wiz_get_ssid@stack, BSS:wiz_get_ssid@stack
+63fe (0001) : _ccolor, DATA:data
+63ff (0001) : _MAX_COL, DATA:data
+64ff (0001) : _MAX_ROW, DATA:data
+67fe (0001) : _col, DATA:data
+67ff (0001) : _row, DATA:data
+79a5 (0001) : cur_cli_y, DATA:data
+79a6 (0001) : cur_rem_y, DATA:data
+79a7 (0001) : cur_loc_y, DATA:data
+79a8 (0001) : at_ok, DATA:data
+79a9 (0001) : at_error, DATA:data
+79aa (0001) : rxstate, DATA:data
+79ab (0001) : linelen, DATA:data
+79ac (0001) : ipd_hdr_len, DATA:data
+79ad (0001) : debug_mode, DATA:data
+79ae (0001) : data_closed, DATA:data
+79af (0001) : ipd_link, DATA:data
+79b2 (0001) : ctrllen, DATA:data
+79b5 (0001) : ctrl_reply_ready, DATA:data
+79b6 (0001) : data_sink, DATA:data
+79b7 (0001) : listlinelen, DATA:data
+79b8 (0001) : filebuf_len, DATA:data
+79fd (0001) : f256k_color, DATA:data
+79fe (0001) : oldHighlight, DATA:data
+79ff (0001) : oldHighlightLocal, DATA:data
+7a58 (0001) : isFileTrailing, DATA:data
+7a59 (0001) : isRemoteListed, DATA:data
+7a5e (0001) : downloadComplete, DATA:data
+7a5f (0001) : downloadProgressY, DATA:data
+7a62 (0001) : progressLastFilled, DATA:data
+7a63 (0001) : progressLastY, DATA:data
+7a6f (0001) : _active, DATA:bss
+7a70 (0001) : _color, DATA:bss
+7acd (0001) : _kernelError, DATA:bss
+9dde (0001) : newHighlight, BSS:read_line@stack
+9ddf (0001) : newHighlight, BSS:read_line@stack
+9e44 (0001) : ly, BSS:read_line@stack
+9e45 (0001) : lx, BSS:read_line@stack
+9fa2 (0001) : wiz_init@stack, BSS:wiz_init@stack
+9fa7 (0001) : wiz_rx_byte@stack, BSS:wiz_rx_byte@stack
+9fca (0001) : y, BSS:textPrintNewLine@stack
+9fca (0001) : curY, BSS:fillSpaceToEnd@stack
+9fcb (0001) : curX, BSS:fillSpaceToEnd@stack
+9fcb (0001) : drive, BSS:fileOpen@stack
+9fcb (0001) : x, BSS:textPrintNewLine@stack
+9fcb (0001) : drive, BSS:fileOpenDir@stack
+0080 (0000) : ZeroEnd, END:zeropage
+0080 (0000) : ZeroStart, START:zeropage
+7a64 (0000) : BSSStart, START:bss
+818a (0000) : BSSEnd, END:bss
+8190 (0000) : HeapStart, START:heap
+9000 (0000) : HeapEnd, END:heap
+9d53 (0000) : StackEnd, END:stack
