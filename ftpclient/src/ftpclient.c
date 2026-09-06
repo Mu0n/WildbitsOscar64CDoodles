@@ -1349,8 +1349,6 @@ static void read_line(char *buf, uint8_t maxlen) {
 				if(newY<0) newY=0; if(newY>464) newY=464;
 				POKEW(PS2_M_X_LO,newX);
 				POKEW(PS2_M_Y_LO,newY);
-			
-				uint8_t mouseWhere = mouseInWhere();
 				
 				//button state
 				lastButtons = kernelEventData.u.mouse.delta.buttons;
@@ -1358,6 +1356,11 @@ static void read_line(char *buf, uint8_t maxlen) {
 				bool rightDown = (lastButtons & 0x02) != 0;
 				bool buttonDown = leftDown || rightDown;
 				
+				if(deltaX != 0 || deltaY !=0) stateHandle(&gState, ET_DELTA_ANALYZE);
+				if(buttonDown != gState.oldButtonDown) stateHandle(&gState, ET_CLICK_ANALYZE); 
+				
+				
+				/*
 				if(!isFileTrailing && buttonDown) //launching a click in the remote area starts a trail 
 				{
 					if(mouseWhere==1 && isRemoteListed)
@@ -1443,6 +1446,7 @@ static void read_line(char *buf, uint8_t maxlen) {
 				if(oldHighlightLocal!=255)forceFileHighlight(15,0,oldHighlightLocal, 1); //white on black
 				oldHighlight=255;
 				oldHighlightLocal =255;
+				*/
 			}
 		else if(kernelEventData.type == kernelEvent(mouse.CLICKS))
 		{
