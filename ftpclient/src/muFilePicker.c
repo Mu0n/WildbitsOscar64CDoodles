@@ -468,9 +468,11 @@ uint8_t pickFile_far(void)
                             FAR_POKEW(FPR_BASE + FPR_cursorIndex, cursorIndex);
                             FAR_POKEW(FPR_BASE + FPR_visualIndex, visualIndex);
 
+/*
                             // draw new cursor
                             textGotoXY(tlX, tlY + visualIndex);
                             printf("%c", 0xFA);
+							*/
                         }
                         else
                         {
@@ -486,9 +488,11 @@ uint8_t pickFile_far(void)
 
                             displayFileList_far(scrollOffset);
 
+/*
                             textGotoXY(tlX, tlY + visualIndex);
                             printf("%c", 0xFA);
-                        }
+*/ 
+						}
                     }
                 }
                 break;
@@ -821,12 +825,14 @@ void displayFileList_far(int scrollOffset)
     // ---------------------------------------------------------
     // Draw scroll indicators
     // ---------------------------------------------------------
-    textGotoXY(tlX + 2, tlY + (visibleEnd - visibleStart + 1));
+    /*
+	textGotoXY(tlX + 2, tlY + (visibleEnd - visibleStart + 1));
 
     char upArrow   = (cursorIndex >= (MAX_VISIBLE_FILES - 1)) ? 0xFB : ' ';
     char downArrow = (fileCount > (cursorIndex - visualIndex + MAX_VISIBLE_FILES)) ? 0xF8 : ' ';
 
-    printf("%c %c", upArrow, downArrow);
+   printf("%c %c", upArrow, downArrow);
+   */
 }
 
 

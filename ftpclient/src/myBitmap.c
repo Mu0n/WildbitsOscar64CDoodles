@@ -20,15 +20,15 @@ void initMyBitmap()
 	bitmapClear();
 	bitmapSetColor(2);
 	bitmapLine(SCR_REMOTE_X*4,    SCR_REMOTE_Y*4-1,   SCR_REMOTE_X_END*4 ,SCR_REMOTE_Y*4-1); //top
-	bitmapLine(SCR_REMOTE_X*4,    SCR_REMOTE_Y*4-1,   SCR_REMOTE_X*4     ,(SCR_REMOTE_Y_END+1)*4); //left
-	bitmapLine(SCR_REMOTE_X_END*4,SCR_REMOTE_Y*4-1,   SCR_REMOTE_X_END*4 ,(SCR_REMOTE_Y_END+1)*4); //right
-	bitmapLine(SCR_REMOTE_X*4,(SCR_REMOTE_Y_END+1)*4, SCR_REMOTE_X_END*4, (SCR_REMOTE_Y_END+1)*4); //bottom
+	bitmapLine(SCR_REMOTE_X*4,    SCR_REMOTE_Y*4-1,   SCR_REMOTE_X*4     ,(SCR_REMOTE_Y_END+2)*4); //left
+	bitmapLine(SCR_REMOTE_X_END*4,SCR_REMOTE_Y*4-1,   SCR_REMOTE_X_END*4 ,(SCR_REMOTE_Y_END+2)*4); //right
+	bitmapLine(SCR_REMOTE_X*4,(SCR_REMOTE_Y_END+2)*4, SCR_REMOTE_X_END*4, (SCR_REMOTE_Y_END+2)*4); //bottom
 	
 	bitmapSetColor(4);
 	bitmapLine(SCR_LOCAL_X*4,    SCR_LOCAL_Y*4-1,   SCR_LOCAL_X_END*4 ,SCR_LOCAL_Y*4-1); //top
-	bitmapLine(SCR_LOCAL_X*4,    SCR_LOCAL_Y*4-1,   SCR_LOCAL_X*4     ,(SCR_LOCAL_Y_END+1)*4); //left
-	bitmapLine(SCR_LOCAL_X_END*4,SCR_LOCAL_Y*4-1,   SCR_LOCAL_X_END*4 ,(SCR_LOCAL_Y_END+1)*4); //right
-	bitmapLine(SCR_LOCAL_X*4,(SCR_LOCAL_Y_END+1)*4, SCR_LOCAL_X_END*4, (SCR_LOCAL_Y_END+1)*4); //bottom
+	bitmapLine(SCR_LOCAL_X*4,    SCR_LOCAL_Y*4-1,   SCR_LOCAL_X*4     ,(SCR_LOCAL_Y_END+2)*4); //left
+	bitmapLine(SCR_LOCAL_X_END*4,SCR_LOCAL_Y*4-1,   SCR_LOCAL_X_END*4 ,(SCR_LOCAL_Y_END+2)*4); //right
+	bitmapLine(SCR_LOCAL_X*4,(SCR_LOCAL_Y_END+2)*4, SCR_LOCAL_X_END*4, (SCR_LOCAL_Y_END+2)*4); //bottom
 	
 	bitmapSetVisible(0, true);bitmapSetVisible(1, false);bitmapSetVisible(2, false);
 }

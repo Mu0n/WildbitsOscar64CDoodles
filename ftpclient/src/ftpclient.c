@@ -69,6 +69,8 @@ high memory usage
 #include "textareas.h"
 #include "mouseAreas.h"
 #include "muFilePicker.h"
+#include "muStates.h"
+#include "muFiles.h"
 
 /* ---- Version ---- */
 #define VERSIONBIG "0"
@@ -108,9 +110,17 @@ high memory usage
 #define SINK_PRINT 1
 #define SINK_FILE  2
 
-#define MAX_REMOTE_FILES 24
-#define PROGRESS_REDRAW_TICKS 8   /* min wait-loop iterations between redraws */
+#define PROGRESS_REDRAW_TICKS 1   /* min wait-loop iterations between redraws */
 
+
+#define WIFI_CTRL_FLOWCTL 0x10   /* bit4: enable RTS/CTS handling in the FPGA UART core */
+
+/* shadow copy -- $DD80 has asymmetric read/write bit layouts (see header
+ * comment), so we must never read-modify-write it; track what we last
+ * wrote instead. */
+ 
+ 
+static uint8_t wifi_ctrl_shadow = 0x00;
 /* ---- Assets --- */
 #pragma section( gfx, 0)
 #pragma region( gfx, 0x10000, 0x10400, , , {gfx} )
@@ -144,13 +154,8 @@ typedef enum {
     RETR_FAILED       /* couldn't even get a data connection; offset unchanged */
 } retr_result_t;
 
-typedef struct  {
-		char name[24];
-		uint32_t size;
-		bool is_dir;
-} RemoteFile;
 
-RemoteFile remoteFiles[MAX_REMOTE_FILES];
+
 static uint32_t downloadBytes = 0;
 static uint32_t downloadTotal = 0;
 static uint32_t downloadLastShown = 0;
@@ -707,7 +712,7 @@ static void draw_download_progress(bool force)
     /* Even after passing the tick gate, skip the actual screen write if
      * the bar didn't visibly change (e.g. downloadTotal unknown, so
      * filled is stuck at 0 between force calls). */
-    if (!force && filled == progressLastFilled) return;
+   // if (!force && filled == progressLastFilled) return;
     progressLastFilled = filled;
 
     textGotoXY(SCR_CLI_X, downloadProgressY);
@@ -747,8 +752,12 @@ static void handle_data_byte(uint8_t link, char c) {
         case SINK_FILE:
             filebuf[filebuf_len++] = (uint8_t)c;
 			downloadBytes++;
-            if (filebuf_len >= FILEBUF_LEN) flush_filebuf();
-            break;
+            if (filebuf_len >= FILEBUF_LEN) 
+			{
+				flush_filebuf();
+			}
+			if((downloadBytes & 0x07FF) == 0) draw_download_progress(false);
+			break;
         default:
             break;
         }
@@ -799,6 +808,15 @@ static bool wiz_atcmd(const char *cmd, uint16_t timeout_frames) {
     uart_puts("\r\n");
     return wiz_wait_atok(timeout_frames);
 }
+static void wiz_reset_demux(void) {
+    rxstate = RX_LINE;
+    ipd_remaining = 0;
+    ipd_hdr_len = 0;
+    linelen = 0;
+    ctrllen = 0;
+    listlinelen = 0;
+}
+
 static bool wiz_init(void) {
     uint8_t tries;
 	/*
@@ -808,9 +826,11 @@ static bool wiz_init(void) {
      * Bit 0 = 0 -> 115200
      */
     POKE(WIFI_CTRL, 0x08);   /* reset tx/rx FIFOs */
+	wifi_ctrl_shadow = 0x08;
     lilpause(20);
 	
     POKE(WIFI_CTRL, 0x00);
+	wifi_ctrl_shadow = 0x00;
     lilpause(100);           /* let the module settle after the FIFO reset --
                                  bump this further if "AT" still times out */
 
@@ -826,7 +846,29 @@ static bool wiz_init(void) {
 
     wiz_atcmd("ATE0", 200);           /* echo off; ignore failure, not fatal */
 
-	
+	/* ---- hardware flow control handshake ----
+     * Configure the module for RTS/CTS first, while our own FPGA side
+     * still has flow control disabled (fully transparent). Only once
+     * the module has accepted it do we flip $DD80 bit4 so the FPGA
+     * starts asserting/honoring the lines. Doing it the other way
+     * round risks both sides waiting on a line the other isn't
+     * driving yet. Non-fatal if it fails -- we just fall back to the
+     * old unprotected behavior. */
+	 /*
+    if (wiz_atcmd("AT+UART_CUR=115200,8,1,0,3", 300)) {
+        wifi_ctrl_shadow |= WIFI_CTRL_FLOWCTL;
+		textPrint("flow control: module ACK, FPGA bit4 set");
+		} else 
+		{
+    textPrint("flow control: AT+UART_CUR FAILED - not enabled");
+	}
+textPrintNewLine(SCR_CLI_X, SCR_CLI_X_END, SCR_CLI_Y, SCR_CLI_Y_END);
+		
+        POKE(WIFI_CTRL, wifi_ctrl_shadow);
+		lilpause(20);
+		*/
+    
+	//wiz_atcmd("AT+UART_CUR=115200,8,1,0,1", 300);
     if (!wiz_atcmd("AT+CWMODE=1", 200)) return false;
     if (!wiz_atcmd("AT+CWDHCP=1,1", 200)) return false;
     if (!wiz_atcmd("AT+CIPMUX=1", 200)) return false;
@@ -1113,6 +1155,8 @@ static retr_result_t ftp_retr_attempt(const char *remote, FILE *fp, uint32_t off
     int code;
     uint16_t t;
     bool timed_out = false;
+	wiz_reset_demux(); 
+	
 
     if (!ftp_pasv(ip, &port)) return RETR_FAILED;
     if (!wiz_open_link(1, ip, port)) {
@@ -1288,28 +1332,6 @@ static bool ftp_stor(const char *local, const char *remote) {
 }
 
 
-
-//force a highlight of a file
-void forceFileHighlight(uint8_t foreColor,uint8_t backColor, uint8_t line, uint8_t whichArea)
-{
-	uint8_t start=0, end=0;
-	if(whichArea==1){start = SCR_REMOTE_X + 7; end = SCR_REMOTE_X_END;}
-	else if(whichArea==2){start = SCR_LOCAL_X; end = SCR_LOCAL_X_END;}
-	else return;
-	
-	textSetColor(foreColor, backColor);
-	POKE(MMU_IO_CTRL,3); // color matrix
-	for(uint8_t x = start; x < end; x++) 
-		{
-			POKE(0xC000 + (uint32_t)x + (uint32_t)line*80, foreColor<<4 | (backColor&0x0F));
-		}
-	
-	POKE(MMU_IO_CTRL,0);
-	textSetColor(15,0); //return to neutral white on black
-}
-
-
-
 /* ===================================================================
  * Text UI
  * =================================================================== */
@@ -1319,8 +1341,7 @@ static void read_line(char *buf, uint8_t maxlen) {
 	int16_t newX=0, newY=0;
     char c;
 	uint8_t lastButtons = 0;
-	static uint8_t oldHighlight = 255;
-	static uint8_t oldHighlightLocal = 255;
+	static bool oldDownButton = false;
 	uint8_t trailOriginArea = 0;
 	bool isShifted = false;
 	
@@ -1347,8 +1368,11 @@ static void read_line(char *buf, uint8_t maxlen) {
 				
 				if(newX<0) newX=0; if(newX>624) newX=624;
 				if(newY<0) newY=0; if(newY>464) newY=464;
-				POKEW(PS2_M_X_LO,newX);
+				POKEW(PS2_M_X_LO,newX); //update mouse cursor position
 				POKEW(PS2_M_Y_LO,newY);
+				
+				
+				uint8_t newArea = mouseInWhere();
 				
 				//button state
 				lastButtons = kernelEventData.u.mouse.delta.buttons;
@@ -1356,53 +1380,49 @@ static void read_line(char *buf, uint8_t maxlen) {
 				bool rightDown = (lastButtons & 0x02) != 0;
 				bool buttonDown = leftDown || rightDown;
 				
-				if(deltaX != 0 || deltaY !=0) stateHandle(&gState, ET_DELTA_ANALYZE);
-				if(buttonDown != gState.oldButtonDown) stateHandle(&gState, ET_CLICK_ANALYZE); 
-				
-				
-				/*
-				if(!isFileTrailing && buttonDown) //launching a click in the remote area starts a trail 
+				if(deltaX != 0 || deltaY !=0) //movement detected
 				{
-					if(mouseWhere==1 && isRemoteListed)
-					{
-					trailOriginArea = 1;
-					isFileTrailing = true; //start the trail
-					spriteSetPosition(0, newX/2+24, newY/2+28);
-					spriteSetVisible(0, true);
-					}
-					else if(mouseWhere==2)
-					{
-					trailOriginArea = 2;
-					isFileTrailing = true; //start the trail
-					spriteSetPosition(0, newX/2+24, newY/2+28);
-					spriteSetVisible(0, true);
-					}
+					stateHandle(ET_MOUSEMOVE, newArea);			
 				}
-				if(isFileTrailing && buttonDown && trailOriginArea != 0) //maintaining a click updates the sprite position
+				if(buttonDown != oldDownButton) //change of buttonDown state detected
+					{
+					if(buttonDown == true)
+						{
+						stateHandle(ET_MOUSECLICK, newArea); 
+						}
+					else
+						{
+						uint8_t possibleXfer = 0;
+						uint8_t otherArea = (newArea == 1 ? 2 : 1);
+						possibleXfer = stateHandle(ET_MOUSEUNCLICK, newArea); 
+						
+						if(possibleXfer == 2) //download remote to local	
+							{
+							if(gState[otherArea - 1].oldHighlight != 255 && strcmp(remoteFiles[gState[otherArea - 1].oldHighlight - SCR_REMOTE_Y].name,"\0"))
+								{
+								char finalName[100];
+								strcpy(finalName, remoteFiles[gState[otherArea - 1].oldHighlight - SCR_REMOTE_Y].name);
+								
+								ftp_retr(remoteFiles[gState[otherArea - 1].oldHighlight - SCR_REMOTE_Y].name, finalName);
+								}
+							}
+						
+						}
+					oldDownButton = buttonDown;
+					}
+				
+				//display file icon sprite when relevant
+				if(gState[0].state == STATE_DRAGOUT || gState[1].state == STATE_DRAGOUT) 
 					{
 					spriteSetPosition(0, newX/2+24, newY/2+28);
 					spriteSetVisible(0, true);
 					}
-				if(isFileTrailing && !buttonDown) //letting go of click ends the trail
+				else if(gState[0].state != STATE_DRAGOUT && gState[1].state != STATE_DRAGOUT)
 					{
-						isFileTrailing = false;
-						spriteSetVisible(0,false);
-						
-						//check if a file transfer request is valid
-						if(mouseWhere==2)
-						{
-							//if(oldHighlight != 255 && strcmp(filesInRemote[oldHighlight - SCR_REMOTE_Y],"\0"))
-							if(oldHighlight != 255 && strcmp(remoteFiles[oldHighlight - SCR_REMOTE_Y].name,"\0"))
-							{
-								char finalName[100];
-								strcpy(finalName, remoteFiles[oldHighlight - SCR_REMOTE_Y].name);
-								
-//textPrint("want ");textPrint(finalName);textPrintNewLine(SCR_CLI_X, SCR_CLI_X_END, SCR_CLI_Y, SCR_CLI_Y_END);
-								ftp_retr(remoteFiles[oldHighlight - SCR_REMOTE_Y].name, finalName);
-								trailOriginArea = 0; //reset the origin
-							}
-						}
+					spriteSetVisible(0, false);
 					}
+				/*
+
 				//detection inside the remote area
 				if(mouseWhere==1 && isRemoteListed && !isFileTrailing) //highlight a file except if a mouse click drag is detected
 					{
@@ -1517,9 +1537,19 @@ static void print_help(void) {
 	
 	uint32_t tBackup = 0x20000;
 	uint32_t cBackup = 0x20800;
+	
+	if(gState[0].oldHighlight!=255)
+	{
+		forceFileHighlight(15,0,gState[0].oldHighlight, gState[0].area); //white on black
+		gState[0].oldHighlight = 255;
+	}
+	if(gState[1].oldHighlight!=255)
+	{
+		forceFileHighlight(15,0,gState[1].oldHighlight, gState[1].area); //white on black
+		gState[1].oldHighlight = 255;
+	}	
+	
 	POKE(PS2_M_MODE_EN,0x00); //disable mouse
-	
-	
 	topLine[0]=160;
 	for(uint8_t z=1; z < (SCR_HELP_X_END - SCR_HELP_X) - 1; z++)
 		{
@@ -1527,24 +1557,26 @@ static void print_help(void) {
 		}
 	topLine[SCR_HELP_X_END - SCR_HELP_X - 1] = 161;
 	topLine[SCR_HELP_X_END - SCR_HELP_X] = 0;
-	
+
 	POKE(MMU_IO_CTRL, 2); //character matrix
+
 	for(uint8_t ty = SCR_HELP_Y; ty < SCR_HELP_Y_END; ty++)
 		{
 		for(uint8_t tx = SCR_HELP_X; tx < SCR_HELP_X_END; tx++) 
 				FAR_POKE(tBackup++, PEEK(0xC000 + (uint32_t)tx + (uint32_t)ty*(uint32_t)80));
 		}
 	
+	tBackup = 0x020000; //reset "pointer"
 	POKE(MMU_IO_CTRL, 3); //color matrix
 	for(uint8_t ty = SCR_HELP_Y; ty < SCR_HELP_Y_END; ty++)
 		{
 		for(uint8_t tx = SCR_HELP_X; tx < SCR_HELP_X_END; tx++) 
 				FAR_POKE(cBackup++, PEEK(0xC000 + (uint32_t)tx + (uint32_t)ty*(uint32_t)80));
 		}
+	cBackup = 0x020800; //reset "pointer"
+
 	POKE(MMU_IO_CTRL, 0);
-	tBackup = 0x20000;
-	cBackup = 0x20800;
-	
+
 	//display help
 	
 	textSetColor(14,6); //cyan over dark blue
@@ -1570,6 +1602,7 @@ static void print_help(void) {
     textPrint(aCol);textPrint("  help                 show this text");fillSpaceToEnd(SCR_HELP_X_END-1);textPrint(aCol);textPrintNewLine(SCR_HELP_X, SCR_HELP_X_END, SCR_HELP_Y, SCR_HELP_Y_END);
 	textPrint(aCol);textPrint("  exit                 exit this program");fillSpaceToEnd(SCR_HELP_X_END-1);textPrint(aCol);textPrintNewLine(SCR_HELP_X, SCR_HELP_X_END, SCR_HELP_Y, SCR_HELP_Y_END);
 	
+	//reuse top line to do the bottom line
 	topLine[0]=162;
 	topLine[SCR_HELP_X_END - SCR_HELP_X - 1] = 163;
 	textPrint(topLine);
@@ -1584,19 +1617,28 @@ static void print_help(void) {
 	textSetColor(15,0); //white over black
 	textSectionClear(SCR_HELP_X_END);
 	//restore what was there before
+	
+
 	POKE(MMU_IO_CTRL, 2); //character matrix
+
+	uint8_t temp=0;
 	for(uint8_t ty = SCR_HELP_Y; ty < SCR_HELP_Y_END; ty++)
 		{
-		for(uint8_t tx = SCR_HELP_X; tx < SCR_HELP_X_END; tx++) 
-				POKE(0xC000 + (uint32_t)tx + (uint32_t)ty*(uint32_t)80,FAR_PEEK(tBackup++));
+		for(uint8_t tx = SCR_HELP_X; tx < SCR_HELP_X_END; tx++){ 
+				temp = FAR_PEEK(tBackup++);
+				POKE(0xC000 + (uint32_t)tx + (uint32_t)ty*(uint32_t)80,temp);
+			}
 		}
 	
 	POKE(MMU_IO_CTRL, 3); //color matrix
 	for(uint8_t ty = SCR_HELP_Y; ty < SCR_HELP_Y_END; ty++)
 		{
-		for(uint8_t tx = SCR_HELP_X; tx < SCR_HELP_X_END; tx++) 
-				POKE(0xC000 + (uint32_t)tx + (uint32_t)ty*(uint32_t)80,FAR_PEEK(cBackup++));
+		for(uint8_t tx = SCR_HELP_X; tx < SCR_HELP_X_END; tx++) {
+				temp = FAR_PEEK(cBackup++);
+				POKE(0xC000 + (uint32_t)tx + (uint32_t)ty*(uint32_t)80,temp);
+			}
 		}
+
 	POKE(MMU_IO_CTRL, 0);
 	POKE(PS2_M_MODE_EN,0x01); //enable mouse
 }
@@ -1654,6 +1696,7 @@ initFPR();
 		textPrint("Modem ready. Type 'help' for commands.");textPrintNewLine(SCR_CLI_X, SCR_CLI_X_END, SCR_CLI_Y, SCR_CLI_Y_END);
 	}	
 	
+	
 //wifi and ftp status bar	
 	textSetColor(0,15);
 	textGotoXY(0,SCR_STATUS_Y);textPrint("Wifi:                FTP:                                  muFTP v");
@@ -1675,6 +1718,9 @@ initFPR();
 //show local files
 showFilesInDirectory(SCR_LOCAL_X, SCR_LOCAL_Y);
 	
+//state machine
+initStates();
+
 //main loop
     for (;;) {
         initTextXY(SCR_CLI_X_END);textPrint("ftp> ");
@@ -1689,6 +1735,7 @@ showFilesInDirectory(SCR_LOCAL_X, SCR_LOCAL_Y);
 			textGotoXY(SCR_CLI_X, SCR_CLI_Y); //reset the cursor
 			cur_cli_y = SCR_CLI_Y;
 			isRemoteListed=false;
+			gState[0].state = STATE_EMPTY;
 			showFilesInDirectory(SCR_LOCAL_X, SCR_LOCAL_Y);
 		} else if (!strcmp(cmd, "wifi")) {
             if (a1 && a2)
@@ -1717,7 +1764,8 @@ showFilesInDirectory(SCR_LOCAL_X, SCR_LOCAL_Y);
 			textPrint("usage: login <user> <pass>");textPrintNewLine(SCR_CLI_X, SCR_CLI_X_END, SCR_CLI_Y, SCR_CLI_Y_END);
 			}
 		} else if (!strcmp(cmd, "ls") || !strcmp(cmd, "dir")) {
-            ftp_list(a1);
+            ftp_list(a1);			
+			stateHandle(ET_LIST, 1); //fill remote
         } else if (!strcmp(cmd, "cd")) {
             if (a1) ftp_cwd(a1);
             else
@@ -1726,6 +1774,8 @@ showFilesInDirectory(SCR_LOCAL_X, SCR_LOCAL_Y);
 			textPrint("usage: cd <path>");textPrintNewLine(SCR_CLI_X, SCR_CLI_X_END, SCR_CLI_Y, SCR_CLI_Y_END);
 			}
 		} else if (!strcmp(cmd, "lcd")) {
+			
+	POKE(PS2_M_MODE_EN,0x00); //disable mouse
             if (a1) ftp_cld(a1);
             else
 			{

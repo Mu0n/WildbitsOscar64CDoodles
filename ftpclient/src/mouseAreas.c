@@ -35,7 +35,7 @@ bool rowFromMouse(uint8_t *row, uint8_t whichArea)
 	
 	r = (uint8_t)(y/8);
 	
-	if(r < start || r >= end)
+	if(r < start || r > end)
 		return false;
 	
 	*row = r;
