@@ -12,7 +12,14 @@
 
 void shutPSG(void);
 void psgNoteOn(uint8_t, uint16_t, uint8_t, uint8_t,uint8_t);
+void psgLegato(uint8_t, uint16_t, uint8_t, uint8_t,uint8_t);
 void psgNoteOff(uint8_t, uint16_t);
 void setMonoPSG(void);
 void setStereoPSG(void);
+
+extern uint16_t psgAddr[];
+extern uint8_t psgLow[];
+extern uint8_t psgHigh[];
+extern uint8_t chanToBytes[];
+
 #endif // MUPSG_H
