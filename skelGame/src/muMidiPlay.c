@@ -30,7 +30,7 @@ EMBED(canyon, "../assets/canyon.mid", 0x50000);
  *  5) Do this to "rewind" the midi file at its beginning and start the playback over: rewindAndPlayMIDI();
  *  6) To load a new MIDI file and start playing that one, do steps 1a+2 to load from a .mid file or steps 1b+2 to get it from high memory
  *
- * v1.1 July 22nd 2026
+ * v1.3 October 2nd 2026
  * Written by Mu0n aka 1Bit Fever Dreams aka AnyBits Fever Dreams
  */
 
@@ -131,7 +131,7 @@ uint8_t loadSMFile(char *name, uint32_t targetAddress) {
 				poke24((uint32_t)targetAddress+(uint32_t)totalBytesRead+(uint32_t)i,buffer[i]);
 				}
 			totalBytesRead += (uint32_t) bytesRead;
-			if(bytesRead < 250) break;
+			//if(bytesRead < 250) break;
 			}
 	fileClose(theMIDIfile);
 	return 0;
@@ -174,12 +174,7 @@ uint16_t readBigEndian16(uint32_t where) {
 uint32_t readBigEndian32(uint32_t where) {
     uint8_t bytes[4];
 
-/*
-	bytes[0] = FAR_PEEK(where);
-	bytes[1] = FAR_PEEK(where+1);
-	bytes[2] = FAR_PEEK(where+2);
-	bytes[3] = FAR_PEEK(where+3);
-*/
+
 	bytes[0] = peek24(where);
 	bytes[1] = peek24(where+1);
 	bytes[2] = peek24(where+2);
@@ -230,14 +225,7 @@ uint8_t readMIDICmd(uint8_t track) {
 	uint8_t extra_byte3, extra_byte4, extra_byte5;
 	
 //status byte or MIDI message reading
-/*
-	status_byte = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset);
-	extra_byte  = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)1);
-	extra_byte2 = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)2);
-	extra_byte3 = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)3);
-	extra_byte4 = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)4);
-	extra_byte5 = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)5);
-	*/
+
 	status_byte = peek24(theOne.tracks[track].start + theOne.tracks[track].offset);
 	extra_byte  = peek24(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)1);
 	extra_byte2 = peek24(theOne.tracks[track].start + theOne.tracks[track].offset + (uint32_t)2);
@@ -275,7 +263,20 @@ uint8_t readMIDICmd(uint8_t track) {
 			theOne.tracks[track].cmd[4] = extra_byte4;
 			theOne.tracks[track].cmd[5] = extra_byte5;
 			}
-		skipWhenFFCmd(track, extra_byte, extra_byte2); //makes the parser offset advance properly for next commands
+		
+		//makes the parser offset advance properly for next commands
+		uint32_t p = theOne.tracks[track].start + theOne.tracks[track].offset + 1;
+		uint32_t p0 = p;
+		uint32_t mlen = 0;
+		uint8_t mb;
+		do
+			{
+			mb = peek24(p++);
+			mlen = (mlen << 7) | (mb & 0x7F);
+			} while(mb & 0x80);
+		theOne.tracks[track].offset += 1 + (p - p0) + mlen;
+		
+		//skipWhenFFCmd(track, extra_byte, extra_byte2); 
 		return 0;
 		}
 //Third, deal with regular MIDI commands			
@@ -308,10 +309,59 @@ uint8_t readMIDICmd(uint8_t track) {
 			{
 			status_byte = status_byte & 0x8F;	//sometimes note offs are note ons with 0 velocity, quirk of some midi sequencers
 			extra_byte2 = 0x7F;	
+			
+			theOne.tracks[track].cmd[0] = status_byte & 0x8F;
+			theOne.tracks[track].cmd[2] = 0x40;
 			}
 		theOne.tracks[track].offset+=2; //complete the 3 byte advance in the offset (or 2 if run-on)		
 		theOne.tracks[track].is2B = false;
 		return 0;
+		}
+	//Fourth, deal with SysEx events: 0xF0 (start) and 0xF7 (escape/continuation)
+	else if(status_byte == 0xF0 || status_byte == 0xF7)
+		{
+		//offset was already advanced past the status byte, so we're now at the VLQ length
+		uint32_t pos = theOne.tracks[track].start + theOne.tracks[track].offset;
+		uint32_t startPos = pos;
+		uint32_t len = 0;
+		uint8_t b;
+
+		do
+			{
+			b = peek24(pos++);
+			len = (len << 7) | (b & 0x7F);
+			} while(b & 0x80);
+
+		theOne.tracks[track].cmd[0] = status_byte;
+		//theOne.tracks[track].sysexStart = pos;   //address of first data byte (new field, uint32_t)
+		//theOne.tracks[track].sysexLen = len;     //number of data bytes (new field, uint32_t)
+
+		//================ MIDI OUT PASSTHROUGH ================
+		if(status_byte == 0xF0)
+			POKE(0xDDA1,0xF0);          //F0 form: the status byte is sent first
+		                                  //F7 form: raw bytes only, no status byte
+		//printf("%02x",0xF0);
+		for(uint32_t i = 0; i < len; i++)
+		{
+		uint8_t newB = peek24(pos + i);
+		//printf(" %02x",newB);
+		POKE(0xDDA1,newB); //payload (normally ends with 0xF7)
+		}
+	
+		if(len > 0 && peek24(pos + len - 1) == 0xF7)
+			__asm{
+				nop
+			}	
+			//lilpause(8); //this is required if it's sent to a Roland MT-32 to avoid buffer overrun. re-implement this if ever needed.
+	
+	
+		//printf("\n");
+		//================================================================
+	
+		//skip the VLQ bytes plus the payload so the next event parses correctly
+		theOne.tracks[track].offset += (pos - startPos) + len;
+		//note: SysEx does not touch lastCmd
+		return 1;
 		}
 	else
 		{
@@ -388,6 +438,8 @@ void exhaustZeroes(uint8_t track)
 //play stuff; call this once in a while in your main loop
 void playMidi()
 {
+	
+	/*
 	if(theOne.cuedDelta > 0x00FFFFFF) //0x00FFFFFF is the max value of the timer0 we can do
 		{
 			//delay up to maximum of 0x00FFFFFF = 2/3rds of a second
@@ -396,15 +448,19 @@ void playMidi()
 		setTimer0(theOne.cuedDelta);
 		return;
 		}
+	*/
 	//do the last delay that's under 2/3rds of a second
 	if(theOne.cuedDelta > 0)	
 		{
-		setTimer0(theOne.cuedDelta);
-		theOne.cuedDelta = 0;
+		armTimer0();
+		//setTimer0(theOne.cuedDelta);
+		//theOne.cuedDelta = 0;
 		return;
 		}
 	performMIDICmd(theOne.cuedIndex);
 
+
+	
 	//
 	//perform this after an event with a non-zero delay has been played, lower the other tracks' deltas by that amount, and refresh next event
 	//
@@ -443,6 +499,12 @@ void initTrack(uint32_t BASE_ADDR) {
 	
 	//read tick
 	theOne.ticks = readBigEndian16(BASE_ADDR+(uint32_t)12);
+	if(theOne.ticks == 0 || (theOne.ticks & 0x8000)) theOne.ticks = 48;
+	{
+		uint32_t usPerTick = (uint32_t)500000 / (uint32_t)theOne.ticks;
+		theOne.timer0PerTick = (usPerTick<<3)+(usPerTick<<2);
+	}
+	
 	
 	for(uint16_t i=0; i<theOne.nbTracks; i++)
 	{
@@ -508,8 +570,21 @@ void sniffNextMIDI() {
 			theOne.cuedIndex = lowestIndex;
 			}
 		}
+	/*
 	if(theOne.cuedDelta > 0) theOne.cuedDelta = theOne.cuedDelta * theOne.timer0PerTick; 
 	setTimer0(theOne.cuedDelta);
+	*/
+	
+	if(theOne.cuedDelta > 0)
+					theOne.cuedDelta = (theOne.cuedDelta * theOne.timer0PerTick) << 1; //<<1 keeps your current effective speed
+	armTimer0();
+			
 }
-
+//substract time left in chunks, comparing to the maximum you can substract
+void armTimer0(void)
+{
+	uint32_t step = (theOne.cuedDelta > 0x00FFFFFF) ? 0x00FFFFFF : theOne.cuedDelta;
+	theOne.cuedDelta -= step;
+	setTimer0(step);
+}
 #endif //MUMIDIPLAY_C

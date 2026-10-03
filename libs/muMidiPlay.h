@@ -30,7 +30,7 @@ EMBED(canyon, "../assets/canyon.mid", 0x50000);
  *  5) Do this to "rewind" the midi file at its beginning and start the playback over: rewindAndPlayMIDI();
  *  6) To load a new MIDI file and start playing that one, do steps 1a+2 to load from a .mid file or steps 1b+2 to get it from high memory
  *
- * v1.1 July 22nd 2026
+ * v1.3 October 2nd 2026
  * Written by Mu0n aka 1Bit Fever Dreams aka AnyBits Fever Dreams
  */
  
@@ -87,6 +87,7 @@ void exhaustZeroes(uint8_t);
 uint8_t readMIDIEvent(uint8_t);
 void sniffNextMIDI(void);
 void sendAME(uint8_t, uint8_t, uint8_t, uint8_t); //this actually sends bytes to the sam2695 chip
+void armTimer0(void);
 /*
 extern struct MIDIParser theOne;
 extern struct midiRecord myMIDIRecord;
