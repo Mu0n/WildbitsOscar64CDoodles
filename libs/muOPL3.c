@@ -11,6 +11,9 @@
  *    followed by at least one call to opl3_note with a note on, and a second call to opl3_note for note off when you're done.
  */
  
+#ifndef MUOPL3_C
+#define MUOPL3_C
+
 #include "f256lib.h"
 #include "muOPL3.h"
 	
@@ -172,3 +175,5 @@ void opl3_note(uint8_t channel, uint16_t fnum, uint8_t block, bool onOrOff) {
     // Set block/frequency (high byte) and enable sound (Key-On) or off depending on onOrOff value
     opl3_write(hb | (uint16_t)OPL_CH_KBF_HI | (uint16_t)(channel-reduce), ((fnum >> 8) & 0x03) | ((uint16_t)block << 2) | (onOrOff?0x20:0x00));
 }
+
+#endif //MUOPL3_C

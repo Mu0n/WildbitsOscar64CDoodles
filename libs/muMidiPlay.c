@@ -131,7 +131,6 @@ uint8_t loadSMFile(char *name, uint32_t targetAddress) {
 				poke24((uint32_t)targetAddress+(uint32_t)totalBytesRead+(uint32_t)i,buffer[i]);
 				}
 			totalBytesRead += (uint32_t) bytesRead;
-			//if(bytesRead < 250) break;
 			}
 	fileClose(theMIDIfile);
 	return 0;

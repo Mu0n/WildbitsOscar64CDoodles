@@ -34,6 +34,9 @@ EMBED(vgmmus, "../assets/doom.vgm", 0x50000);
  * Written by Mu0n aka 1Bit Fever Dreams aka AnyBits Fever Dreams
  */
 
+#ifndef MUVGMPLAY_C
+#define MUVGMPLAY_C
+
 #include "f256lib.h"
 #include "muOPL3.h" //opl3 chip routines
 #include "muVGMPlay.h" //useful routines
@@ -54,7 +57,7 @@ static bool oneLoop = false; //for songs that have a loop, set this once and do 
 void prepVGMForPlay(uint32_t sourceAddress) {
 	opl3_quietAll();
 	startAddr = sourceAddress; //often 0x50000, can be elsewhere
-	detectHeaderStructure();
+	detectHeaderStructureVGM();
 	resetTimer0();
 }
 
@@ -81,7 +84,6 @@ uint8_t getStart(uint16_t ver)
 //if you use an embedded vgm file, then don't use this function
 void loadVGMIntoRam(const char *name, uint32_t targetAddress)
 {
-	bool exitFlag = true; //for the copy loop
 	char buffer[255];//for the copy loop
 	uint8_t bytesRead = 0;//for the copy loop
 	uint32_t soFar = 0;//for the copy loop
@@ -95,10 +97,8 @@ void loadVGMIntoRam(const char *name, uint32_t targetAddress)
 	
 	fileSeek(theVGMfile, 0, SEEK_SET);
     	
-	while(exitFlag)
+	while(bytesRead = fileRead(buffer, sizeof(uint8_t), 255, theVGMfile) > 0)
 	{
-		bytesRead = fileRead(buffer, sizeof(uint8_t), 255, theVGMfile);
-		if(bytesRead != 255) exitFlag = false;
 		for(uint8_t i=0; i<bytesRead; i++)
 			{
 			poke24(targetAddress+(uint32_t)i+(uint32_t)soFar, buffer[i]);
@@ -113,7 +113,7 @@ void loadVGMIntoRam(const char *name, uint32_t targetAddress)
 
 //checks the header, number of tracks, etc. assumes the static startAddr has been set already
 //if opl2 or opl3 mode has to be set, it will happen here
-void detectHeaderStructure()
+void detectHeaderStructureVGM()
 {
 	uint8_t headerBuffer[16];
 	uint16_t version=0;
@@ -183,7 +183,6 @@ void detectHeaderStructure()
 
 				
 		}
-	printf("offs %02x addr %08lx", dataOffset, startAddr + (uint32_t)dataOffset);
 	beginDataAddr = startAddr + (uint32_t)dataOffset;
 	needle = beginDataAddr;
 	if(loopBackTo!=0) loopBackTo = startAddr + (uint32_t)loopBackTo;
@@ -377,3 +376,5 @@ int8_t VGMLoopPass()
 		}
 	return 0;
 }
+
+#endif //MUVGMPLAY_C

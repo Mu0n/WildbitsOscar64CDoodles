@@ -44,7 +44,7 @@ uint8_t getStart(uint16_t);
 //used during the prep of a VGM file
 void loadVGMIntoRam(const char *, uint32_t); //skip using this if the .vgm if embedded
 void prepVGMForPlay(uint32_t); //main workhorse during prep
-void detectHeaderStructure(void); //sets the proper data start of the vgm past the header, detects if a loop is needed
+void detectHeaderStructureVGM(void); //sets the proper data start of the vgm past the header, detects if a loop is needed
 
 //used during playback
 bool isVGMDone(void); //tests to see if the end of song was reached
