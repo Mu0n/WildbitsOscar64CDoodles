@@ -144,7 +144,7 @@ With llvm-mos, use this at the top of your main source file:
 5) Do this to "rewind" the tr2 file at its beginning and start the playback over: `rewindAndPlayTR2();`
 6) To load a new tr2 file and start playing that one, do steps 1a+2 to load from a .tr2 file or steps 1b+2 to get it from memory
 
-7) ## Background RSD (raw sid dumps) file playback ##
+## Background RSD (raw sid dumps) file playback ##
 
 This allows the playback of a rsd file that targets either the SID chip
 
