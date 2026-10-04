@@ -143,3 +143,52 @@ With llvm-mos, use this at the top of your main source file:
 4) During a loop pass, do this to check if the tr2 playback has ended: `if(isTR2Done()) { ... }`
 5) Do this to "rewind" the tr2 file at its beginning and start the playback over: `rewindAndPlayTR2();`
 6) To load a new tr2 file and start playing that one, do steps 1a+2 to load from a .tr2 file or steps 1b+2 to get it from memory
+
+7) ## Background RSD (raw sid dumps) file playback ##
+
+This allows the playback of a rsd file that targets either the SID chip
+
+### Dependencies ###
+
+This will use the FPGA based SID chip of the K, K2 and Jr2. This will monopolize your timer0 during playback.
+
+Just include muSidPlay.c and the rest will follow.
+```
+[Your project] -> [muSidPlay.c] --+--> [muSidPlay.h]
+                                  |
+                                  +--> [muSid.c] -> [muSid.h]
+                                  |
+                                  +--> [muGen2Ram.c] -> [muGen2Ram.h]
+                                  |
+                                  +--> [muTimer0Int.c] -> [muTimer0Int.h]
+```
+
+### Typical Usage ###
+
+1.a) keep your rsd file external and at a known location which could include a path (i.e. `media/tr2/yourfile.rsd`), and load it into high memory using 
+`loadSIDFile("yourfile.rsd", 0x50000)` 
+where 0x50000 is a good address that gives you almost 196kb of space. If you need more, target a different 512k memory bank, like at 0x1000000
+
+or
+
+1.b) embed your rsd file. 
+With oscar64, use this at the top of your main source file:
+```
+#pragma section( sidmus, 0)
+#pragma region( sidmus, 0x50000, 0x5FFFF, , , {sidmus} )
+#pragma data(sidmus)
+__export const char rsd[] = {
+	#embed "../assets/mule.rsd"
+};
+#pragma data(data)
+```
+With llvm-mos, use this at the top of your main source file:
+
+`EMBED(mule, "../assets/mule.rsd", 0x50000);`
+ 
+2) During your setup, use this only once: `prepSIDForPlay(0x50000, size_in_bytes); //change the addresss if needed`
+3) During a loop pass, do this once per pass: `SIDLoopPass();`
+4) During a loop pass, do this to check if the rsd playback has ended: `if(isSIDDone()) { ... }`
+5) Do this to "rewind" the rsd file at its beginning and start the playback over: `rewindAndPlaySID();`
+6) To load a new rsd file and start playing that one, do steps 1a+2 to load from a .rsd file or steps 1b+2 to get it from memory
+7) 
