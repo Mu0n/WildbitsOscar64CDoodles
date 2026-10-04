@@ -191,4 +191,3 @@ With llvm-mos, use this at the top of your main source file:
 4) During a loop pass, do this to check if the rsd playback has ended: `if(isSIDDone()) { ... }`
 5) Do this to "rewind" the rsd file at its beginning and start the playback over: `rewindAndPlaySID();`
 6) To load a new rsd file and start playing that one, do steps 1a+2 to load from a .rsd file or steps 1b+2 to get it from memory
-7) 
