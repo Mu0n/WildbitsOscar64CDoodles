@@ -61,7 +61,7 @@ static bool tr2Done = false;
 void prepTR2ForPlay(uint32_t sourceAddress) {
 	shutPSG();
 	startAddr = sourceAddress; //often 0x50000, can be elsewhere
-	detectHeaderStructure();
+	detectTr2HeaderStructure();
 	
 	for(uint8_t i=0; i<6;i++) legatoPrevious[i]=0;
 	resetSong(0);
@@ -72,7 +72,6 @@ void prepTR2ForPlay(uint32_t sourceAddress) {
 //if you use an embedded tr2 file, then don't use this function
 void loadTR2File(const char *name, uint32_t targetAddress)
 {
-	bool exitFlag = true; //for the copy loop
 	char buffer[255];//for the copy loop
 	uint8_t bytesRead = 0;//for the copy loop
 	uint32_t soFar = 0;//for the copy loop
@@ -86,10 +85,8 @@ void loadTR2File(const char *name, uint32_t targetAddress)
 	
 	fileSeek(theTr2file, 0, SEEK_SET);
     	
-	while(exitFlag)
+	while(bytesRead = fileRead(buffer, sizeof(uint8_t), 255, theTr2file) > 0)
 	{
-		bytesRead = fileRead(buffer, sizeof(uint8_t), 255, theTr2file);
-		if(bytesRead != 255) exitFlag = false;
 		for(uint8_t i=0; i<bytesRead; i++)
 			{
 			poke24(targetAddress+(uint32_t)i+(uint32_t)soFar, buffer[i]);
@@ -124,7 +121,7 @@ setTimer0(0x00066666*(7-theSongs.tempo/25)); //1 frame, will be adjusted to temp
 }
 
 //checks the header, number of tracks, etc. assumes the static startAddr has been set already
-void detectHeaderStructure()
+void detectTr2HeaderStructure()
 {
 	uint8_t subVersion = 0;
 	uint8_t topPattern = 0;
@@ -226,7 +223,7 @@ int8_t TR2LoopPass()
 						if(legatoPrevious[chanIndex] == (nextRead & 0x7F)) //previous was not legato
 							psgNoteOff(chanToBytes[chanIndex], psgAddr[chanIndex]);
 						//small delay needed?? unneeded in the superbasic version
-						psgNoteOn(chanToBytes[chanIndex], psgAddr[chanIndex], psgLow[nextRead],psgHigh[nextRead], 0x08);
+						psgNoteOn(chanToBytes[chanIndex], psgAddr[chanIndex], psgLow[nextRead],psgHigh[nextRead], 0x01);
 						break;
 					case 85: //note off
 						psgNoteOff(chanToBytes[chanIndex], psgAddr[chanIndex]);
@@ -248,7 +245,7 @@ int8_t TR2LoopPass()
 						theSongs.patPtr = (uint16_t)512 + (uint16_t)(theInitPage - 1)*256 + (uint16_t)nextPattern*256;
 						break;
 					case 129 ... 212: //note value | 128 means legato note, just switch the frequency without a note off note on
-						psgNoteOn(chanToBytes[chanIndex], psgAddr[chanIndex], psgLow[nextRead&0x7F],psgHigh[nextRead&0x7F], 0x08);
+						psgNoteOn(chanToBytes[chanIndex], psgAddr[chanIndex], psgLow[nextRead&0x7F],psgHigh[nextRead&0x7F], 0x01);
 						break;
 					default:
 						break;

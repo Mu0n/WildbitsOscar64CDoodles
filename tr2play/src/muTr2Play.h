@@ -19,7 +19,7 @@ void dealKey(void);
 //used during the prep of a tr2 file
 void loadTR2File(const char *, uint32_t); //skip using this if the .tr2 if embedded
 void prepTR2ForPlay(uint32_t); //main workhorse during prep
-void detectHeaderStructure(void); //sets the proper data start of the tr2 past the header, detects if a loop is needed
+void detectTr2HeaderStructure(void); //sets the proper data start of the tr2 past the header, detects if a loop is needed
 void resetSong(uint8_t);
 
 //used during playback
