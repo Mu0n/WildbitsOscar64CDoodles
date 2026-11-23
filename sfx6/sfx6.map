@@ -1,0 +1,297 @@
+sections
+0280 - 21ef : DATA, code
+21ef - 2278 : DATA, data
+2278 - 23e0 : BSS, bss
+23e0 - 9000 : HEAP, heap
+9000 - 9f9e : STACK, stack
+0080 - 0080 : ZEROPAGE, zeropage
+10000 - 13a0e : DATA, camera_sfx
+10000 - 22d4e : DATA, bong_sfx
+10000 - 31c06 : DATA, coin_sfx
+10000 - 45a5c : DATA, tief_sfx
+0200 - 023f : DATA, startup
+9fee - a000 : SSTACK, sstack
+9fee - 9fee : SSTACK, kernelReset@stack
+9fee - 9fee : SSTACK, graphicsDefineColor@stack
+9fee - 9fee : SSTACK, graphicsSetLayerBitmap@stack
+9fee - 9fee : SSTACK, graphicsReset@stack
+9fee - 9fee : SSTACK, textSetDouble@stack
+9fee - 9fee : SSTACK, textSetCursor@stack
+9fee - 9fee : SSTACK, mathUnsignedMultiply@stack
+9fee - 9fee : SSTACK, textDefineForegroundColor@stack
+9fee - 9fee : SSTACK, textDefineBackgroundColor@stack
+9fee - 9fee : SSTACK, textGotoXY@stack
+9fee - 9fee : SSTACK, textClear@stack
+9fee - 9fee : SSTACK, textReset@stack
+9fee - 9fee : SSTACK, bitmapSetVisible@stack
+9fee - 9fee : SSTACK, bitmapReset@stack
+9fee - 9fee : SSTACK, tileSetVisible@stack
+9fee - 9fee : SSTACK, tileReset@stack
+9fee - 9fee : SSTACK, spriteSetVisible@stack
+9fee - 9fee : SSTACK, spriteReset@stack
+9fee - 9fee : SSTACK, fileReset@stack
+9fee - 9fee : SSTACK, _kernelCallWrapper@stack
+9fee - 9fee : SSTACK, randomSeed@stack
+9fe6 - 9fee : SSTACK, randomReset@stack
+9fe6 - 9fe6 : SSTACK, f256Init@stack
+9fee - 9fee : SSTACK, boostVSClock@stack
+9fee - 9fee : SSTACK, setupSound@stack
+9fee - 9fee : SSTACK, pcmHeaderPump@stack
+9fee - 9fee : SSTACK, lowVol@stack
+9fee - 9fee : SSTACK, silencePad@stack
+9fee - 9fee : SSTACK, highVol@stack
+9fee - 9fee : SSTACK, setup@stack
+9fee - 9fee : SSTACK, mathUnsignedAddition@stack
+9fee - 9fee : SSTACK, textPrint@stack
+9fee - 9fee : SSTACK, f256k_scroll@stack
+9fee - 9fee : SSTACK, putpch@stack
+9fee - 9fee : SSTACK, puts@stack
+9fde - 9fee : SSTACK, nformi@stack
+9fde - 9fee : SSTACK, nforml@stack
+9fee - 9fee : SSTACK, isinf@stack
+9fee - 9fee : SSTACK, nformf@stack
+9fd6 - 9fde : SSTACK, sformat@stack
+9fa4 - 9fd6 : SSTACK, printf@stack
+9fee - 9fee : SSTACK, peek24Block@stack
+9fee - 9fee : SSTACK, stopSound@stack
+9fce - 9fee : SSTACK, PCMLoopPass@stack
+9fee - 9fee : SSTACK, _kernelCallWrapper@stack
+9fee - 9fee : SSTACK, kernelNextEvent@stack
+9fee - 9fee : SSTACK, startSound@stack
+9fee - 9fee : SSTACK, dealKeyboard@stack
+9f9e - 9fa4 : SSTACK, f256main@stack
+9fee - 9fee : SSTACK, f256Reset@stack
+9f9e - 9f9e : SSTACK, main@stack
+
+regions
+10000 - 13a0e : 13a0e, 3a0e, camera_sfx
+20000 - 22d4e : 22d4e, 2d4e, bong_sfx
+30000 - 31c06 : 31c06, 1c06, coin_sfx
+40000 - 45a5c : 45a5c, 5a5c, tief_sfx
+0080 - 00ef : 0000, 0000, zeropage
+0200 - 0280 : 023f, 003f, startup
+0280 - 9000 : 2278, 2160, main
+
+objects
+0080 - 0080 : ZeroStart, START:zeropage
+0080 - 0080 : ZeroEnd, END:zeropage
+0200 - 023f : startup, NATIVE_CODE:startup
+0280 - 02b3 : main, NATIVE_CODE:code
+02b3 - 02f2 : f256Init, NATIVE_CODE:code
+02f2 - 0305 : kernelReset, NATIVE_CODE:code
+0305 - 033e : graphicsReset, NATIVE_CODE:code
+033e - 0396 : graphicsDefineColor, NATIVE_CODE:code
+0396 - 03c5 : graphicsSetLayerBitmap, NATIVE_CODE:code
+03c5 - 0409 : textReset, NATIVE_CODE:code
+0409 - 043a : textSetDouble, NATIVE_CODE:code
+043a - 044a : textSetCursor, NATIVE_CODE:code
+044a - 0478 : textDefineForegroundColor, NATIVE_CODE:code
+0478 - 04a1 : mathUnsignedMultiply, NATIVE_CODE:code
+04a1 - 04cf : textDefineBackgroundColor, NATIVE_CODE:code
+04cf - 0552 : textClear, NATIVE_CODE:code
+0552 - 056b : textGotoXY, NATIVE_CODE:code
+056b - 063f : bitmapReset, NATIVE_CODE:code
+063f - 0674 : bitmapSetVisible, NATIVE_CODE:code
+0674 - 0692 : tileReset, NATIVE_CODE:code
+0692 - 06d8 : tileSetVisible, NATIVE_CODE:code
+06d8 - 06ea : spriteReset, NATIVE_CODE:code
+06ea - 0704 : spriteSetVisible, NATIVE_CODE:code
+0704 - 070f : fileReset, NATIVE_CODE:code
+070f - 0759 : randomReset, NATIVE_CODE:code
+0759 - 0761 : _kernelCallWrapper, NATIVE_CODE:code
+0761 - 0779 : _kernelCallRaw, NATIVE_CODE:code
+0779 - 07de : f256main, NATIVE_CODE:code
+07de - 08fc : setup, NATIVE_CODE:code
+08fc - 091e : boostVSClock, NATIVE_CODE:code
+091e - 0963 : setupSound, NATIVE_CODE:code
+0963 - 0971 : pcmHeaderPump, NATIVE_CODE:code
+0971 - 0993 : lowVol, NATIVE_CODE:code
+0993 - 09bf : silencePad, NATIVE_CODE:code
+09bf - 09df : highVol, NATIVE_CODE:code
+09df - 0b72 : textPrint, NATIVE_CODE:code
+0b72 - 0baf : mathUnsignedAddition, NATIVE_CODE:code
+0baf - 0bef : *, DATA:code
+0bef - 0c17 : printf, NATIVE_CODE:code
+0c17 - 105c : sformat, NATIVE_CODE:code
+105c - 1071 : puts, NATIVE_CODE:code
+1071 - 122b : putpch, NATIVE_CODE:code
+122b - 128f : f256k_scroll, NATIVE_CODE:code
+128f - 13aa : nformi, NATIVE_CODE:code
+13aa - 14f6 : nforml, NATIVE_CODE:code
+14f6 - 1a46 : nformf, NATIVE_CODE:code
+1a46 - 1a55 : isinf, NATIVE_CODE:code
+1a55 - 1a5a : *, DATA:code
+1a5a - 1baf : PCMLoopPass, NATIVE_CODE:code
+1baf - 1be1 : peek24Block, NATIVE_CODE:code
+1be1 - 1bf4 : stopSound, NATIVE_CODE:code
+1bf4 - 1c41 : dealKeyboard, NATIVE_CODE:code
+1c41 - 1c51 : kernelNextEvent, NATIVE_CODE:code
+1c51 - 1c59 : _kernelCallWrapper, NATIVE_CODE:code
+1c59 - 1c71 : _kernelCallRaw, NATIVE_CODE:code
+1c71 - 1c8c : startSound, NATIVE_CODE:code
+1c8c - 1ca9 : f256Reset, NATIVE_CODE:code
+1ca9 - 1ce1 : mul16by8, NATIVE_CODE:code
+1ce1 - 1d26 : freg, NATIVE_CODE:code
+1d26 - 1e13 : faddsub, NATIVE_CODE:code
+1e13 - 1ead : crt_fmul, NATIVE_CODE:code
+1ead - 1edb : crt_fmul8, NATIVE_CODE:code
+1edb - 1f89 : crt_fdiv, NATIVE_CODE:code
+1f89 - 1fa7 : divs16, NATIVE_CODE:code
+1fa7 - 1fb5 : negaccu, NATIVE_CODE:code
+1fb5 - 1fc3 : negtmp, NATIVE_CODE:code
+1fc3 - 2048 : divmod, NATIVE_CODE:code
+2048 - 2067 : mods16, NATIVE_CODE:code
+2067 - 2075 : negtmpb, NATIVE_CODE:code
+2075 - 20c1 : f32_to_i16, NATIVE_CODE:code
+20c1 - 20df : sint16_to_float, NATIVE_CODE:code
+20df - 2108 : uint16_to_float, NATIVE_CODE:code
+2108 - 21df : divmod32, NATIVE_CODE:code
+21df - 21ef : __multab10L, DATA:code
+21ef - 21f0 : _ccolor, DATA:data
+21f0 - 21f1 : _MAX_COL, DATA:data
+21f1 - 21f2 : _MAX_ROW, DATA:data
+21f2 - 21f3 : _col, DATA:data
+21f3 - 21f4 : _row, DATA:data
+21f4 - 21f5 : f256k_color, DATA:data
+21f5 - 21f6 : globalPause, DATA:data
+21f6 - 21f7 : countActiveChannels, DATA:data
+21f7 - 21f9 : kernelArgs, DATA:bss
+21f9 - 2200 : kernelEventData, DATA:bss
+2200 - 2230 : textColors, DATA:data
+2230 - 225c : pcmHeader, DATA:data
+225c - 2278 : fround5, DATA:data
+2278 - 2278 : BSSStart, START:bss
+2278 - 227b : _BITMAP_CLUT, DATA:bss
+227b - 227e : _tileSize, DATA:bss
+227e - 22be : _spriteCtl, DATA:bss
+22be - 22c6 : _dirStream, DATA:bss
+22c6 - 22c8 : _kern_target, DATA:bss
+22c8 - 22c9 : _kernelError, DATA:bss
+22c9 - 22e9 : blk, DATA:bss
+2300 - 23a0 : sfx, DATA:bss
+23a0 - 23e0 : sums, DATA:bss
+23e0 - 23e0 : BSSEnd, END:bss
+9f9e - 9f9e : StackEnd, END:stack
+9f9e - 9fa4 : f256main@stack, BSS:f256main@stack
+9fa4 - 9fd6 : buff, BSS:printf@stack
+9fce - 9fee : buf32, BSS:PCMLoopPass@stack
+9fd6 - 9fde : si, BSS:sformat@stack
+9fde - 9fee : buffer, BSS:nformi@stack
+9fde - 9fee : buffer, BSS:nforml@stack
+9fe6 - 9fee : clock, BSS:randomReset@stack
+9fee - a000 : sstack, STACK:sstack
+10000 - 13a0e : camera_sfx, DATA:camera_sfx
+20000 - 22d4e : bong_sfx, DATA:bong_sfx
+30000 - 31c06 : coin_sfx, DATA:coin_sfx
+40000 - 45a5c : tief_sfx, DATA:tief_sfx
+
+objects by size
+40000 (5a5c) : tief_sfx, DATA:tief_sfx
+10000 (3a0e) : camera_sfx, DATA:camera_sfx
+20000 (2d4e) : bong_sfx, DATA:bong_sfx
+30000 (1c06) : coin_sfx, DATA:coin_sfx
+14f6 (0550) : nformf, NATIVE_CODE:code
+0c17 (0445) : sformat, NATIVE_CODE:code
+1071 (01ba) : putpch, NATIVE_CODE:code
+09df (0193) : textPrint, NATIVE_CODE:code
+1a5a (0155) : PCMLoopPass, NATIVE_CODE:code
+13aa (014c) : nforml, NATIVE_CODE:code
+07de (011e) : setup, NATIVE_CODE:code
+128f (011b) : nformi, NATIVE_CODE:code
+1d26 (00ed) : faddsub, NATIVE_CODE:code
+2108 (00d7) : divmod32, NATIVE_CODE:code
+056b (00d4) : bitmapReset, NATIVE_CODE:code
+1edb (00ae) : crt_fdiv, NATIVE_CODE:code
+2300 (00a0) : sfx, DATA:bss
+1e13 (009a) : crt_fmul, NATIVE_CODE:code
+1fc3 (0085) : divmod, NATIVE_CODE:code
+04cf (0083) : textClear, NATIVE_CODE:code
+0779 (0065) : f256main, NATIVE_CODE:code
+122b (0064) : f256k_scroll, NATIVE_CODE:code
+033e (0058) : graphicsDefineColor, NATIVE_CODE:code
+1bf4 (004d) : dealKeyboard, NATIVE_CODE:code
+2075 (004c) : f32_to_i16, NATIVE_CODE:code
+070f (004a) : randomReset, NATIVE_CODE:code
+0692 (0046) : tileSetVisible, NATIVE_CODE:code
+091e (0045) : setupSound, NATIVE_CODE:code
+1ce1 (0045) : freg, NATIVE_CODE:code
+03c5 (0044) : textReset, NATIVE_CODE:code
+227e (0040) : _spriteCtl, DATA:bss
+23a0 (0040) : sums, DATA:bss
+0200 (003f) : startup, NATIVE_CODE:startup
+02b3 (003f) : f256Init, NATIVE_CODE:code
+0b72 (003d) : mathUnsignedAddition, NATIVE_CODE:code
+0305 (0039) : graphicsReset, NATIVE_CODE:code
+1ca9 (0038) : mul16by8, NATIVE_CODE:code
+063f (0035) : bitmapSetVisible, NATIVE_CODE:code
+0280 (0033) : main, NATIVE_CODE:code
+1baf (0032) : peek24Block, NATIVE_CODE:code
+9fa4 (0032) : buff, BSS:printf@stack
+0409 (0031) : textSetDouble, NATIVE_CODE:code
+2200 (0030) : textColors, DATA:data
+0396 (002f) : graphicsSetLayerBitmap, NATIVE_CODE:code
+044a (002e) : textDefineForegroundColor, NATIVE_CODE:code
+04a1 (002e) : textDefineBackgroundColor, NATIVE_CODE:code
+1ead (002e) : crt_fmul8, NATIVE_CODE:code
+0993 (002c) : silencePad, NATIVE_CODE:code
+2230 (002c) : pcmHeader, DATA:data
+0478 (0029) : mathUnsignedMultiply, NATIVE_CODE:code
+20df (0029) : uint16_to_float, NATIVE_CODE:code
+0bef (0028) : printf, NATIVE_CODE:code
+08fc (0022) : boostVSClock, NATIVE_CODE:code
+0971 (0022) : lowVol, NATIVE_CODE:code
+09bf (0020) : highVol, NATIVE_CODE:code
+22c9 (0020) : blk, DATA:bss
+9fce (0020) : buf32, BSS:PCMLoopPass@stack
+2048 (001f) : mods16, NATIVE_CODE:code
+0674 (001e) : tileReset, NATIVE_CODE:code
+1f89 (001e) : divs16, NATIVE_CODE:code
+20c1 (001e) : sint16_to_float, NATIVE_CODE:code
+1c8c (001d) : f256Reset, NATIVE_CODE:code
+225c (001c) : fround5, DATA:data
+1c71 (001b) : startSound, NATIVE_CODE:code
+06ea (001a) : spriteSetVisible, NATIVE_CODE:code
+0552 (0019) : textGotoXY, NATIVE_CODE:code
+0761 (0018) : _kernelCallRaw, NATIVE_CODE:code
+1c59 (0018) : _kernelCallRaw, NATIVE_CODE:code
+105c (0015) : puts, NATIVE_CODE:code
+02f2 (0013) : kernelReset, NATIVE_CODE:code
+1be1 (0013) : stopSound, NATIVE_CODE:code
+06d8 (0012) : spriteReset, NATIVE_CODE:code
+9fee (0012) : sstack, STACK:sstack
+043a (0010) : textSetCursor, NATIVE_CODE:code
+1c41 (0010) : kernelNextEvent, NATIVE_CODE:code
+21df (0010) : __multab10L, DATA:code
+9fde (0010) : buffer, BSS:nformi@stack
+9fde (0010) : buffer, BSS:nforml@stack
+1a46 (000f) : isinf, NATIVE_CODE:code
+0963 (000e) : pcmHeaderPump, NATIVE_CODE:code
+1fa7 (000e) : negaccu, NATIVE_CODE:code
+1fb5 (000e) : negtmp, NATIVE_CODE:code
+2067 (000e) : negtmpb, NATIVE_CODE:code
+0704 (000b) : fileReset, NATIVE_CODE:code
+0759 (0008) : _kernelCallWrapper, NATIVE_CODE:code
+1c51 (0008) : _kernelCallWrapper, NATIVE_CODE:code
+22be (0008) : _dirStream, DATA:bss
+9fd6 (0008) : si, BSS:sformat@stack
+9fe6 (0008) : clock, BSS:randomReset@stack
+21f9 (0007) : kernelEventData, DATA:bss
+9f9e (0006) : f256main@stack, BSS:f256main@stack
+2278 (0003) : _BITMAP_CLUT, DATA:bss
+227b (0003) : _tileSize, DATA:bss
+21f7 (0002) : kernelArgs, DATA:bss
+22c6 (0002) : _kern_target, DATA:bss
+21ef (0001) : _ccolor, DATA:data
+21f0 (0001) : _MAX_COL, DATA:data
+21f1 (0001) : _MAX_ROW, DATA:data
+21f2 (0001) : _col, DATA:data
+21f3 (0001) : _row, DATA:data
+21f4 (0001) : f256k_color, DATA:data
+21f5 (0001) : globalPause, DATA:data
+21f6 (0001) : countActiveChannels, DATA:data
+22c8 (0001) : _kernelError, DATA:bss
+0080 (0000) : ZeroStart, START:zeropage
+0080 (0000) : ZeroEnd, END:zeropage
+2278 (0000) : BSSStart, START:bss
+23e0 (0000) : BSSEnd, END:bss
+9f9e (0000) : StackEnd, END:stack
