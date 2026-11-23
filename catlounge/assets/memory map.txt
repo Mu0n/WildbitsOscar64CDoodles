@@ -1,0 +1,12 @@
+bitmap_001,   0x10000, 76800
+palette_001,  0x23000, 1024
+midi_003,     0x28000, 10447
+sprites_001,  0x2B000, 45056
+sprites_002,  0x3B000, 1024
+bitmap_002    0x40000, 76800
+sprites_003,  0x53000, 16384
+controllers,  0x57000, 4096
+shadowmap1,   0x70000, 38400
+FilePicker_Directory, 0x80000, 76800
+bitmap_003,   0x100000, 76800
+any_music_file_loaded_from_a_file, 0x180000, 64000

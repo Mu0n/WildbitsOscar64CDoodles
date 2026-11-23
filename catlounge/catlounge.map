@@ -1,0 +1,984 @@
+sections
+0280 - 7a16 : DATA, code
+7a16 - 7beb : DATA, data
+7beb - 7ea1 : BSS, bss
+7ea8 - 9000 : HEAP, heap
+9000 - 9754 : STACK, stack
+0080 - 0080 : ZEROPAGE, zeropage
+10000 - 22c00 : DATA, bitmap_001
+10000 - 52c00 : DATA, bitmap_002
+10000 - 23400 : DATA, palette_001
+10000 - 3d400 : DATA, notes_001
+10000 - 112c00 : DATA, bitmap_room2
+10000 - 7c600 : DATA, shadowmap1
+10000 - 3c600 : DATA, shadowmap2
+10000 - 36400 : DATA, sprites_001
+10000 - 54000 : DATA, chip_psg
+10000 - 55000 : DATA, chip_midi
+10000 - 56000 : DATA, chip_sid
+10000 - 57000 : DATA, chip_opl
+10000 - 58000 : DATA, chip_mp3
+10000 - 59000 : DATA, whiskers_worried
+10000 - 5a000 : DATA, controllers
+0200 - 023f : DATA, startup
+9ff4 - a000 : SSTACK, sstack
+9ff4 - 9ff4 : SSTACK, graphicsSetLayerBitmap@stack
+9ff4 - 9ff4 : SSTACK, textGotoXY@stack
+9ff4 - 9ff4 : SSTACK, bitmapSetVisible@stack
+9ff4 - 9ff4 : SSTACK, tileSetVisible@stack
+9ff4 - 9ff4 : SSTACK, spriteSetVisible@stack
+9ff4 - 9ff4 : SSTACK, _kernelCallWrapper@stack
+9fec - 9ff4 : SSTACK, f256Init@stack
+9ff4 - 9ff4 : SSTACK, bitmapSetAddress@stack
+9ff4 - 9ff4 : SSTACK, FAR_PEEK@stack
+9ff4 - 9ff4 : SSTACK, FAR_POKE@stack
+9ff4 - 9ff4 : SSTACK, swapBMLogo@stack
+9ff4 - 9ff4 : SSTACK, opl3_write@stack
+9ff4 - 9ff4 : SSTACK, opl3_quietAll@stack
+9ff4 - 9ff4 : SSTACK, midiShutAllChannels@stack
+9ff4 - 9ff4 : SSTACK, shutPSG@stack
+9ff0 - 9ff4 : SSTACK, clearSIDRegisters@stack
+9ff0 - 9ff0 : SSTACK, quitGracefully@stack
+9ff4 - 9ff4 : SSTACK, spriteSetPosition@stack
+9ff4 - 9ff4 : SSTACK, initSpriteRecord@stack
+9ff4 - 9ff4 : SSTACK, getShadowColor@stack
+9ff4 - 9ff4 : SSTACK, spriteSetPos@stack
+9ff4 - 9ff4 : SSTACK, stateChange@stack
+9ff4 - 9ff4 : SSTACK, fpr_set_currentPath@stack
+9ff4 - 9ff4 : SSTACK, textSetColor@stack
+9ff4 - 9ff4 : SSTACK, textPrint@stack
+9ff4 - 9ff4 : SSTACK, wipeStatusBar@stack
+9ff4 - 9ff4 : SSTACK, textScrollUp@stack
+9ff4 - 9ff4 : SSTACK, textPutChar@stack
+9ff4 - 9ff4 : SSTACK, commonBoxTop@stack
+9ff4 - 9ff4 : SSTACK, textPrintNewLine@stack
+9ff4 - 9ff4 : SSTACK, fillSpaceToEnd@stack
+9ff4 - 9ff4 : SSTACK, commonBoxBottom@stack
+9ff4 - 9ff4 : SSTACK, textSectionClear@stack
+9ff4 - 9ff4 : SSTACK, resetTimer0@stack
+9ff4 - 9ff4 : SSTACK, setTimer0@stack
+9ff4 - 9ff4 : SSTACK, armTimer0@stack
+9ff4 - 9ff4 : SSTACK, performMIDICmd@stack
+9ff4 - 9ff4 : SSTACK, peek24@stack
+9ff4 - 9ff4 : SSTACK, readMIDICmd@stack
+9ff4 - 9ff4 : SSTACK, chainEvent@stack
+9ff2 - 9ff4 : SSTACK, exhaustZeroes@stack
+9ff4 - 9ff4 : SSTACK, psgNoteOff@stack
+9ff4 - 9ff4 : SSTACK, psgNoteOn@stack
+9ff4 - 9ff4 : SSTACK, armRowTimer@stack
+9ff4 - 9ff4 : SSTACK, shutAllSIDVoices@stack
+9ff4 - 9ff4 : SSTACK, _kernelCallWrapper@stack
+9ff4 - 9ff4 : SSTACK, f256getchar@stack
+9ff4 - 9ff4 : SSTACK, _kernelCallWrapper@stack
+9ff4 - 9ff4 : SSTACK, kernelNextEvent@stack
+9ff4 - 9ff4 : SSTACK, _kernelCallWrapper@stack
+9ff4 - 9ff4 : SSTACK, kernelNextEvent@stack
+9ff4 - 9ff4 : SSTACK, fileClose@stack
+9ff4 - 9ff4 : SSTACK, closeDownMp3File@stack
+9ff4 - 9ff4 : SSTACK, switchMode@stack
+9ff4 - 9ff4 : SSTACK, onTuneEnded@stack
+9ff4 - 9ff4 : SSTACK, padPollDelayUntilReady@stack
+9ff4 - 9ff4 : SSTACK, pollNES@stack
+9ff4 - 9ff4 : SSTACK, padState@stack
+9ff4 - 9ff4 : SSTACK, spriteFrameChange@stack
+9ff4 - 9ff4 : SSTACK, animationGetIndex@stack
+9ff4 - 9ff4 : SSTACK, updateWalkState@stack
+9ff4 - 9ff4 : SSTACK, exitCouchModal@stack
+9ff4 - 9ff4 : SSTACK, pollSNES@stack
+9ff4 - 9ff4 : SSTACK, pullEvent@stack
+9ff4 - 9ff4 : SSTACK, exitTurnTableModal@stack
+9ff4 - 9ff4 : SSTACK, flipSprite@stack
+9ff0 - 9ff0 : SSTACK, invokePause@stack
+9ff4 - 9ff4 : SSTACK, _kernelCallWrapper@stack
+9ff4 - 9ff4 : SSTACK, kernelNextEvent@stack
+9ff4 - 9ff4 : SSTACK, enterTurnTableModal@stack
+9ff4 - 9ff4 : SSTACK, fpr_get_currentPath@stack
+9ff4 - 9ff4 : SSTACK, strlen@stack
+9ff4 - 9ff4 : SSTACK, pathWithoutDrive@stack
+9ff3 - 9ff4 : SSTACK, fileOpenDir@stack
+9ff4 - 9ff4 : SSTACK, fileCloseDir@stack
+9ff4 - 9ff4 : SSTACK, FAR_POKEW@stack
+9ff4 - 9ff4 : SSTACK, reprepFPR_far@stack
+9ff4 - 9ff4 : SSTACK, fileReadDir@stack
+9ff4 - 9ff4 : SSTACK, strcmp@stack
+9ff4 - 9ff4 : SSTACK, tolower@stack
+9ff4 - 9ff4 : SSTACK, endsWithExt@stack
+9fb3 - 9ff3 : SSTACK, readDirectory_far@stack
+9ff4 - 9ff4 : SSTACK, FAR_PEEKW@stack
+9f04 - 9ff4 : SSTACK, sortFileList_far@stack
+9ff4 - 9ff4 : SSTACK, formatGuide@stack
+9ff4 - 9ff4 : SSTACK, wipeArea_far@stack
+9ff4 - 9ff4 : SSTACK, f256putchar@stack
+9ff4 - 9ff4 : SSTACK, f256k_scroll@stack
+9ff4 - 9ff4 : SSTACK, puts@stack
+9fe4 - 9ff4 : SSTACK, nformi@stack
+9fe4 - 9ff4 : SSTACK, nforml@stack
+9fdc - 9fe4 : SSTACK, sformat@stack
+9faa - 9fdc : SSTACK, printf@stack
+9e9e - 9faa : SSTACK, displayFileList_far@stack
+9ff4 - 9ff4 : SSTACK, joystickPicking@stack
+9fdc - 9fdc : SSTACK, sprintf@stack
+9d98 - 9e9e : SSTACK, filePickModal_far@stack
+9ca2 - 9d98 : SSTACK, getTheFile_far@stack
+9ff4 - 9ff4 : SSTACK, _kernelCallWrapper@stack
+9ff4 - 9ff4 : SSTACK, initMyTimers@stack
+9ff3 - 9ff4 : SSTACK, fileOpen@stack
+9ff4 - 9ff4 : SSTACK, fileRead@stack
+9ff4 - 9ff4 : SSTACK, poke24@stack
+9ef9 - 9ff3 : SSTACK, loadSMFile@stack
+9ff4 - 9ff4 : SSTACK, readBigEndian16@stack
+9fe0 - 9ff4 : SSTACK, prepMIDIForPlay@stack
+9ff4 - 9ff4 : SSTACK, writePlaying@stack
+9ef4 - 9ff3 : SSTACK, loadVGMIntoRam@stack
+9ef9 - 9ff3 : SSTACK, loadTR2File@stack
+9ff4 - 9ff4 : SSTACK, resetSong@stack
+9ef9 - 9ff3 : SSTACK, loadSIDIntoRam@stack
+97b4 - 9ff4 : SSTACK, read2KChunk@stack
+9795 - 97b4 : SSTACK, invokeTurnTable@stack
+9ff4 - 9ff4 : SSTACK, animationUpdate@stack
+9ff4 - 9ff4 : SSTACK, spriteGetPosition@stack
+9ff4 - 9ff4 : SSTACK, spriteSwapRooms@stack
+9ff4 - 9ff4 : SSTACK, swapRoom@stack
+9ff4 - 9ff4 : SSTACK, f256Reset@stack
+9754 - 9795 : SSTACK, main@stack
+
+regions
+10000 - 22c00 : 22c00, 12c00, bitmap_001
+40000 - 52c00 : 52c00, 12c00, bitmap_002
+23000 - 23400 : 23400, 0400, palette_001
+3d000 - 3d400 : 3d400, 0400, notes_001
+100000 - 112c00 : 112c00, 12c00, bitmap_room2
+73000 - 7c600 : 7c600, 9600, shadowmap1
+33000 - 3c600 : 3c600, 9600, shadowmap2
+2b000 - 36400 : 36400, b400, sprites_001
+53000 - 54000 : 54000, 1000, chip_psg
+54000 - 55000 : 55000, 1000, chip_midi
+55000 - 56000 : 56000, 1000, chip_sid
+56000 - 57000 : 57000, 1000, chip_opl
+57000 - 58000 : 58000, 1000, chip_mp3
+58000 - 59000 : 59000, 1000, whiskers_worried
+59000 - 5a000 : 5a000, 1000, controllers
+0080 - 00ef : 0000, 0000, zeropage
+0200 - 0280 : 023f, 003f, startup
+0280 - 9000 : 7beb, 7c21, main
+
+objects
+0080 - 0080 : ZeroEnd, END:zeropage
+0080 - 0080 : ZeroStart, START:zeropage
+0200 - 023f : startup, NATIVE_CODE:startup
+0280 - 1bff : main, NATIVE_CODE:code
+1bff - 1f8a : f256Init, NATIVE_CODE:code
+1f8a - 1fba : graphicsSetLayerBitmap, NATIVE_CODE:code
+1fba - 1fc2 : textGotoXY@proxy, NATIVE_CODE:code
+1fc2 - 1fdb : textGotoXY, NATIVE_CODE:code
+1fdb - 1fdf : swapBMLogo@proxy, NATIVE_CODE:code
+1fdf - 20d4 : swapBMLogo, NATIVE_CODE:code
+20d4 - 2109 : bitmapSetVisible, NATIVE_CODE:code
+2109 - 2147 : tileSetVisible, NATIVE_CODE:code
+2147 - 215f : onTuneEnded, NATIVE_CODE:code
+215f - 2179 : spriteSetVisible, NATIVE_CODE:code
+2179 - 217f : _kernelCallWrapper, NATIVE_CODE:code
+217f - 2197 : _kernelCallRaw, NATIVE_CODE:code
+2197 - 21d7 : bitmapSetAddress, NATIVE_CODE:code
+21d7 - 21db : FAR_PEEK@proxy, NATIVE_CODE:code
+21db - 220e : FAR_PEEK, NATIVE_CODE:code
+220e - 2212 : FAR_POKE@proxy, NATIVE_CODE:code
+2212 - 2243 : FAR_POKE, NATIVE_CODE:code
+2243 - 2251 : quitGracefully, NATIVE_CODE:code
+2251 - 22a4 : clearSIDRegisters, NATIVE_CODE:code
+22a4 - 22e7 : opl3_quietAll, NATIVE_CODE:code
+22e7 - 22fe : opl3_write, NATIVE_CODE:code
+22fe - 2316 : midiShutAllChannels, NATIVE_CODE:code
+2316 - 232b : shutPSG, NATIVE_CODE:code
+232b - 23b0 : initSpriteRecord, NATIVE_CODE:code
+23b0 - 23b4 : spriteSetPosition@proxy, NATIVE_CODE:code
+23b4 - 23dc : spriteSetPosition, NATIVE_CODE:code
+23dc - 245e : stateChange, NATIVE_CODE:code
+245e - 24f7 : spriteSetPos, NATIVE_CODE:code
+24f7 - 255f : getShadowColor, NATIVE_CODE:code
+255f - 2583 : fpr_set_currentPath, NATIVE_CODE:code
+2583 - 2592 : *, DATA:code
+2592 - 25ac : wipeStatusBar, NATIVE_CODE:code
+25ac - 25b4 : textSetColor@proxy, NATIVE_CODE:code
+25b4 - 25c1 : textSetColor, NATIVE_CODE:code
+25c1 - 25c9 : textPrint@proxy, NATIVE_CODE:code
+25c9 - 2780 : textPrint, NATIVE_CODE:code
+2780 - 2782 : *, DATA:code
+2782 - 278e : commonBoxTop@proxy, NATIVE_CODE:code
+278e - 27ba : commonBoxTop, NATIVE_CODE:code
+27ba - 2880 : textPutChar, NATIVE_CODE:code
+2880 - 2972 : textScrollUp, NATIVE_CODE:code
+2972 - 2976 : textPrintNewLine@proxy, NATIVE_CODE:code
+2976 - 29ee : textPrintNewLine, NATIVE_CODE:code
+29ee - 2a16 : *, DATA:code
+2a16 - 2a1a : fillSpaceToEnd@proxy, NATIVE_CODE:code
+2a1a - 2a37 : fillSpaceToEnd, NATIVE_CODE:code
+2a37 - 2a52 : *, DATA:code
+2a52 - 2a65 : *, DATA:code
+2a65 - 2a89 : *, DATA:code
+2a89 - 2aac : *, DATA:code
+2aac - 2ab4 : commonBoxBottom@proxy, NATIVE_CODE:code
+2ab4 - 2ae3 : commonBoxBottom, NATIVE_CODE:code
+2ae3 - 2b5e : textSectionClear, NATIVE_CODE:code
+2b5e - 2bb0 : armTimer0, NATIVE_CODE:code
+2bb0 - 2bbe : setTimer0, NATIVE_CODE:code
+2bbe - 2bce : resetTimer0, NATIVE_CODE:code
+2bce - 2c9f : performMIDICmd, NATIVE_CODE:code
+2c9f - 2d11 : exhaustZeroes, NATIVE_CODE:code
+2d11 - 2e6c : chainEvent, NATIVE_CODE:code
+2e6c - 2e98 : peek24, NATIVE_CODE:code
+2e98 - 33f4 : readMIDICmd, NATIVE_CODE:code
+33f4 - 3403 : psgNoteOff, NATIVE_CODE:code
+3403 - 341c : psgNoteOn, NATIVE_CODE:code
+341c - 3482 : resetSong, NATIVE_CODE:code
+3482 - 34be : armRowTimer, NATIVE_CODE:code
+34be - 34ef : shutAllSIDVoices, NATIVE_CODE:code
+34ef - 3514 : f256getchar, NATIVE_CODE:code
+3514 - 351a : _kernelCallWrapper, NATIVE_CODE:code
+351a - 3532 : _kernelCallRaw, NATIVE_CODE:code
+3532 - 353f : kernelNextEvent, NATIVE_CODE:code
+353f - 3545 : _kernelCallWrapper, NATIVE_CODE:code
+3545 - 355d : _kernelCallRaw, NATIVE_CODE:code
+355d - 357d : closeDownMp3File, NATIVE_CODE:code
+357d - 3585 : fileClose@proxy, NATIVE_CODE:code
+3585 - 35be : fileClose, NATIVE_CODE:code
+35be - 35cb : kernelNextEvent, NATIVE_CODE:code
+35cb - 35d3 : _kernelCallWrapper, NATIVE_CODE:code
+35d3 - 35eb : _kernelCallRaw, NATIVE_CODE:code
+35eb - 35ef : switchMode@proxy, NATIVE_CODE:code
+35ef - 362d : switchMode, NATIVE_CODE:code
+362d - 3638 : pollNES, NATIVE_CODE:code
+3638 - 363f : padPollDelayUntilReady, NATIVE_CODE:code
+363f - 3645 : padState, NATIVE_CODE:code
+3645 - 367a : exitCouchModal, NATIVE_CODE:code
+367a - 376e : updateWalkState, NATIVE_CODE:code
+376e - 377e : spriteFrameChange@proxy, NATIVE_CODE:code
+377e - 37cd : spriteFrameChange, NATIVE_CODE:code
+37cd - 37d5 : animationGetIndex@proxy, NATIVE_CODE:code
+37d5 - 380d : animationGetIndex, NATIVE_CODE:code
+380d - 381b : pollSNES, NATIVE_CODE:code
+381b - 3850 : pullEvent, NATIVE_CODE:code
+3850 - 3887 : exitTurnTableModal, NATIVE_CODE:code
+3887 - 3894 : flipSprite, NATIVE_CODE:code
+3894 - 3898 : invokePause@proxy, NATIVE_CODE:code
+3898 - 38e5 : invokePause, NATIVE_CODE:code
+38e5 - 3921 : *, DATA:code
+3921 - 3949 : *, DATA:code
+3949 - 3972 : *, DATA:code
+3972 - 39a4 : *, DATA:code
+39a4 - 39c9 : *, DATA:code
+39c9 - 39fd : *, DATA:code
+39fd - 3a21 : *, DATA:code
+3a21 - 3a49 : *, DATA:code
+3a49 - 3a52 : *, DATA:code
+3a52 - 3a8c : *, DATA:code
+3a8c - 3ac6 : *, DATA:code
+3ac6 - 3b00 : *, DATA:code
+3b00 - 3b0d : kernelNextEvent, NATIVE_CODE:code
+3b0d - 3b13 : _kernelCallWrapper, NATIVE_CODE:code
+3b13 - 3b2b : _kernelCallRaw, NATIVE_CODE:code
+3b2b - 3b62 : *, DATA:code
+3b62 - 3b69 : *, DATA:code
+3b69 - 3b7b : *, DATA:code
+3b7b - 3b82 : *, DATA:code
+3b82 - 3b89 : *, DATA:code
+3b89 - 3b90 : *, DATA:code
+3b90 - 3b97 : *, DATA:code
+3b97 - 3bab : *, DATA:code
+3bab - 3bc3 : *, DATA:code
+3bc3 - 3c32 : enterTurnTableModal, NATIVE_CODE:code
+3c32 - 4063 : invokeTurnTable, NATIVE_CODE:code
+4063 - 4103 : getTheFile_far, NATIVE_CODE:code
+4103 - 412c : fpr_get_currentPath, NATIVE_CODE:code
+412c - 41ae : fileOpenDir, NATIVE_CODE:code
+41ae - 41fc : pathWithoutDrive, NATIVE_CODE:code
+41fc - 4204 : strlen@proxy, NATIVE_CODE:code
+4204 - 4220 : strlen, NATIVE_CODE:code
+4220 - 43f6 : readDirectory_far, NATIVE_CODE:code
+43f6 - 4430 : fileCloseDir, NATIVE_CODE:code
+4430 - 4433 : *, DATA:code
+4433 - 4b47 : filePickModal_far, NATIVE_CODE:code
+4b47 - 4b4b : reprepFPR_far@proxy, NATIVE_CODE:code
+4b4b - 4bd8 : reprepFPR_far, NATIVE_CODE:code
+4bd8 - 4bdf : FAR_POKEW@proxy, NATIVE_CODE:code
+4bdf - 4beb : FAR_POKEW@proxy, NATIVE_CODE:code
+4beb - 4c11 : FAR_POKEW, NATIVE_CODE:code
+4c11 - 4c15 : *, DATA:code
+4c15 - 4c19 : *, DATA:code
+4c19 - 4c1d : *, DATA:code
+4c1d - 4c21 : *, DATA:code
+4c21 - 4c25 : *, DATA:code
+4c25 - 4c29 : *, DATA:code
+4c29 - 4cf3 : fileReadDir, NATIVE_CODE:code
+4cf3 - 4cfb : strcmp@proxy, NATIVE_CODE:code
+4cfb - 4d28 : strcmp, NATIVE_CODE:code
+4d28 - 4d2a : *, DATA:code
+4d2a - 4d2d : *, DATA:code
+4d2d - 4dad : endsWithExt, NATIVE_CODE:code
+4dad - 4db8 : tolower, NATIVE_CODE:code
+4db8 - 5142 : sortFileList_far, NATIVE_CODE:code
+5142 - 514a : FAR_PEEKW@proxy, NATIVE_CODE:code
+514a - 5179 : FAR_PEEKW, NATIVE_CODE:code
+5179 - 5243 : formatGuide, NATIVE_CODE:code
+5243 - 5272 : *, DATA:code
+5272 - 5299 : *, DATA:code
+5299 - 52c0 : *, DATA:code
+52c0 - 52ed : *, DATA:code
+52ed - 532a : *, DATA:code
+532a - 5363 : *, DATA:code
+5363 - 5659 : displayFileList_far, NATIVE_CODE:code
+5659 - 565d : wipeArea_far@proxy, NATIVE_CODE:code
+565d - 5695 : wipeArea_far, NATIVE_CODE:code
+5695 - 5697 : *, DATA:code
+5697 - 56bd : printf, NATIVE_CODE:code
+56bd - 5ee9 : sformat, NATIVE_CODE:code
+5ee9 - 60ae : puts, NATIVE_CODE:code
+60ae - 610f : f256k_scroll, NATIVE_CODE:code
+610f - 622a : nformi, NATIVE_CODE:code
+622a - 6368 : nforml, NATIVE_CODE:code
+6368 - 636b : *, DATA:code
+636b - 6520 : joystickPicking, NATIVE_CODE:code
+6520 - 654b : sprintf, NATIVE_CODE:code
+654b - 6551 : *, DATA:code
+6551 - 6577 : initMyTimers, NATIVE_CODE:code
+6577 - 657f : _kernelCallWrapper, NATIVE_CODE:code
+657f - 6597 : _kernelCallRaw, NATIVE_CODE:code
+6597 - 65a2 : *, DATA:code
+65a2 - 65a6 : *, DATA:code
+65a6 - 6650 : loadSMFile, NATIVE_CODE:code
+6650 - 6658 : fileOpen@proxy, NATIVE_CODE:code
+6658 - 66fd : fileOpen, NATIVE_CODE:code
+66fd - 66ff : *, DATA:code
+66ff - 6703 : fileRead@proxy, NATIVE_CODE:code
+6703 - 67dc : fileRead, NATIVE_CODE:code
+67dc - 6804 : poke24, NATIVE_CODE:code
+6804 - 6c33 : prepMIDIForPlay, NATIVE_CODE:code
+6c33 - 6c64 : readBigEndian16, NATIVE_CODE:code
+6c64 - 6c81 : writePlaying, NATIVE_CODE:code
+6c81 - 6c88 : textPutChar@proxy, NATIVE_CODE:code
+6c88 - 6c92 : *, DATA:code
+6c92 - 6c96 : *, DATA:code
+6c96 - 6d47 : loadVGMIntoRam, NATIVE_CODE:code
+6d47 - 6dc3 : loadTR2File, NATIVE_CODE:code
+6dc3 - 6ecc : loadSIDIntoRam, NATIVE_CODE:code
+6ecc - 6ecf : *, DATA:code
+6ecf - 6f34 : read2KChunk, NATIVE_CODE:code
+6f34 - 6f4c : *, DATA:code
+6f4c - 7011 : animationUpdate, NATIVE_CODE:code
+7011 - 7021 : spriteGetPosition@proxy, NATIVE_CODE:code
+7021 - 7041 : spriteGetPosition, NATIVE_CODE:code
+7041 - 7079 : spriteSwapRooms, NATIVE_CODE:code
+7079 - 709c : swapRoom, NATIVE_CODE:code
+709c - 70b9 : f256Reset, NATIVE_CODE:code
+70b9 - 70f1 : mul16by8, NATIVE_CODE:code
+70f1 - 7127 : mul32by8, NATIVE_CODE:code
+7127 - 716c : freg, NATIVE_CODE:code
+716c - 7259 : faddsub, NATIVE_CODE:code
+7259 - 72f3 : crt_fmul, NATIVE_CODE:code
+72f3 - 7321 : crt_fmul8, NATIVE_CODE:code
+7321 - 73cf : crt_fdiv, NATIVE_CODE:code
+73cf - 73ea : divs16, NATIVE_CODE:code
+73ea - 73f8 : negaccu, NATIVE_CODE:code
+73f8 - 7406 : negtmp, NATIVE_CODE:code
+7406 - 748b : divmod, NATIVE_CODE:code
+748b - 74aa : mods16, NATIVE_CODE:code
+74d4 - 74e2 : negtmpb, NATIVE_CODE:code
+74e2 - 752e : f32_to_i16, NATIVE_CODE:code
+752e - 754c : sint16_to_float, NATIVE_CODE:code
+754c - 7575 : uint16_to_float, NATIVE_CODE:code
+7575 - 75dd : mul32, NATIVE_CODE:code
+75fb - 76d2 : divmod32, NATIVE_CODE:code
+76d2 - 76e3 : store32, NATIVE_CODE:code
+76e3 - 76f4 : load32, NATIVE_CODE:code
+76f4 - 77c2 : crt_malloc, NATIVE_CODE:code
+77c2 - 785b : crt_free, NATIVE_CODE:code
+785b - 7860 : __multab9L, DATA:code
+7860 - 7866 : __multab3L, DATA:code
+7866 - 786d : fillSpaceToEnd@proxy, NATIVE_CODE:code
+786d - 7874 : textPrintNewLine@proxy, NATIVE_CODE:code
+7874 - 787b : textPrintNewLine@proxy, NATIVE_CODE:code
+787b - 7882 : setTimer0@proxy, NATIVE_CODE:code
+7882 - 788a : swapBMLogo@proxy, NATIVE_CODE:code
+788a - 789d : fileRead@proxy, NATIVE_CODE:code
+789d - 78a8 : freg@proxy, NATIVE_CODE:code
+78a8 - 78b3 : textPrint@proxy, NATIVE_CODE:code
+78b3 - 78be : textPrint@proxy, NATIVE_CODE:code
+78c3 - 78ce : textPrint@proxy, NATIVE_CODE:code
+78ce - 78d9 : textPrint@proxy, NATIVE_CODE:code
+78d9 - 78e0 : FAR_PEEKW@proxy, NATIVE_CODE:code
+78e0 - 78eb : FAR_PEEKW@proxy, NATIVE_CODE:code
+78eb - 78f2 : FAR_PEEKW@proxy, NATIVE_CODE:code
+78f2 - 7905 : FAR_PEEKW@proxy, NATIVE_CODE:code
+7905 - 790c : FAR_PEEKW@proxy, NATIVE_CODE:code
+790c - 7917 : strcmp@proxy, NATIVE_CODE:code
+7917 - 7922 : strcmp@proxy, NATIVE_CODE:code
+7922 - 792d : FAR_POKEW@proxy, NATIVE_CODE:code
+792d - 793c : FAR_PEEK@proxy, NATIVE_CODE:code
+793c - 794b : spriteFrameChange@proxy, NATIVE_CODE:code
+794b - 7956 : spriteFrameChange@proxy, NATIVE_CODE:code
+7956 - 796d : spriteFrameChange@proxy, NATIVE_CODE:code
+796d - 7978 : animationGetIndex@proxy, NATIVE_CODE:code
+7978 - 797f : textPutChar@proxy, NATIVE_CODE:code
+797f - 7986 : textSetColor@proxy, NATIVE_CODE:code
+7986 - 798d : textSetColor@proxy, NATIVE_CODE:code
+798d - 7998 : textSetColor@proxy, NATIVE_CODE:code
+7998 - 799f : textSetColor@proxy, NATIVE_CODE:code
+799f - 79aa : textSetColor@proxy, NATIVE_CODE:code
+79aa - 79b5 : textGotoXY@proxy, NATIVE_CODE:code
+79b5 - 79c0 : textGotoXY@proxy, NATIVE_CODE:code
+79c0 - 79c7 : textGotoXY@proxy, NATIVE_CODE:code
+79c7 - 79d2 : textGotoXY@proxy, NATIVE_CODE:code
+79d2 - 79d9 : textGotoXY@proxy, NATIVE_CODE:code
+79d9 - 79e0 : textGotoXY@proxy, NATIVE_CODE:code
+79e0 - 79e7 : textGotoXY@proxy, NATIVE_CODE:code
+79e7 - 79f2 : textGotoXY@proxy, NATIVE_CODE:code
+79f2 - 79fd : FAR_POKE@proxy, NATIVE_CODE:code
+79fd - 7a08 : FAR_POKE@proxy, NATIVE_CODE:code
+7a08 - 7a0f : spriteSetVisible@proxy, NATIVE_CODE:code
+7a0f - 7a16 : spriteSetVisible@proxy, NATIVE_CODE:code
+7a16 - 7a17 : _ccolor, DATA:data
+7a17 - 7a18 : _MAX_COL, DATA:data
+7a18 - 7a19 : _MAX_ROW, DATA:data
+7a19 - 7a49 : textColors, DATA:data
+7a49 - 7a4a : _col, DATA:data
+7a4a - 7a4b : _row, DATA:data
+7a4b - 7a4f : *, DATA:data
+7a4f - 7a53 : WALKR_L, DATA:data
+7a53 - 7a63 : whiskersWalkR_L, DATA:data
+7a63 - 7a64 : room2, DATA:data
+7a64 - 7a6c : whiskersL, DATA:data
+7a6c - 7a70 : SIT_L, DATA:data
+7a70 - 7a74 : whiskersSitL, DATA:data
+7a74 - 7a7c : whiskersR, DATA:data
+7a7c - 7a80 : SIT_R, DATA:data
+7a80 - 7a86 : whiskersSitR, DATA:data
+7a86 - 7a8e : notesSAS, DATA:data
+7a8e - 7a92 : NOTESSPRANIM, DATA:data
+7a92 - 7a9a : notesAnim, DATA:data
+7a9a - 7aa2 : *, DATA:data
+7aa2 - 7aa6 : addy, DATA:data
+7aa6 - 7aa7 : modePlay, DATA:data
+7aa7 - 7aa8 : tuneEnded, DATA:data
+7aa8 - 7aa9 : globalPause, DATA:data
+7aa9 - 7aaa : tr2Done, DATA:data
+7aaa - 7aab : chanIndex, DATA:data
+7aab - 7aac : currow, DATA:data
+7aac - 7aad : endPending, DATA:data
+7aad - 7ab5 : chanToBytes, DATA:data
+7ab5 - 7ac5 : psgAddr, DATA:data
+7ac5 - 7b19 : psgLow, DATA:data
+7b19 - 7b6d : psgHigh, DATA:data
+7b6d - 7b6e : eopSeen, DATA:data
+7b6e - 7b72 : tooBigWait, DATA:data
+7b72 - 7b73 : oneLoop, DATA:data
+7b73 - 7b74 : isMP3Finished, DATA:data
+7b74 - 7b75 : kqHead, DATA:data
+7b75 - 7b76 : kqTail, DATA:data
+7b76 - 7b77 : jUpDown, DATA:data
+7b77 - 7b78 : jDownDown, DATA:data
+7b78 - 7b79 : modal_Couch, DATA:data
+7b79 - 7b7a : modalActive, DATA:data
+7b7a - 7b7b : couchLatched, DATA:data
+7b7b - 7b7c : kRightDown, DATA:data
+7b7c - 7b7d : jRightDown, DATA:data
+7b7d - 7b7e : rightDown, DATA:data
+7b7e - 7b7f : kLeftDown, DATA:data
+7b7f - 7b80 : jLeftDown, DATA:data
+7b80 - 7b81 : leftDown, DATA:data
+7b81 - 7b82 : kUpDown, DATA:data
+7b82 - 7b83 : upDown, DATA:data
+7b83 - 7b84 : kDownDown, DATA:data
+7b84 - 7b85 : downDown, DATA:data
+7b85 - 7b86 : modal_TurnTable, DATA:data
+7b86 - 7b87 : facingRight, DATA:data
+7b87 - 7b8b : WALKR_R, DATA:data
+7b8b - 7b9b : whiskersWalkR_R, DATA:data
+7b9b - 7b9f : WALKL_L, DATA:data
+7b9f - 7baf : whiskersWalkL_L, DATA:data
+7baf - 7bb3 : WALKL_R, DATA:data
+7bb3 - 7bc3 : whiskersWalkL_R, DATA:data
+7bc3 - 7bc7 : SIT_L_BENCH, DATA:data
+7bc7 - 7bc9 : whiskersSitLBench, DATA:data
+7bc9 - 7bca : turnTableLatched, DATA:data
+7bca - 7bcb : shiftLatch, DATA:data
+7bcb - 7bcd : s, DATA:data
+7bcd - 7be9 : fround5, DATA:data
+7be9 - 7bea : padLatch, DATA:data
+7bea - 7beb : roomChangeLatched, DATA:data
+7beb - 7beb : BSSStart, START:bss
+7beb - 7bed : kernelArgs, DATA:bss
+7bed - 7bf4 : kernelEventData, DATA:bss
+7bf4 - 7c00 : _BITMAP_BASE, DATA:bss
+7c00 - 7c03 : _BITMAP_CLUT, DATA:bss
+7c03 - 7c06 : _tileSize, DATA:bss
+7c06 - 7c46 : _spriteCtl, DATA:bss
+7c46 - 7c4e : _dirStream, DATA:bss
+7c4e - 7c50 : _kern_target, DATA:bss
+7c50 - 7c51 : _kernelError, DATA:bss
+7c51 - 7c7e : spriteRecords, DATA:bss
+7c7e - 7c95 : theOne, DATA:bss
+7c95 - 7c96 : comeRightTrough, DATA:bss
+7c96 - 7c9a : startAddr, DATA:bss
+7c9a - 7cb0 : theSongs, DATA:bss
+7cb0 - 7cb6 : legatoPrevious, DATA:bss
+7cb6 - 7cb7 : theInitPage, DATA:bss
+7cb7 - 7cbb : samplesSoFar, DATA:bss
+7cbb - 7cbf : totalWait, DATA:bss
+7cbf - 7cc0 : comeRightTrough, DATA:bss
+7cc0 - 7cc4 : needle, DATA:bss
+7cc4 - 7cc8 : gd3Location, DATA:bss
+7cc8 - 7ccc : loopBackTo, DATA:bss
+7ccc - 7cd0 : beginDataAddr, DATA:bss
+7cd0 - 7cd4 : samplesSoFar, DATA:bss
+7cd4 - 7cd8 : totalWait, DATA:bss
+7cd8 - 7cdc : needle, DATA:bss
+7cdc - 7cdd : palOrNTSC, DATA:bss
+7cdd - 7cdf : theMP3File, DATA:bss
+7cdf - 7cff : kq, DATA:bss
+7cff - 7e01 : fileDirEntS, DATA:bss
+7e01 - 7e79 : FPName, DATA:bss
+7e79 - 7e99 : myMIDIRecord, DATA:bss
+7e99 - 7e9d : needle, DATA:bss
+7e9d - 7ea1 : HeapNode, DATA:bss
+7ea1 - 7ea1 : BSSEnd, END:bss
+7ea8 - 7ea8 : HeapStart, START:heap
+9000 - 9000 : HeapEnd, END:heap
+9754 - 9768 : main@stack, BSS:main@stack
+9754 - 9754 : StackEnd, END:stack
+9768 - 976a : y, BSS:main@stack
+976a - 976c : x, BSS:main@stack
+976d - 978d : buf32, BSS:main@stack
+978d - 9795 : customGlyph, BSS:main@stack
+9795 - 97a4 : invokeTurnTable@stack, BSS:invokeTurnTable@stack
+97a4 - 97b4 : headerBuffer, BSS:invokeTurnTable@stack
+97b4 - 9fb4 : mp3Buffer, BSS:read2KChunk@stack
+9ca2 - 9ca8 : getTheFile_far@stack, BSS:getTheFile_far@stack
+9ca8 - 9d20 : selected, BSS:getTheFile_far@stack
+9d20 - 9d5c : finalPath, BSS:getTheFile_far@stack
+9d5c - 9d98 : localPath, BSS:getTheFile_far@stack
+9d98 - 9daa : filePickModal_far@stack, BSS:filePickModal_far@stack
+9daa - 9dea : finalDir, BSS:filePickModal_far@stack
+9dea - 9e62 : selectedFile, BSS:filePickModal_far@stack
+9e62 - 9e9e : currentPath, BSS:filePickModal_far@stack
+9e9e - 9eb6 : displayFileList_far@stack, BSS:displayFileList_far@stack
+9eb6 - 9eba : extBuf, BSS:displayFileList_far@stack
+9eba - 9f32 : nameBuf, BSS:displayFileList_far@stack
+9ef4 - 9ff3 : buffer, BSS:loadVGMIntoRam@stack
+9ef9 - 9ff3 : buffer, BSS:loadSMFile@stack
+9ef9 - 9ff3 : buffer, BSS:loadTR2File@stack
+9ef9 - 9ff3 : buffer, BSS:loadSIDIntoRam@stack
+9f04 - 9f7c : jName, BSS:sortFileList_far@stack
+9f32 - 9faa : nameBuf, BSS:displayFileList_far@stack
+9f7c - 9ff4 : keyName, BSS:sortFileList_far@stack
+9faa - 9fdc : buff, BSS:printf@stack
+9fb3 - 9fb7 : extBuf, BSS:readDirectory_far@stack
+9fb4 - 9ff4 : buf32, BSS:read2KChunk@stack
+9fb7 - 9ff3 : localPath, BSS:readDirectory_far@stack
+9fdc - 9fe4 : si, BSS:sformat@stack
+9fe0 - 9ff4 : prepMIDIForPlay@stack, BSS:prepMIDIForPlay@stack
+9fe4 - 9ff4 : buffer, BSS:nforml@stack
+9fe4 - 9ff4 : buffer, BSS:nformi@stack
+9fec - 9ff4 : clock, BSS:f256Init@stack
+9ff0 - 9ff4 : base, BSS:clearSIDRegisters@stack
+9ff2 - 9ff4 : exhaustZeroes@stack, BSS:exhaustZeroes@stack
+9ff3 - 9ff4 : drive, BSS:fileOpenDir@stack
+9ff3 - 9ff4 : drive, BSS:fileOpen@stack
+9ff4 - a000 : sstack, STACK:sstack
+10000 - 22c00 : bitmap_001, DATA:bitmap_001
+23000 - 23400 : palette_001, DATA:palette_001
+2b000 - 36400 : sprites_001, DATA:sprites_001
+33000 - 3c600 : shadowmap2, DATA:shadowmap2
+3d000 - 3d400 : notes_001, DATA:notes_001
+40000 - 52c00 : bitmap_002, DATA:bitmap_002
+53000 - 54000 : chip_psg, DATA:chip_psg
+54000 - 55000 : chip_midi, DATA:chip_midi
+55000 - 56000 : chip_sid, DATA:chip_sid
+56000 - 57000 : chip_opl, DATA:chip_opl
+57000 - 58000 : chip_mp3, DATA:chip_mp3
+58000 - 59000 : whiskers_worried, DATA:whiskers_worried
+59000 - 5a000 : controllers, DATA:controllers
+73000 - 7c600 : shadowmap1, DATA:shadowmap1
+100000 - 112c00 : bitmap_room2, DATA:bitmap_room2
+
+objects by size
+10000 (12c00) : bitmap_001, DATA:bitmap_001
+40000 (12c00) : bitmap_002, DATA:bitmap_002
+100000 (12c00) : bitmap_room2, DATA:bitmap_room2
+2b000 (b400) : sprites_001, DATA:sprites_001
+33000 (9600) : shadowmap2, DATA:shadowmap2
+73000 (9600) : shadowmap1, DATA:shadowmap1
+0280 (197f) : main, NATIVE_CODE:code
+53000 (1000) : chip_psg, DATA:chip_psg
+54000 (1000) : chip_midi, DATA:chip_midi
+55000 (1000) : chip_sid, DATA:chip_sid
+56000 (1000) : chip_opl, DATA:chip_opl
+57000 (1000) : chip_mp3, DATA:chip_mp3
+58000 (1000) : whiskers_worried, DATA:whiskers_worried
+59000 (1000) : controllers, DATA:controllers
+56bd (082c) : sformat, NATIVE_CODE:code
+97b4 (0800) : mp3Buffer, BSS:read2KChunk@stack
+4433 (0714) : filePickModal_far, NATIVE_CODE:code
+2e98 (055c) : readMIDICmd, NATIVE_CODE:code
+3c32 (0431) : invokeTurnTable, NATIVE_CODE:code
+6804 (042f) : prepMIDIForPlay, NATIVE_CODE:code
+23000 (0400) : palette_001, DATA:palette_001
+3d000 (0400) : notes_001, DATA:notes_001
+1bff (038b) : f256Init, NATIVE_CODE:code
+4db8 (038a) : sortFileList_far, NATIVE_CODE:code
+5363 (02f6) : displayFileList_far, NATIVE_CODE:code
+4220 (01d6) : readDirectory_far, NATIVE_CODE:code
+5ee9 (01c5) : puts, NATIVE_CODE:code
+25c9 (01b7) : textPrint, NATIVE_CODE:code
+636b (01b5) : joystickPicking, NATIVE_CODE:code
+2d11 (015b) : chainEvent, NATIVE_CODE:code
+622a (013e) : nforml, NATIVE_CODE:code
+610f (011b) : nformi, NATIVE_CODE:code
+6dc3 (0109) : loadSIDIntoRam, NATIVE_CODE:code
+7cff (0102) : fileDirEntS, DATA:bss
+9ef4 (00ff) : buffer, BSS:loadVGMIntoRam@stack
+9ef9 (00fa) : buffer, BSS:loadSMFile@stack
+9ef9 (00fa) : buffer, BSS:loadTR2File@stack
+9ef9 (00fa) : buffer, BSS:loadSIDIntoRam@stack
+1fdf (00f5) : swapBMLogo, NATIVE_CODE:code
+367a (00f4) : updateWalkState, NATIVE_CODE:code
+2880 (00f2) : textScrollUp, NATIVE_CODE:code
+716c (00ed) : faddsub, NATIVE_CODE:code
+6703 (00d9) : fileRead, NATIVE_CODE:code
+75fb (00d7) : divmod32, NATIVE_CODE:code
+2bce (00d1) : performMIDICmd, NATIVE_CODE:code
+76f4 (00ce) : crt_malloc, NATIVE_CODE:code
+4c29 (00ca) : fileReadDir, NATIVE_CODE:code
+5179 (00ca) : formatGuide, NATIVE_CODE:code
+27ba (00c6) : textPutChar, NATIVE_CODE:code
+6f4c (00c5) : animationUpdate, NATIVE_CODE:code
+6c96 (00b1) : loadVGMIntoRam, NATIVE_CODE:code
+7321 (00ae) : crt_fdiv, NATIVE_CODE:code
+65a6 (00aa) : loadSMFile, NATIVE_CODE:code
+6658 (00a5) : fileOpen, NATIVE_CODE:code
+4063 (00a0) : getTheFile_far, NATIVE_CODE:code
+7259 (009a) : crt_fmul, NATIVE_CODE:code
+245e (0099) : spriteSetPos, NATIVE_CODE:code
+77c2 (0099) : crt_free, NATIVE_CODE:code
+4b4b (008d) : reprepFPR_far, NATIVE_CODE:code
+232b (0085) : initSpriteRecord, NATIVE_CODE:code
+7406 (0085) : divmod, NATIVE_CODE:code
+23dc (0082) : stateChange, NATIVE_CODE:code
+412c (0082) : fileOpenDir, NATIVE_CODE:code
+4d2d (0080) : endsWithExt, NATIVE_CODE:code
+6d47 (007c) : loadTR2File, NATIVE_CODE:code
+2ae3 (007b) : textSectionClear, NATIVE_CODE:code
+2976 (0078) : textPrintNewLine, NATIVE_CODE:code
+7e01 (0078) : FPName, DATA:bss
+9ca8 (0078) : selected, BSS:getTheFile_far@stack
+9dea (0078) : selectedFile, BSS:filePickModal_far@stack
+9eba (0078) : nameBuf, BSS:displayFileList_far@stack
+9f04 (0078) : jName, BSS:sortFileList_far@stack
+9f32 (0078) : nameBuf, BSS:displayFileList_far@stack
+9f7c (0078) : keyName, BSS:sortFileList_far@stack
+2c9f (0072) : exhaustZeroes, NATIVE_CODE:code
+3bc3 (006f) : enterTurnTableModal, NATIVE_CODE:code
+24f7 (0068) : getShadowColor, NATIVE_CODE:code
+7575 (0068) : mul32, NATIVE_CODE:code
+341c (0066) : resetSong, NATIVE_CODE:code
+6ecf (0065) : read2KChunk, NATIVE_CODE:code
+60ae (0061) : f256k_scroll, NATIVE_CODE:code
+7ac5 (0054) : psgLow, DATA:data
+7b19 (0054) : psgHigh, DATA:data
+2251 (0053) : clearSIDRegisters, NATIVE_CODE:code
+2b5e (0052) : armTimer0, NATIVE_CODE:code
+377e (004f) : spriteFrameChange, NATIVE_CODE:code
+41ae (004e) : pathWithoutDrive, NATIVE_CODE:code
+3898 (004d) : invokePause, NATIVE_CODE:code
+74e2 (004c) : f32_to_i16, NATIVE_CODE:code
+7127 (0045) : freg, NATIVE_CODE:code
+22a4 (0043) : opl3_quietAll, NATIVE_CODE:code
+2197 (0040) : bitmapSetAddress, NATIVE_CODE:code
+7c06 (0040) : _spriteCtl, DATA:bss
+9daa (0040) : finalDir, BSS:filePickModal_far@stack
+9fb4 (0040) : buf32, BSS:read2KChunk@stack
+0200 (003f) : startup, NATIVE_CODE:startup
+2109 (003e) : tileSetVisible, NATIVE_CODE:code
+35ef (003e) : switchMode, NATIVE_CODE:code
+3482 (003c) : armRowTimer, NATIVE_CODE:code
+9d20 (003c) : finalPath, BSS:getTheFile_far@stack
+9d5c (003c) : localPath, BSS:getTheFile_far@stack
+9e62 (003c) : currentPath, BSS:filePickModal_far@stack
+9fb7 (003c) : localPath, BSS:readDirectory_far@stack
+43f6 (003a) : fileCloseDir, NATIVE_CODE:code
+3585 (0039) : fileClose, NATIVE_CODE:code
+37d5 (0038) : animationGetIndex, NATIVE_CODE:code
+565d (0038) : wipeArea_far, NATIVE_CODE:code
+7041 (0038) : spriteSwapRooms, NATIVE_CODE:code
+70b9 (0038) : mul16by8, NATIVE_CODE:code
+3850 (0037) : exitTurnTableModal, NATIVE_CODE:code
+70f1 (0036) : mul32by8, NATIVE_CODE:code
+20d4 (0035) : bitmapSetVisible, NATIVE_CODE:code
+3645 (0035) : exitCouchModal, NATIVE_CODE:code
+381b (0035) : pullEvent, NATIVE_CODE:code
+21db (0033) : FAR_PEEK, NATIVE_CODE:code
+9faa (0032) : buff, BSS:printf@stack
+2212 (0031) : FAR_POKE, NATIVE_CODE:code
+34be (0031) : shutAllSIDVoices, NATIVE_CODE:code
+6c33 (0031) : readBigEndian16, NATIVE_CODE:code
+1f8a (0030) : graphicsSetLayerBitmap, NATIVE_CODE:code
+7a19 (0030) : textColors, DATA:data
+2ab4 (002f) : commonBoxBottom, NATIVE_CODE:code
+514a (002f) : FAR_PEEKW, NATIVE_CODE:code
+72f3 (002e) : crt_fmul8, NATIVE_CODE:code
+4cfb (002d) : strcmp, NATIVE_CODE:code
+7c51 (002d) : spriteRecords, DATA:bss
+278e (002c) : commonBoxTop, NATIVE_CODE:code
+2e6c (002c) : peek24, NATIVE_CODE:code
+6520 (002b) : sprintf, NATIVE_CODE:code
+4103 (0029) : fpr_get_currentPath, NATIVE_CODE:code
+754c (0029) : uint16_to_float, NATIVE_CODE:code
+23b4 (0028) : spriteSetPosition, NATIVE_CODE:code
+67dc (0028) : poke24, NATIVE_CODE:code
+4beb (0026) : FAR_POKEW, NATIVE_CODE:code
+5697 (0026) : printf, NATIVE_CODE:code
+6551 (0026) : initMyTimers, NATIVE_CODE:code
+34ef (0025) : f256getchar, NATIVE_CODE:code
+255f (0024) : fpr_set_currentPath, NATIVE_CODE:code
+7079 (0023) : swapRoom, NATIVE_CODE:code
+355d (0020) : closeDownMp3File, NATIVE_CODE:code
+7021 (0020) : spriteGetPosition, NATIVE_CODE:code
+7cdf (0020) : kq, DATA:bss
+7e79 (0020) : myMIDIRecord, DATA:bss
+976d (0020) : buf32, BSS:main@stack
+748b (001f) : mods16, NATIVE_CODE:code
+752e (001e) : sint16_to_float, NATIVE_CODE:code
+2a1a (001d) : fillSpaceToEnd, NATIVE_CODE:code
+6c64 (001d) : writePlaying, NATIVE_CODE:code
+709c (001d) : f256Reset, NATIVE_CODE:code
+4204 (001c) : strlen, NATIVE_CODE:code
+7bcd (001c) : fround5, DATA:data
+73cf (001b) : divs16, NATIVE_CODE:code
+215f (001a) : spriteSetVisible, NATIVE_CODE:code
+2592 (001a) : wipeStatusBar, NATIVE_CODE:code
+1fc2 (0019) : textGotoXY, NATIVE_CODE:code
+3403 (0019) : psgNoteOn, NATIVE_CODE:code
+2147 (0018) : onTuneEnded, NATIVE_CODE:code
+217f (0018) : _kernelCallRaw, NATIVE_CODE:code
+22fe (0018) : midiShutAllChannels, NATIVE_CODE:code
+351a (0018) : _kernelCallRaw, NATIVE_CODE:code
+3545 (0018) : _kernelCallRaw, NATIVE_CODE:code
+35d3 (0018) : _kernelCallRaw, NATIVE_CODE:code
+3b13 (0018) : _kernelCallRaw, NATIVE_CODE:code
+657f (0018) : _kernelCallRaw, NATIVE_CODE:code
+9e9e (0018) : displayFileList_far@stack, BSS:displayFileList_far@stack
+22e7 (0017) : opl3_write, NATIVE_CODE:code
+7956 (0017) : spriteFrameChange@proxy, NATIVE_CODE:code
+7c7e (0017) : theOne, DATA:bss
+7c9a (0016) : theSongs, DATA:bss
+2316 (0015) : shutPSG, NATIVE_CODE:code
+9754 (0014) : main@stack, BSS:main@stack
+9fe0 (0014) : prepMIDIForPlay@stack, BSS:prepMIDIForPlay@stack
+788a (0013) : fileRead@proxy, NATIVE_CODE:code
+78f2 (0013) : FAR_PEEKW@proxy, NATIVE_CODE:code
+9d98 (0012) : filePickModal_far@stack, BSS:filePickModal_far@stack
+76d2 (0011) : store32, NATIVE_CODE:code
+76e3 (0011) : load32, NATIVE_CODE:code
+2bbe (0010) : resetTimer0, NATIVE_CODE:code
+376e (0010) : spriteFrameChange@proxy, NATIVE_CODE:code
+7011 (0010) : spriteGetPosition@proxy, NATIVE_CODE:code
+7a53 (0010) : whiskersWalkR_L, DATA:data
+7ab5 (0010) : psgAddr, DATA:data
+7b8b (0010) : whiskersWalkR_R, DATA:data
+7b9f (0010) : whiskersWalkL_L, DATA:data
+7bb3 (0010) : whiskersWalkL_R, DATA:data
+97a4 (0010) : headerBuffer, BSS:invokeTurnTable@stack
+9fe4 (0010) : buffer, BSS:nforml@stack
+9fe4 (0010) : buffer, BSS:nformi@stack
+33f4 (000f) : psgNoteOff, NATIVE_CODE:code
+792d (000f) : FAR_PEEK@proxy, NATIVE_CODE:code
+793c (000f) : spriteFrameChange@proxy, NATIVE_CODE:code
+9795 (000f) : invokeTurnTable@stack, BSS:invokeTurnTable@stack
+2243 (000e) : quitGracefully, NATIVE_CODE:code
+2bb0 (000e) : setTimer0, NATIVE_CODE:code
+380d (000e) : pollSNES, NATIVE_CODE:code
+73ea (000e) : negaccu, NATIVE_CODE:code
+73f8 (000e) : negtmp, NATIVE_CODE:code
+74d4 (000e) : negtmpb, NATIVE_CODE:code
+25b4 (000d) : textSetColor, NATIVE_CODE:code
+3532 (000d) : kernelNextEvent, NATIVE_CODE:code
+35be (000d) : kernelNextEvent, NATIVE_CODE:code
+3887 (000d) : flipSprite, NATIVE_CODE:code
+3b00 (000d) : kernelNextEvent, NATIVE_CODE:code
+2782 (000c) : commonBoxTop@proxy, NATIVE_CODE:code
+4bdf (000c) : FAR_POKEW@proxy, NATIVE_CODE:code
+7bf4 (000c) : _BITMAP_BASE, DATA:bss
+9ff4 (000c) : sstack, STACK:sstack
+362d (000b) : pollNES, NATIVE_CODE:code
+4dad (000b) : tolower, NATIVE_CODE:code
+789d (000b) : freg@proxy, NATIVE_CODE:code
+78a8 (000b) : textPrint@proxy, NATIVE_CODE:code
+78b3 (000b) : textPrint@proxy, NATIVE_CODE:code
+78c3 (000b) : textPrint@proxy, NATIVE_CODE:code
+78ce (000b) : textPrint@proxy, NATIVE_CODE:code
+78e0 (000b) : FAR_PEEKW@proxy, NATIVE_CODE:code
+790c (000b) : strcmp@proxy, NATIVE_CODE:code
+7917 (000b) : strcmp@proxy, NATIVE_CODE:code
+7922 (000b) : FAR_POKEW@proxy, NATIVE_CODE:code
+794b (000b) : spriteFrameChange@proxy, NATIVE_CODE:code
+796d (000b) : animationGetIndex@proxy, NATIVE_CODE:code
+798d (000b) : textSetColor@proxy, NATIVE_CODE:code
+799f (000b) : textSetColor@proxy, NATIVE_CODE:code
+79aa (000b) : textGotoXY@proxy, NATIVE_CODE:code
+79b5 (000b) : textGotoXY@proxy, NATIVE_CODE:code
+79c7 (000b) : textGotoXY@proxy, NATIVE_CODE:code
+79e7 (000b) : textGotoXY@proxy, NATIVE_CODE:code
+79f2 (000b) : FAR_POKE@proxy, NATIVE_CODE:code
+79fd (000b) : FAR_POKE@proxy, NATIVE_CODE:code
+1fba (0008) : textGotoXY@proxy, NATIVE_CODE:code
+25ac (0008) : textSetColor@proxy, NATIVE_CODE:code
+25c1 (0008) : textPrint@proxy, NATIVE_CODE:code
+2aac (0008) : commonBoxBottom@proxy, NATIVE_CODE:code
+357d (0008) : fileClose@proxy, NATIVE_CODE:code
+35cb (0008) : _kernelCallWrapper, NATIVE_CODE:code
+37cd (0008) : animationGetIndex@proxy, NATIVE_CODE:code
+41fc (0008) : strlen@proxy, NATIVE_CODE:code
+4cf3 (0008) : strcmp@proxy, NATIVE_CODE:code
+5142 (0008) : FAR_PEEKW@proxy, NATIVE_CODE:code
+6577 (0008) : _kernelCallWrapper, NATIVE_CODE:code
+6650 (0008) : fileOpen@proxy, NATIVE_CODE:code
+7882 (0008) : swapBMLogo@proxy, NATIVE_CODE:code
+7a64 (0008) : whiskersL, DATA:data
+7a74 (0008) : whiskersR, DATA:data
+7a86 (0008) : notesSAS, DATA:data
+7a92 (0008) : notesAnim, DATA:data
+7aad (0008) : chanToBytes, DATA:data
+7c46 (0008) : _dirStream, DATA:bss
+978d (0008) : customGlyph, BSS:main@stack
+9fdc (0008) : si, BSS:sformat@stack
+9fec (0008) : clock, BSS:f256Init@stack
+3638 (0007) : padPollDelayUntilReady, NATIVE_CODE:code
+4bd8 (0007) : FAR_POKEW@proxy, NATIVE_CODE:code
+6c81 (0007) : textPutChar@proxy, NATIVE_CODE:code
+7866 (0007) : fillSpaceToEnd@proxy, NATIVE_CODE:code
+786d (0007) : textPrintNewLine@proxy, NATIVE_CODE:code
+7874 (0007) : textPrintNewLine@proxy, NATIVE_CODE:code
+787b (0007) : setTimer0@proxy, NATIVE_CODE:code
+78d9 (0007) : FAR_PEEKW@proxy, NATIVE_CODE:code
+78eb (0007) : FAR_PEEKW@proxy, NATIVE_CODE:code
+7905 (0007) : FAR_PEEKW@proxy, NATIVE_CODE:code
+7978 (0007) : textPutChar@proxy, NATIVE_CODE:code
+797f (0007) : textSetColor@proxy, NATIVE_CODE:code
+7986 (0007) : textSetColor@proxy, NATIVE_CODE:code
+7998 (0007) : textSetColor@proxy, NATIVE_CODE:code
+79c0 (0007) : textGotoXY@proxy, NATIVE_CODE:code
+79d2 (0007) : textGotoXY@proxy, NATIVE_CODE:code
+79d9 (0007) : textGotoXY@proxy, NATIVE_CODE:code
+79e0 (0007) : textGotoXY@proxy, NATIVE_CODE:code
+7a08 (0007) : spriteSetVisible@proxy, NATIVE_CODE:code
+7a0f (0007) : spriteSetVisible@proxy, NATIVE_CODE:code
+7bed (0007) : kernelEventData, DATA:bss
+2179 (0006) : _kernelCallWrapper, NATIVE_CODE:code
+3514 (0006) : _kernelCallWrapper, NATIVE_CODE:code
+353f (0006) : _kernelCallWrapper, NATIVE_CODE:code
+363f (0006) : padState, NATIVE_CODE:code
+3b0d (0006) : _kernelCallWrapper, NATIVE_CODE:code
+7860 (0006) : __multab3L, DATA:code
+7a80 (0006) : whiskersSitR, DATA:data
+7cb0 (0006) : legatoPrevious, DATA:bss
+9ca2 (0006) : getTheFile_far@stack, BSS:getTheFile_far@stack
+785b (0005) : __multab9L, DATA:code
+1fdb (0004) : swapBMLogo@proxy, NATIVE_CODE:code
+21d7 (0004) : FAR_PEEK@proxy, NATIVE_CODE:code
+220e (0004) : FAR_POKE@proxy, NATIVE_CODE:code
+23b0 (0004) : spriteSetPosition@proxy, NATIVE_CODE:code
+2972 (0004) : textPrintNewLine@proxy, NATIVE_CODE:code
+2a16 (0004) : fillSpaceToEnd@proxy, NATIVE_CODE:code
+35eb (0004) : switchMode@proxy, NATIVE_CODE:code
+3894 (0004) : invokePause@proxy, NATIVE_CODE:code
+4b47 (0004) : reprepFPR_far@proxy, NATIVE_CODE:code
+5659 (0004) : wipeArea_far@proxy, NATIVE_CODE:code
+66ff (0004) : fileRead@proxy, NATIVE_CODE:code
+7a4f (0004) : WALKR_L, DATA:data
+7a6c (0004) : SIT_L, DATA:data
+7a70 (0004) : whiskersSitL, DATA:data
+7a7c (0004) : SIT_R, DATA:data
+7a8e (0004) : NOTESSPRANIM, DATA:data
+7aa2 (0004) : addy, DATA:data
+7b6e (0004) : tooBigWait, DATA:data
+7b87 (0004) : WALKR_R, DATA:data
+7b9b (0004) : WALKL_L, DATA:data
+7baf (0004) : WALKL_R, DATA:data
+7bc3 (0004) : SIT_L_BENCH, DATA:data
+7c96 (0004) : startAddr, DATA:bss
+7cb7 (0004) : samplesSoFar, DATA:bss
+7cbb (0004) : totalWait, DATA:bss
+7cc0 (0004) : needle, DATA:bss
+7cc4 (0004) : gd3Location, DATA:bss
+7cc8 (0004) : loopBackTo, DATA:bss
+7ccc (0004) : beginDataAddr, DATA:bss
+7cd0 (0004) : samplesSoFar, DATA:bss
+7cd4 (0004) : totalWait, DATA:bss
+7cd8 (0004) : needle, DATA:bss
+7e99 (0004) : needle, DATA:bss
+7e9d (0004) : HeapNode, DATA:bss
+9eb6 (0004) : extBuf, BSS:displayFileList_far@stack
+9fb3 (0004) : extBuf, BSS:readDirectory_far@stack
+9ff0 (0004) : base, BSS:clearSIDRegisters@stack
+7c00 (0003) : _BITMAP_CLUT, DATA:bss
+7c03 (0003) : _tileSize, DATA:bss
+7bc7 (0002) : whiskersSitLBench, DATA:data
+7bcb (0002) : s, DATA:data
+7beb (0002) : kernelArgs, DATA:bss
+7c4e (0002) : _kern_target, DATA:bss
+7cdd (0002) : theMP3File, DATA:bss
+9768 (0002) : y, BSS:main@stack
+976a (0002) : x, BSS:main@stack
+9ff2 (0002) : exhaustZeroes@stack, BSS:exhaustZeroes@stack
+7a16 (0001) : _ccolor, DATA:data
+7a17 (0001) : _MAX_COL, DATA:data
+7a18 (0001) : _MAX_ROW, DATA:data
+7a49 (0001) : _col, DATA:data
+7a4a (0001) : _row, DATA:data
+7a63 (0001) : room2, DATA:data
+7aa6 (0001) : modePlay, DATA:data
+7aa7 (0001) : tuneEnded, DATA:data
+7aa8 (0001) : globalPause, DATA:data
+7aa9 (0001) : tr2Done, DATA:data
+7aaa (0001) : chanIndex, DATA:data
+7aab (0001) : currow, DATA:data
+7aac (0001) : endPending, DATA:data
+7b6d (0001) : eopSeen, DATA:data
+7b72 (0001) : oneLoop, DATA:data
+7b73 (0001) : isMP3Finished, DATA:data
+7b74 (0001) : kqHead, DATA:data
+7b75 (0001) : kqTail, DATA:data
+7b76 (0001) : jUpDown, DATA:data
+7b77 (0001) : jDownDown, DATA:data
+7b78 (0001) : modal_Couch, DATA:data
+7b79 (0001) : modalActive, DATA:data
+7b7a (0001) : couchLatched, DATA:data
+7b7b (0001) : kRightDown, DATA:data
+7b7c (0001) : jRightDown, DATA:data
+7b7d (0001) : rightDown, DATA:data
+7b7e (0001) : kLeftDown, DATA:data
+7b7f (0001) : jLeftDown, DATA:data
+7b80 (0001) : leftDown, DATA:data
+7b81 (0001) : kUpDown, DATA:data
+7b82 (0001) : upDown, DATA:data
+7b83 (0001) : kDownDown, DATA:data
+7b84 (0001) : downDown, DATA:data
+7b85 (0001) : modal_TurnTable, DATA:data
+7b86 (0001) : facingRight, DATA:data
+7bc9 (0001) : turnTableLatched, DATA:data
+7bca (0001) : shiftLatch, DATA:data
+7be9 (0001) : padLatch, DATA:data
+7bea (0001) : roomChangeLatched, DATA:data
+7c50 (0001) : _kernelError, DATA:bss
+7c95 (0001) : comeRightTrough, DATA:bss
+7cb6 (0001) : theInitPage, DATA:bss
+7cbf (0001) : comeRightTrough, DATA:bss
+7cdc (0001) : palOrNTSC, DATA:bss
+9ff3 (0001) : drive, BSS:fileOpenDir@stack
+9ff3 (0001) : drive, BSS:fileOpen@stack
+0080 (0000) : ZeroEnd, END:zeropage
+0080 (0000) : ZeroStart, START:zeropage
+7beb (0000) : BSSStart, START:bss
+7ea1 (0000) : BSSEnd, END:bss
+7ea8 (0000) : HeapStart, START:heap
+9000 (0000) : HeapEnd, END:heap
+9754 (0000) : StackEnd, END:stack
