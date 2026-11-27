@@ -1,0 +1,579 @@
+sections
+0280 - 4c6e : DATA, code
+44fd - 4d78 : DATA, data
+4d78 - 507c : BSS, bss
+5080 - 9000 : HEAP, heap
+9000 - 9c2d : STACK, stack
+0080 - 0080 : ZEROPAGE, zeropage
+0200 - 023f : DATA, startup
+9fd7 - a000 : SSTACK, sstack
+9fd7 - 9fd7 : SSTACK, kernelReset@stack
+9fd7 - 9fd7 : SSTACK, graphicsDefineColor@stack
+9fd7 - 9fd7 : SSTACK, graphicsSetLayerBitmap@stack
+9fd7 - 9fd7 : SSTACK, graphicsReset@stack
+9fd7 - 9fd7 : SSTACK, textSetDouble@stack
+9fd7 - 9fd7 : SSTACK, textSetCursor@stack
+9fd7 - 9fd7 : SSTACK, mathUnsignedMultiply@stack
+9fd7 - 9fd7 : SSTACK, textDefineForegroundColor@stack
+9fd7 - 9fd7 : SSTACK, textDefineBackgroundColor@stack
+9fd7 - 9fd7 : SSTACK, textGotoXY@stack
+9fd7 - 9fd7 : SSTACK, textClear@stack
+9fd7 - 9fd7 : SSTACK, textReset@stack
+9fd7 - 9fd7 : SSTACK, bitmapSetVisible@stack
+9fd7 - 9fd7 : SSTACK, bitmapReset@stack
+9fd7 - 9fd7 : SSTACK, tileSetVisible@stack
+9fd7 - 9fd7 : SSTACK, tileReset@stack
+9fd7 - 9fd7 : SSTACK, spriteSetVisible@stack
+9fd7 - 9fd7 : SSTACK, spriteReset@stack
+9fd7 - 9fd7 : SSTACK, fileReset@stack
+9fd7 - 9fd7 : SSTACK, _kernelCallWrapper@stack
+9fd7 - 9fd7 : SSTACK, randomSeed@stack
+9fcf - 9fd7 : SSTACK, randomReset@stack
+9fcf - 9fcf : SSTACK, f256Init@stack
+9fd7 - 9fd7 : SSTACK, FAR_POKE@stack
+9fd7 - 9fd7 : SSTACK, fpr_set_currentPath@stack
+9fd7 - 9fd7 : SSTACK, initFPR@stack
+9fd7 - 9fd7 : SSTACK, highVol@stack
+9fd7 - 9fd7 : SSTACK, setup@stack
+9fd7 - 9fd7 : SSTACK, strrchr@stack
+9fd7 - 9fd7 : SSTACK, strncpy@stack
+9fd7 - 9fd7 : SSTACK, _kernelCallWrapper@stack
+9fd7 - 9fd7 : SSTACK, getTimerAbsolute@stack
+9fd7 - 9fd7 : SSTACK, setTimer@stack
+9fd7 - 9fd7 : SSTACK, kernelNextEvent@stack
+9fd4 - 9fd7 : SSTACK, lilpause@stack
+9fd7 - 9fd7 : SSTACK, textEnableBackgroundColors@stack
+9fd7 - 9fd7 : SSTACK, textSetColor@stack
+9fd7 - 9fd7 : SSTACK, f256k_scroll@stack
+9fd7 - 9fd7 : SSTACK, putpch@stack
+9fd7 - 9fd7 : SSTACK, puts@stack
+9fc7 - 9fd7 : SSTACK, nformi@stack
+9fc7 - 9fd7 : SSTACK, nforml@stack
+9fd7 - 9fd7 : SSTACK, isinf@stack
+9fd7 - 9fd7 : SSTACK, nformf@stack
+9fbf - 9fc7 : SSTACK, sformat@stack
+9f8d - 9fbf : SSTACK, printf@stack
+9f8d - 9f8d : SSTACK, instructions@stack
+9fd7 - 9fd7 : SSTACK, _kernelCallWrapper@stack
+9fd7 - 9fd7 : SSTACK, kernelNextEvent@stack
+9fd7 - 9fd7 : SSTACK, fileClose@stack
+9fd7 - 9fd7 : SSTACK, _kernelCallWrapper@stack
+9fd7 - 9fd7 : SSTACK, kernelNextEvent@stack
+9fd7 - 9fd7 : SSTACK, f256getchar@stack
+9fd7 - 9fd7 : SSTACK, kernelRead@stack
+9fd7 - 9fd7 : SSTACK, fileRead@stack
+9fd6 - 9fd7 : SSTACK, readLine@stack
+9fd7 - 9fd7 : SSTACK, fileSeek@stack
+9fd4 - 9fd4 : SSTACK, fetchNextPLEntry@stack
+9fd7 - 9fd7 : SSTACK, FAR_PEEK@stack
+9fd7 - 9fd7 : SSTACK, fpr_get_currentPath@stack
+9fd7 - 9fd7 : SSTACK, strlen@stack
+9fd7 - 9fd7 : SSTACK, pathWithoutDrive@stack
+9fd6 - 9fd7 : SSTACK, fileOpenDir@stack
+9fd7 - 9fd7 : SSTACK, fileCloseDir@stack
+9fd7 - 9fd7 : SSTACK, FAR_POKEW@stack
+9fd7 - 9fd7 : SSTACK, reprepFPR_far@stack
+9fd7 - 9fd7 : SSTACK, initFilePickRecord_far@stack
+9fd7 - 9fd7 : SSTACK, fileReadDir@stack
+9fd7 - 9fd7 : SSTACK, strcmp@stack
+9fd7 - 9fd7 : SSTACK, tolower@stack
+9fd7 - 9fd7 : SSTACK, endsWithExt@stack
+9fd3 - 9fd7 : SSTACK, isExtensionAllowed_far@stack
+9f97 - 9fd3 : SSTACK, readDirectory_far@stack
+9fd7 - 9fd7 : SSTACK, FAR_PEEKW@stack
+9fd7 - 9fd7 : SSTACK, strcasecmp_local@stack
+9ee7 - 9fd7 : SSTACK, sortFileList_far@stack
+9f89 - 9f8d : SSTACK, wipeArea_far@stack
+9e79 - 9f89 : SSTACK, displayFileList_far@stack
+9fd7 - 9fd7 : SSTACK, _kernelCallWrapper@stack
+9fd7 - 9fd7 : SSTACK, kernelNextEvent@stack
+9e67 - 9e79 : SSTACK, pickFile_far@stack
+9fd7 - 9fd7 : SSTACK, backUpDirectory_far@stack
+9fbf - 9fbf : SSTACK, sprintf@stack
+9d6b - 9e67 : SSTACK, filePickModal_far@stack
+9c75 - 9d6b : SSTACK, getTheFile_far@stack
+9f8d - 9f8d : SSTACK, eraseLine@stack
+9fd6 - 9fd7 : SSTACK, fileOpen@stack
+9fd6 - 9fd6 : SSTACK, load_MOD_file@stack
+9fd7 - 9fd7 : SSTACK, hitspace@stack
+9fd7 - 9fd7 : SSTACK, poke24@stack
+9ed8 - 9fd7 : SSTACK, copyToRAM@stack
+9fd7 - 9fd7 : SSTACK, peek24@stack
+9fd7 - 9fd7 : SSTACK, readBigEndianWord@stack
+9fd7 - 9fd7 : SSTACK, mathUnsignedAddition@stack
+9fd7 - 9fd7 : SSTACK, textPrint@stack
+9fd7 - 9fd7 : SSTACK, mathUnsignedDivision@stack
+9fd7 - 9fd7 : SSTACK, textPrintUInt@stack
+9fd3 - 9fd7 : SSTACK, textPrintInt@stack
+9fd7 - 9fd7 : SSTACK, headerPump@stack
+9fd7 - 9fd7 : SSTACK, read2KChunk@stack
+9fd7 - 9fd7 : SSTACK, _kernelCallWrapper@stack
+9fd7 - 9fd7 : SSTACK, kernelNextEvent@stack
+9ea8 - 9ed8 : SSTACK, checkMODHeader@stack
+9f8d - 9f8d : SSTACK, textUI@stack
+9fd7 - 9fd7 : SSTACK, vs1053bBoostClock@stack
+9fd7 - 9fd7 : SSTACK, _kernelCallWrapper@stack
+9fd7 - 9fd7 : SSTACK, kernelNextEvent@stack
+9f8d - 9f8d : SSTACK, dealPressedKey@stack
+9fd7 - 9fd7 : SSTACK, mainLoop@stack
+9c2d - 9c75 : SSTACK, f256main@stack
+9fd7 - 9fd7 : SSTACK, f256Reset@stack
+9c2d - 9c2d : SSTACK, main@stack
+
+regions
+0080 - 00ef : 0000, 0000, zeropage
+0200 - 0280 : 023f, 003f, startup
+0280 - 9000 : 4d78, 4dfc, main
+
+objects
+0080 - 0080 : ZeroStart, START:zeropage
+0080 - 0080 : ZeroEnd, END:zeropage
+0200 - 023f : startup, NATIVE_CODE:startup
+0280 - 02b3 : main, NATIVE_CODE:code
+02b3 - 02f2 : f256Init, NATIVE_CODE:code
+02f2 - 0305 : kernelReset, NATIVE_CODE:code
+0305 - 033e : graphicsReset, NATIVE_CODE:code
+033e - 0396 : graphicsDefineColor, NATIVE_CODE:code
+0396 - 03c5 : graphicsSetLayerBitmap, NATIVE_CODE:code
+03c5 - 0409 : textReset, NATIVE_CODE:code
+0409 - 043a : textSetDouble, NATIVE_CODE:code
+043a - 044a : textSetCursor, NATIVE_CODE:code
+044a - 0478 : textDefineForegroundColor, NATIVE_CODE:code
+0478 - 04a1 : mathUnsignedMultiply, NATIVE_CODE:code
+04a1 - 04cf : textDefineBackgroundColor, NATIVE_CODE:code
+04cf - 0552 : textClear, NATIVE_CODE:code
+0552 - 056b : textGotoXY, NATIVE_CODE:code
+056b - 063f : bitmapReset, NATIVE_CODE:code
+063f - 0674 : bitmapSetVisible, NATIVE_CODE:code
+0674 - 0692 : tileReset, NATIVE_CODE:code
+0692 - 06d8 : tileSetVisible, NATIVE_CODE:code
+06d8 - 06ea : spriteReset, NATIVE_CODE:code
+06ea - 0704 : spriteSetVisible, NATIVE_CODE:code
+0704 - 070f : fileReset, NATIVE_CODE:code
+070f - 0759 : randomReset, NATIVE_CODE:code
+0759 - 0761 : _kernelCallWrapper, NATIVE_CODE:code
+0761 - 0779 : _kernelCallRaw, NATIVE_CODE:code
+0779 - 09f8 : f256main, NATIVE_CODE:code
+09f8 - 0a28 : setup, NATIVE_CODE:code
+0a28 - 0a50 : fpr_set_currentPath, NATIVE_CODE:code
+0a50 - 0a81 : FAR_POKE, NATIVE_CODE:code
+0a81 - 0a8b : *, DATA:code
+0a8b - 0aab : highVol, NATIVE_CODE:code
+0aab - 0ade : strrchr, NATIVE_CODE:code
+0ade - 0b51 : strncpy, NATIVE_CODE:code
+0b51 - 0b83 : lilpause, NATIVE_CODE:code
+0b83 - 0b96 : getTimerAbsolute, NATIVE_CODE:code
+0b96 - 0b9e : _kernelCallWrapper, NATIVE_CODE:code
+0b9e - 0bb6 : _kernelCallRaw, NATIVE_CODE:code
+0bb6 - 0bda : setTimer, NATIVE_CODE:code
+0bda - 0bea : kernelNextEvent, NATIVE_CODE:code
+0bea - 0c28 : instructions, NATIVE_CODE:code
+0c28 - 0c3b : textEnableBackgroundColors, NATIVE_CODE:code
+0c3b - 0c48 : textSetColor, NATIVE_CODE:code
+0c48 - 0c70 : printf, NATIVE_CODE:code
+0c70 - 10b5 : sformat, NATIVE_CODE:code
+10b5 - 10ca : puts, NATIVE_CODE:code
+10ca - 1284 : putpch, NATIVE_CODE:code
+1284 - 12e8 : f256k_scroll, NATIVE_CODE:code
+12e8 - 1403 : nformi, NATIVE_CODE:code
+1403 - 154f : nforml, NATIVE_CODE:code
+154f - 1a9f : nformf, NATIVE_CODE:code
+1a9f - 1aae : isinf, NATIVE_CODE:code
+1aae - 1ad9 : *, DATA:code
+1ad9 - 1ae1 : _kernelCallWrapper, NATIVE_CODE:code
+1ae1 - 1af9 : _kernelCallRaw, NATIVE_CODE:code
+1af9 - 1afc : *, DATA:code
+1afc - 1afe : *, DATA:code
+1afe - 1b00 : *, DATA:code
+1b00 - 1b2b : *, DATA:code
+1b2b - 1b66 : fileClose, NATIVE_CODE:code
+1b66 - 1b76 : kernelNextEvent, NATIVE_CODE:code
+1b76 - 1bf2 : fetchNextPLEntry, NATIVE_CODE:code
+1bf2 - 1ca2 : readLine, NATIVE_CODE:code
+1ca2 - 1d34 : fileRead, NATIVE_CODE:code
+1d34 - 1dc9 : kernelRead, NATIVE_CODE:code
+1dc9 - 1df7 : f256getchar, NATIVE_CODE:code
+1df7 - 1e07 : kernelNextEvent, NATIVE_CODE:code
+1e07 - 1e0f : _kernelCallWrapper, NATIVE_CODE:code
+1e0f - 1e27 : _kernelCallRaw, NATIVE_CODE:code
+1e27 - 1e68 : fileSeek, NATIVE_CODE:code
+1e68 - 1f49 : getTheFile_far, NATIVE_CODE:code
+1f49 - 1f76 : fpr_get_currentPath, NATIVE_CODE:code
+1f76 - 1fa9 : FAR_PEEK, NATIVE_CODE:code
+1fa9 - 202b : fileOpenDir, NATIVE_CODE:code
+202b - 2079 : pathWithoutDrive, NATIVE_CODE:code
+2079 - 2095 : strlen, NATIVE_CODE:code
+2095 - 20d7 : fileCloseDir, NATIVE_CODE:code
+20d7 - 2304 : filePickModal_far, NATIVE_CODE:code
+2304 - 2393 : initFilePickRecord_far, NATIVE_CODE:code
+2393 - 2444 : reprepFPR_far, NATIVE_CODE:code
+2444 - 247a : FAR_POKEW, NATIVE_CODE:code
+247a - 2634 : readDirectory_far, NATIVE_CODE:code
+2634 - 26fe : fileReadDir, NATIVE_CODE:code
+26fe - 272b : strcmp, NATIVE_CODE:code
+272b - 272e : *, DATA:code
+272e - 279c : isExtensionAllowed_far, NATIVE_CODE:code
+279c - 280b : endsWithExt, NATIVE_CODE:code
+280b - 2816 : tolower, NATIVE_CODE:code
+2816 - 2b80 : sortFileList_far, NATIVE_CODE:code
+2b80 - 2bbf : FAR_PEEKW, NATIVE_CODE:code
+2bbf - 2c34 : strcasecmp_local, NATIVE_CODE:code
+2c34 - 2f0f : displayFileList_far, NATIVE_CODE:code
+2f0f - 2f74 : wipeArea_far, NATIVE_CODE:code
+2f74 - 2f76 : *, DATA:code
+2f76 - 2f7d : *, DATA:code
+2f7d - 2f7f : *, DATA:code
+2f7f - 2f82 : *, DATA:code
+2f82 - 2f8a : *, DATA:code
+2f8a - 2f90 : *, DATA:code
+2f90 - 3520 : pickFile_far, NATIVE_CODE:code
+3520 - 3530 : kernelNextEvent, NATIVE_CODE:code
+3530 - 3538 : _kernelCallWrapper, NATIVE_CODE:code
+3538 - 3550 : _kernelCallRaw, NATIVE_CODE:code
+3550 - 35e0 : backUpDirectory_far, NATIVE_CODE:code
+35e0 - 361c : sprintf, NATIVE_CODE:code
+361c - 3622 : *, DATA:code
+3622 - 3626 : *, DATA:code
+3626 - 362a : *, DATA:code
+362a - 362b : *, DATA:code
+362b - 3644 : eraseLine, NATIVE_CODE:code
+3644 - 3695 : *, DATA:code
+3695 - 36a4 : *, DATA:code
+36a4 - 3749 : fileOpen, NATIVE_CODE:code
+3749 - 374b : *, DATA:code
+374b - 375e : load_MOD_file, NATIVE_CODE:code
+375e - 3765 : *, DATA:code
+3765 - 377b : hitspace, NATIVE_CODE:code
+377b - 3bb6 : checkMODHeader, NATIVE_CODE:code
+3bb6 - 3c46 : copyToRAM, NATIVE_CODE:code
+3c46 - 3c6e : poke24, NATIVE_CODE:code
+3c6e - 3c9a : peek24, NATIVE_CODE:code
+3c9a - 3cab : *, DATA:code
+3cab - 3cbf : *, DATA:code
+3cbf - 3cf7 : readBigEndianWord, NATIVE_CODE:code
+3cf7 - 3e8a : textPrint, NATIVE_CODE:code
+3e8a - 3ec7 : mathUnsignedAddition, NATIVE_CODE:code
+3ec7 - 3ecf : *, DATA:code
+3ecf - 3f52 : textPrintInt, NATIVE_CODE:code
+3f52 - 3f54 : *, DATA:code
+3f54 - 406a : textPrintUInt, NATIVE_CODE:code
+406a - 4071 : *, DATA:code
+4071 - 4078 : *, DATA:code
+4078 - 407e : *, DATA:code
+407e - 4085 : *, DATA:code
+4085 - 4093 : headerPump, NATIVE_CODE:code
+4093 - 40a2 : *, DATA:code
+40a2 - 4357 : read2KChunk, NATIVE_CODE:code
+4357 - 4367 : kernelNextEvent, NATIVE_CODE:code
+4367 - 436f : _kernelCallWrapper, NATIVE_CODE:code
+436f - 4387 : _kernelCallRaw, NATIVE_CODE:code
+4387 - 43a7 : *, DATA:code
+43a7 - 43b9 : *, DATA:code
+43b9 - 43c8 : *, DATA:code
+43c8 - 44c3 : textUI, NATIVE_CODE:code
+44c3 - 44c9 : *, DATA:code
+44c9 - 44d0 : *, DATA:code
+44d0 - 44d6 : *, DATA:code
+44d6 - 44dd : *, DATA:code
+44dd - 44e2 : *, DATA:code
+44e2 - 44e9 : *, DATA:code
+44e9 - 44ee : *, DATA:code
+44ee - 44f5 : *, DATA:code
+44f5 - 44fd : *, DATA:code
+44fd - 44fe : _ccolor, DATA:data
+44fe - 44ff : _MAX_COL, DATA:data
+44ff - 4500 : _MAX_ROW, DATA:data
+4500 - 4508 : *, DATA:code
+4508 - 452a : vs1053bBoostClock, NATIVE_CODE:code
+452a - 4547 : f256Reset, NATIVE_CODE:code
+4547 - 457f : mul16by8, NATIVE_CODE:code
+457f - 45c4 : freg, NATIVE_CODE:code
+45c4 - 46b1 : faddsub, NATIVE_CODE:code
+46b1 - 474b : crt_fmul, NATIVE_CODE:code
+474b - 4779 : crt_fmul8, NATIVE_CODE:code
+4779 - 4827 : crt_fdiv, NATIVE_CODE:code
+4827 - 4869 : mul16, NATIVE_CODE:code
+4869 - 4887 : divs16, NATIVE_CODE:code
+4887 - 4895 : negaccu, NATIVE_CODE:code
+4895 - 48a3 : negtmp, NATIVE_CODE:code
+48a3 - 4928 : divmod, NATIVE_CODE:code
+4928 - 4947 : mods16, NATIVE_CODE:code
+4947 - 4955 : negtmpb, NATIVE_CODE:code
+4955 - 49a1 : f32_to_i16, NATIVE_CODE:code
+49a1 - 49bf : sint16_to_float, NATIVE_CODE:code
+49bf - 49e8 : uint16_to_float, NATIVE_CODE:code
+49e8 - 4a2c : uint32_to_float, NATIVE_CODE:code
+4a2c - 4b03 : divmod32, NATIVE_CODE:code
+4b03 - 4bd1 : crt_malloc, NATIVE_CODE:code
+4bd1 - 4c6a : crt_free, NATIVE_CODE:code
+4c6a - 4c6e : __multab3L, DATA:code
+4c6e - 4c9e : textColors, DATA:data
+4c9e - 4c9f : _col, DATA:data
+4c9f - 4ca0 : _row, DATA:data
+4ca0 - 4ca1 : f256k_color, DATA:data
+4ca1 - 4cbd : fround5, DATA:data
+4cbd - 4cbe : periodIndex, DATA:data
+4cbe - 4cea : pcmHeader, DATA:data
+4cea - 4ceb : isPlaying, DATA:data
+4ceb - 4cec : hasEnded, DATA:data
+4cec - 4ced : nearingEnd, DATA:data
+4ced - 4cf1 : itersFixed, DATA:data
+4cf1 - 4cf3 : kernelArgs, DATA:bss
+4cf3 - 4cfa : kernelEventData, DATA:bss
+4cfa - 4cfd : _BITMAP_CLUT, DATA:bss
+4cfd - 4d00 : _tileSize, DATA:bss
+4d00 - 4d78 : palPeriods, DATA:data
+4d78 - 4db8 : _spriteCtl, DATA:bss
+4d78 - 4d78 : BSSStart, START:bss
+4db8 - 4dc0 : _dirStream, DATA:bss
+4dc0 - 4dc2 : _kern_target, DATA:bss
+4dc2 - 4dc3 : _kernelError, DATA:bss
+4dc3 - 4dc7 : chan0Fixed, DATA:bss
+4dc7 - 4dcb : HeapNode, DATA:bss
+4e00 - 4e78 : name, DATA:bss
+4e78 - 4f7a : fileDirEntS, DATA:bss
+4f7a - 4fb8 : instLength, DATA:bss
+5000 - 507c : instAddr, DATA:bss
+507c - 507c : BSSEnd, END:bss
+5080 - 5080 : HeapStart, START:heap
+9000 - 9000 : HeapEnd, END:heap
+9c2d - 9c2d : StackEnd, END:stack
+9c2d - 9c36 : f256main@stack, BSS:f256main@stack
+9c36 - 9c38 : curLine, BSS:f256main@stack
+9c39 - 9c75 : cliPath, BSS:f256main@stack
+9c75 - 9c7b : getTheFile_far@stack, BSS:getTheFile_far@stack
+9c7b - 9cf3 : selected, BSS:getTheFile_far@stack
+9cf3 - 9d2f : finalPath, BSS:getTheFile_far@stack
+9d2f - 9d6b : localPath, BSS:getTheFile_far@stack
+9d6b - 9d73 : filePickModal_far@stack, BSS:filePickModal_far@stack
+9d73 - 9db3 : finalDir, BSS:filePickModal_far@stack
+9db3 - 9e2b : selectedFile, BSS:filePickModal_far@stack
+9e2b - 9e67 : currentPath, BSS:filePickModal_far@stack
+9e67 - 9e79 : pickFile_far@stack, BSS:pickFile_far@stack
+9e79 - 9e99 : displayFileList_far@stack, BSS:displayFileList_far@stack
+9e99 - 9f11 : nameBuf, BSS:displayFileList_far@stack
+9ea8 - 9ec2 : checkMODHeader@stack, BSS:checkMODHeader@stack
+9ec2 - 9ed8 : name, BSS:checkMODHeader@stack
+9ed8 - 9fd7 : buffer, BSS:copyToRAM@stack
+9ee7 - 9f5f : jName, BSS:sortFileList_far@stack
+9f11 - 9f89 : nameBuf, BSS:displayFileList_far@stack
+9f5f - 9fd7 : keyName, BSS:sortFileList_far@stack
+9f89 - 9f8d : wipeArea_far@stack, BSS:wipeArea_far@stack
+9f8d - 9fbf : buff, BSS:printf@stack
+9f97 - 9fd3 : localPath, BSS:readDirectory_far@stack
+9fbf - 9fc7 : si, BSS:sformat@stack
+9fc7 - 9fd7 : buffer, BSS:nformi@stack
+9fc7 - 9fd7 : buffer, BSS:nforml@stack
+9fcf - 9fd7 : clock, BSS:randomReset@stack
+9fd3 - 9fd7 : textPrintInt@stack, BSS:textPrintInt@stack
+9fd3 - 9fd7 : extBuf, BSS:isExtensionAllowed_far@stack
+9fd4 - 9fd7 : pauseTimer, BSS:lilpause@stack
+9fd6 - 9fd7 : c, BSS:readLine@stack
+9fd6 - 9fd7 : drive, BSS:fileOpenDir@stack
+9fd6 - 9fd7 : drive, BSS:fileOpen@stack
+9fd7 - a000 : sstack, STACK:sstack
+
+objects by size
+2f90 (0590) : pickFile_far, NATIVE_CODE:code
+154f (0550) : nformf, NATIVE_CODE:code
+0c70 (0445) : sformat, NATIVE_CODE:code
+377b (043b) : checkMODHeader, NATIVE_CODE:code
+2816 (036a) : sortFileList_far, NATIVE_CODE:code
+2c34 (02db) : displayFileList_far, NATIVE_CODE:code
+40a2 (02b5) : read2KChunk, NATIVE_CODE:code
+0779 (027f) : f256main, NATIVE_CODE:code
+20d7 (022d) : filePickModal_far, NATIVE_CODE:code
+10ca (01ba) : putpch, NATIVE_CODE:code
+247a (01ba) : readDirectory_far, NATIVE_CODE:code
+3cf7 (0193) : textPrint, NATIVE_CODE:code
+1403 (014c) : nforml, NATIVE_CODE:code
+12e8 (011b) : nformi, NATIVE_CODE:code
+3f54 (0116) : textPrintUInt, NATIVE_CODE:code
+4e78 (0102) : fileDirEntS, DATA:bss
+9ed8 (00ff) : buffer, BSS:copyToRAM@stack
+43c8 (00fb) : textUI, NATIVE_CODE:code
+45c4 (00ed) : faddsub, NATIVE_CODE:code
+1e68 (00e1) : getTheFile_far, NATIVE_CODE:code
+4a2c (00d7) : divmod32, NATIVE_CODE:code
+056b (00d4) : bitmapReset, NATIVE_CODE:code
+4b03 (00ce) : crt_malloc, NATIVE_CODE:code
+2634 (00ca) : fileReadDir, NATIVE_CODE:code
+2393 (00b1) : reprepFPR_far, NATIVE_CODE:code
+1bf2 (00b0) : readLine, NATIVE_CODE:code
+4779 (00ae) : crt_fdiv, NATIVE_CODE:code
+36a4 (00a5) : fileOpen, NATIVE_CODE:code
+46b1 (009a) : crt_fmul, NATIVE_CODE:code
+4bd1 (0099) : crt_free, NATIVE_CODE:code
+1d34 (0095) : kernelRead, NATIVE_CODE:code
+1ca2 (0092) : fileRead, NATIVE_CODE:code
+3550 (0090) : backUpDirectory_far, NATIVE_CODE:code
+3bb6 (0090) : copyToRAM, NATIVE_CODE:code
+2304 (008f) : initFilePickRecord_far, NATIVE_CODE:code
+48a3 (0085) : divmod, NATIVE_CODE:code
+04cf (0083) : textClear, NATIVE_CODE:code
+3ecf (0083) : textPrintInt, NATIVE_CODE:code
+1fa9 (0082) : fileOpenDir, NATIVE_CODE:code
+1b76 (007c) : fetchNextPLEntry, NATIVE_CODE:code
+5000 (007c) : instAddr, DATA:bss
+4d00 (0078) : palPeriods, DATA:data
+4e00 (0078) : name, DATA:bss
+9c7b (0078) : selected, BSS:getTheFile_far@stack
+9db3 (0078) : selectedFile, BSS:filePickModal_far@stack
+9e99 (0078) : nameBuf, BSS:displayFileList_far@stack
+9ee7 (0078) : jName, BSS:sortFileList_far@stack
+9f11 (0078) : nameBuf, BSS:displayFileList_far@stack
+9f5f (0078) : keyName, BSS:sortFileList_far@stack
+2bbf (0075) : strcasecmp_local, NATIVE_CODE:code
+0ade (0073) : strncpy, NATIVE_CODE:code
+279c (006f) : endsWithExt, NATIVE_CODE:code
+272e (006e) : isExtensionAllowed_far, NATIVE_CODE:code
+2f0f (0065) : wipeArea_far, NATIVE_CODE:code
+1284 (0064) : f256k_scroll, NATIVE_CODE:code
+033e (0058) : graphicsDefineColor, NATIVE_CODE:code
+202b (004e) : pathWithoutDrive, NATIVE_CODE:code
+4955 (004c) : f32_to_i16, NATIVE_CODE:code
+070f (004a) : randomReset, NATIVE_CODE:code
+0692 (0046) : tileSetVisible, NATIVE_CODE:code
+457f (0045) : freg, NATIVE_CODE:code
+03c5 (0044) : textReset, NATIVE_CODE:code
+49e8 (0044) : uint32_to_float, NATIVE_CODE:code
+2095 (0042) : fileCloseDir, NATIVE_CODE:code
+4827 (0042) : mul16, NATIVE_CODE:code
+1e27 (0041) : fileSeek, NATIVE_CODE:code
+4d78 (0040) : _spriteCtl, DATA:bss
+9d73 (0040) : finalDir, BSS:filePickModal_far@stack
+0200 (003f) : startup, NATIVE_CODE:startup
+02b3 (003f) : f256Init, NATIVE_CODE:code
+2b80 (003f) : FAR_PEEKW, NATIVE_CODE:code
+0bea (003e) : instructions, NATIVE_CODE:code
+4f7a (003e) : instLength, DATA:bss
+3e8a (003d) : mathUnsignedAddition, NATIVE_CODE:code
+35e0 (003c) : sprintf, NATIVE_CODE:code
+9c39 (003c) : cliPath, BSS:f256main@stack
+9cf3 (003c) : finalPath, BSS:getTheFile_far@stack
+9d2f (003c) : localPath, BSS:getTheFile_far@stack
+9e2b (003c) : currentPath, BSS:filePickModal_far@stack
+9f97 (003c) : localPath, BSS:readDirectory_far@stack
+1b2b (003b) : fileClose, NATIVE_CODE:code
+0305 (0039) : graphicsReset, NATIVE_CODE:code
+3cbf (0038) : readBigEndianWord, NATIVE_CODE:code
+4547 (0038) : mul16by8, NATIVE_CODE:code
+2444 (0036) : FAR_POKEW, NATIVE_CODE:code
+063f (0035) : bitmapSetVisible, NATIVE_CODE:code
+0280 (0033) : main, NATIVE_CODE:code
+0aab (0033) : strrchr, NATIVE_CODE:code
+1f76 (0033) : FAR_PEEK, NATIVE_CODE:code
+0b51 (0032) : lilpause, NATIVE_CODE:code
+9f8d (0032) : buff, BSS:printf@stack
+0409 (0031) : textSetDouble, NATIVE_CODE:code
+0a50 (0031) : FAR_POKE, NATIVE_CODE:code
+09f8 (0030) : setup, NATIVE_CODE:code
+4c6e (0030) : textColors, DATA:data
+0396 (002f) : graphicsSetLayerBitmap, NATIVE_CODE:code
+044a (002e) : textDefineForegroundColor, NATIVE_CODE:code
+04a1 (002e) : textDefineBackgroundColor, NATIVE_CODE:code
+1dc9 (002e) : f256getchar, NATIVE_CODE:code
+474b (002e) : crt_fmul8, NATIVE_CODE:code
+1f49 (002d) : fpr_get_currentPath, NATIVE_CODE:code
+26fe (002d) : strcmp, NATIVE_CODE:code
+3c6e (002c) : peek24, NATIVE_CODE:code
+4cbe (002c) : pcmHeader, DATA:data
+0478 (0029) : mathUnsignedMultiply, NATIVE_CODE:code
+49bf (0029) : uint16_to_float, NATIVE_CODE:code
+9fd7 (0029) : sstack, STACK:sstack
+0a28 (0028) : fpr_set_currentPath, NATIVE_CODE:code
+0c48 (0028) : printf, NATIVE_CODE:code
+3c46 (0028) : poke24, NATIVE_CODE:code
+0bb6 (0024) : setTimer, NATIVE_CODE:code
+4508 (0022) : vs1053bBoostClock, NATIVE_CODE:code
+0a8b (0020) : highVol, NATIVE_CODE:code
+9e79 (0020) : displayFileList_far@stack, BSS:displayFileList_far@stack
+4928 (001f) : mods16, NATIVE_CODE:code
+0674 (001e) : tileReset, NATIVE_CODE:code
+4869 (001e) : divs16, NATIVE_CODE:code
+49a1 (001e) : sint16_to_float, NATIVE_CODE:code
+452a (001d) : f256Reset, NATIVE_CODE:code
+2079 (001c) : strlen, NATIVE_CODE:code
+4ca1 (001c) : fround5, DATA:data
+06ea (001a) : spriteSetVisible, NATIVE_CODE:code
+9ea8 (001a) : checkMODHeader@stack, BSS:checkMODHeader@stack
+0552 (0019) : textGotoXY, NATIVE_CODE:code
+362b (0019) : eraseLine, NATIVE_CODE:code
+0761 (0018) : _kernelCallRaw, NATIVE_CODE:code
+0b9e (0018) : _kernelCallRaw, NATIVE_CODE:code
+1ae1 (0018) : _kernelCallRaw, NATIVE_CODE:code
+1e0f (0018) : _kernelCallRaw, NATIVE_CODE:code
+3538 (0018) : _kernelCallRaw, NATIVE_CODE:code
+436f (0018) : _kernelCallRaw, NATIVE_CODE:code
+3765 (0016) : hitspace, NATIVE_CODE:code
+9ec2 (0016) : name, BSS:checkMODHeader@stack
+10b5 (0015) : puts, NATIVE_CODE:code
+02f2 (0013) : kernelReset, NATIVE_CODE:code
+0b83 (0013) : getTimerAbsolute, NATIVE_CODE:code
+0c28 (0013) : textEnableBackgroundColors, NATIVE_CODE:code
+374b (0013) : load_MOD_file, NATIVE_CODE:code
+06d8 (0012) : spriteReset, NATIVE_CODE:code
+9e67 (0012) : pickFile_far@stack, BSS:pickFile_far@stack
+043a (0010) : textSetCursor, NATIVE_CODE:code
+0bda (0010) : kernelNextEvent, NATIVE_CODE:code
+1b66 (0010) : kernelNextEvent, NATIVE_CODE:code
+1df7 (0010) : kernelNextEvent, NATIVE_CODE:code
+3520 (0010) : kernelNextEvent, NATIVE_CODE:code
+4357 (0010) : kernelNextEvent, NATIVE_CODE:code
+9fc7 (0010) : buffer, BSS:nformi@stack
+9fc7 (0010) : buffer, BSS:nforml@stack
+1a9f (000f) : isinf, NATIVE_CODE:code
+4085 (000e) : headerPump, NATIVE_CODE:code
+4887 (000e) : negaccu, NATIVE_CODE:code
+4895 (000e) : negtmp, NATIVE_CODE:code
+4947 (000e) : negtmpb, NATIVE_CODE:code
+0c3b (000d) : textSetColor, NATIVE_CODE:code
+0704 (000b) : fileReset, NATIVE_CODE:code
+280b (000b) : tolower, NATIVE_CODE:code
+9c2d (0009) : f256main@stack, BSS:f256main@stack
+0759 (0008) : _kernelCallWrapper, NATIVE_CODE:code
+0b96 (0008) : _kernelCallWrapper, NATIVE_CODE:code
+1ad9 (0008) : _kernelCallWrapper, NATIVE_CODE:code
+1e07 (0008) : _kernelCallWrapper, NATIVE_CODE:code
+3530 (0008) : _kernelCallWrapper, NATIVE_CODE:code
+4367 (0008) : _kernelCallWrapper, NATIVE_CODE:code
+4db8 (0008) : _dirStream, DATA:bss
+9d6b (0008) : filePickModal_far@stack, BSS:filePickModal_far@stack
+9fbf (0008) : si, BSS:sformat@stack
+9fcf (0008) : clock, BSS:randomReset@stack
+4cf3 (0007) : kernelEventData, DATA:bss
+9c75 (0006) : getTheFile_far@stack, BSS:getTheFile_far@stack
+4c6a (0004) : __multab3L, DATA:code
+4ced (0004) : itersFixed, DATA:data
+4dc3 (0004) : chan0Fixed, DATA:bss
+4dc7 (0004) : HeapNode, DATA:bss
+9f89 (0004) : wipeArea_far@stack, BSS:wipeArea_far@stack
+9fd3 (0004) : textPrintInt@stack, BSS:textPrintInt@stack
+9fd3 (0004) : extBuf, BSS:isExtensionAllowed_far@stack
+4cfa (0003) : _BITMAP_CLUT, DATA:bss
+4cfd (0003) : _tileSize, DATA:bss
+9fd4 (0003) : pauseTimer, BSS:lilpause@stack
+4cf1 (0002) : kernelArgs, DATA:bss
+4dc0 (0002) : _kern_target, DATA:bss
+9c36 (0002) : curLine, BSS:f256main@stack
+44fd (0001) : _ccolor, DATA:data
+44fe (0001) : _MAX_COL, DATA:data
+44ff (0001) : _MAX_ROW, DATA:data
+4c9e (0001) : _col, DATA:data
+4c9f (0001) : _row, DATA:data
+4ca0 (0001) : f256k_color, DATA:data
+4cbd (0001) : periodIndex, DATA:data
+4cea (0001) : isPlaying, DATA:data
+4ceb (0001) : hasEnded, DATA:data
+4cec (0001) : nearingEnd, DATA:data
+4dc2 (0001) : _kernelError, DATA:bss
+9fd6 (0001) : c, BSS:readLine@stack
+9fd6 (0001) : drive, BSS:fileOpenDir@stack
+9fd6 (0001) : drive, BSS:fileOpen@stack
+0080 (0000) : ZeroStart, START:zeropage
+0080 (0000) : ZeroEnd, END:zeropage
+4d78 (0000) : BSSStart, START:bss
+507c (0000) : BSSEnd, END:bss
+5080 (0000) : HeapStart, START:heap
+9000 (0000) : HeapEnd, END:heap
+9c2d (0000) : StackEnd, END:stack
